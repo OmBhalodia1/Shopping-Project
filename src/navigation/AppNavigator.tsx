@@ -14,6 +14,7 @@ import ReadyCard from '../screens/ReadyCard';
 import BottomTabNavigator from './BottomTabNavigator';
 import AllCategories from '../screens/CategoriesFilter';
 import CategoriesFilter from '../screens/CategoriesFilter';
+import ShopFilter from '../screens/ShopFilter';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -81,6 +82,11 @@ const AppNavigator = () => (
       <Stack.Screen
         name="CategoriesFilter"
         component={CategoriesFilter}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="ShopFilter"
+        component={ShopFilter}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

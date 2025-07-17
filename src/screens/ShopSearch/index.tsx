@@ -1,50 +1,65 @@
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
-import React from 'react';
+import {
+  StyleSheet,
+  View,
+  SafeAreaView,
+  Keyboard,
+  TouchableWithoutFeedback,
+} from 'react-native';
+import React, { useState } from 'react';
 import HeaderShop from '../../components/HeaderShop';
 import Section from '../../components/Section';
 import Title from '../../components/Title';
 import NewItemsList from '../../components/NewItemsList';
-import { images } from '../../utils/images';
-export const NewItemProducts = [
-  {
-    id: '1',
-    image: images.Discover1,
-    name: 'Lorem ipsum dolor sit amet consectetur.',
-    price: '$17,00',
-  },
-  {
-    id: '2',
-    image: images.Discover2,
-    name: 'Lorem ipsum dolor sit amet consectetur.',
-    price: '$17,00',
-  },
-  {
-    id: '3',
-    image: images.Discover1,
-    name: 'Lorem ipsum dolor sit amet consectetur.',
-    price: '$17,00',
-  },
-];
+import SearchList from '../../components/SearchList';
+import { styles } from './styles';
+import { DEFAULT_HISTORY } from './type';
+import { DiscoverProducts } from './type';
+import { RECOMMENDATIONS } from './type';
+
 const ShopSearch = () => {
+  const [history, setHistory] = useState(DEFAULT_HISTORY);
+  const [search, setSearch] = useState('');
+
+  const handleSearch = (text: string) => {
+    setSearch(text);
+    if (text && !history.includes(text)) {
+      setHistory([text, ...history]);
+    }
+  };
+
+  const handleClearHistory = () => setHistory([]);
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{ padding: 18 }}>
-        <HeaderShop title="Search" />
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <View style={{ flex: 1, padding: 18 }}>
+          <HeaderShop
+            title="Search"
+            searchText={search}
+            onSubmit={handleSearch}
+          />
+          <Section
+            sectionContent={
+              <SearchList
+                mode="history"
+                items={history}
+                onClear={handleClearHistory}
+              />
+            }
+          />
+          <Section
+            sectionContent={
+              <SearchList mode="recommendation" items={RECOMMENDATIONS} />
+            }
+          />
 
-        <Section
-          title={<Title label="Discover" />}
-          sectionContent={<NewItemsList products={NewItemProducts} />}
-        />
-      </View>
+          <Section
+            title={<Title label="Discover" />}
+            sectionContent={<NewItemsList products={DiscoverProducts} />}
+          />
+        </View>
+      </TouchableWithoutFeedback>
     </SafeAreaView>
   );
 };
 
 export default ShopSearch;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-});

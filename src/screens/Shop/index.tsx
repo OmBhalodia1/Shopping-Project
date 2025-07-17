@@ -17,6 +17,7 @@ import { NewItemProducts } from './type';
 import { TopProducts } from './type';
 import { JustForYouProducts } from './type';
 import { categories } from './type';
+import Pagination from '../../components/Pagination';
 
 type NavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -56,14 +57,7 @@ const ShopScreen: React.FC<{ navigation: NavigationProp }> = ({
           </View>
         </View>
 
-        <View style={styles.pagination}>
-          <View style={[styles.dot, styles.activeDot]} />
-          <View style={styles.dot} />
-          <View style={styles.dot} />
-          <View style={styles.dot} />
-          <View style={styles.dot} />
-        </View>
-
+        <Pagination />
         <Section
           title={
             <Title

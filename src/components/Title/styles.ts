@@ -17,4 +17,31 @@ export const styles = StyleSheet.create({
   star: {
     flexDirection: 'row',
   },
+  categoryContainer: {
+    flexDirection: 'row',
+    marginLeft: 16,
+  },
+  categoryButton: {
+    paddingVertical: 5,
+    paddingHorizontal: 12,
+    borderRadius: 4,
+    borderWidth: 1,
+    borderColor: '#FFEDED',
+    marginRight: 8,
+    backgroundColor: '#FFEDED',
+  },
+  categoryButtonActive: {
+    backgroundColor: '#E5EBFC',
+    borderColor: '#004CFF',
+  },
+  categoryButtonText: {
+    color: '#222',
+    fontWeight: '500',
+    fontFamily: 'Raleway',
+    fontSize: 13,
+    textAlign: 'center',
+  },
+  categoryButtonTextActive: {
+    color: '#004CFF',
+  },
 });

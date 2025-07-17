@@ -8,12 +8,14 @@ type HeaderShopProps = {
   showFilter?: boolean;
   searchText?: string;
   onSubmit?: (text: string) => void;
+  onPress?: () => void;
 };
 
 const HeaderShop: React.FC<HeaderShopProps> = ({
   showFilter = false,
   title = 'Shop',
   searchText = '',
+  onPress,
   onSubmit,
 }) => {
   const [input, setInput] = useState(searchText);
@@ -57,7 +59,7 @@ const HeaderShop: React.FC<HeaderShopProps> = ({
       </View>
 
       {showFilter && (
-        <TouchableOpacity style={{ marginLeft: 4 }}>
+        <TouchableOpacity style={{ marginLeft: 4 }} onPress={onPress}>
           <Image source={icons.filter} resizeMode="contain" />
         </TouchableOpacity>
       )}

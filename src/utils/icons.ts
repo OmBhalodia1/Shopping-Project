@@ -21,4 +21,6 @@ export const icons = {
   filter: require('../assets/icons/filter.png'),
   arrowDown: require('../assets/icons/arrowDown.png'),
   arrowUp: require('../assets/icons/arrowUp.png'),
+  delete: require('../assets/icons/delete.png'),
+  share: require('../assets/icons/Share.png'),
 };

@@ -12,5 +12,6 @@ export type RootStackParamList = {
   BottomTabNavigator: undefined;
   CategoriesFilter: undefined;
   ShopSearch: undefined;
+  ShopFilter: undefined;
   ShopClothing: { category: string };
 };

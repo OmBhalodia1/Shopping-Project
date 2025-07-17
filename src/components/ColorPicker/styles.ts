@@ -1,44 +1,41 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-  row: {
+  colorList: {
     flexDirection: 'row',
-    marginBottom: 10,
-    shadowRadius: 3,
-    shadowColor: '#222',
-    shadowOpacity: 0.16,
-    padding: 5,
-    shadowOffset: { width: 0, height: 5 },
+    gap: 15,
+    padding: 4,
   },
-  itemContainer: {
+  colorButton: {
+    width: 40,
+    height: 40,
+    justifyContent: 'center',
     alignItems: 'center',
-    marginRight: 12,
+    position: 'relative',
   },
-  avatar: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
+  colorCircle: {
+    width: 35,
+    height: 35,
+    borderRadius: 18,
     borderWidth: 4,
     borderColor: '#FFFFFF',
+    shadowColor: '#000',
+    shadowOpacity: 0.16,
+    shadowOffset: { width: 0, height: 5 },
   },
-  title: {
-    marginTop: 5,
-    fontSize: 13,
-    color: '#202020',
-    textAlign: 'center',
-    fontFamily: 'Raleway',
-    fontWeight: '500',
-    lineHeight: 17,
-    letterSpacing: -0.13,
+  colorSelected: {
+    borderWidth: 1,
+    borderColor: '#285AFF',
+    borderRadius: 20,
   },
   tickContainer: {
     position: 'absolute',
-    right: -4,
     top: -4,
+    right: -4,
   },
   tickCircle: {
-    width: 25,
-    height: 25,
+    width: 20,
+    height: 20,
     borderRadius: 15,
     backgroundColor: '#285AFF',
     justifyContent: 'center',

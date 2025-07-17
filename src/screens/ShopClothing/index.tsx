@@ -18,10 +18,18 @@ import { RootStackParamList } from '../../types/RootStackParamList';
 import { AllItems } from './type';
 import { imageList1 } from './type';
 import { imageList2 } from './type';
+import { StackNavigationProp } from '@react-navigation/stack';
 
 type ShopClothingRouteProp = RouteProp<RootStackParamList, 'ShopClothing'>;
 
-const ShopClothing = () => {
+type NavigationProp = StackNavigationProp<
+  RootStackParamList,
+  'BottomTabNavigator'
+>;
+
+const ShopClothing: React.FC<{ navigation: NavigationProp }> = ({
+  navigation,
+}) => {
   const route = useRoute<ShopClothingRouteProp>();
   const { category } = route.params || {};
 
@@ -34,8 +42,11 @@ const ShopClothing = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.contentWrapper}>
-        <HeaderShop showFilter={showFilter} searchText={category} />
-
+        <HeaderShop
+          showFilter={showFilter}
+          searchText={category}
+          onPress={() => navigation.navigate('ShopFilter')}
+        />
         <ScrollView
           showsVerticalScrollIndicator={false}
           onScroll={handleScroll}
@@ -58,7 +69,13 @@ const ShopClothing = () => {
           />
 
           <Section
-            title={<Title label="All Items" filter />}
+            title={
+              <Title
+                label="All Items"
+                filter
+                onPress={() => navigation.navigate('ShopFilter')}
+              />
+            }
             sectionContent={<JustForYouList products={AllItems} />}
           />
         </ScrollView>
