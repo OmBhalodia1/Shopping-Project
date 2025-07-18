@@ -13,9 +13,9 @@ import { icons } from '../../utils/icons';
 import Title from '../../components/Title';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../types/RootStackParamList';
-import { categoryImages } from './type';
-import { categories } from './type';
-import { genderTabs } from './type';
+import { categoryImages } from './data';
+import { categories } from './data';
+import { genderTabs } from './data';
 import { styles } from './styles';
 import RenderSubcategories from '../../components/RenderSubCategories';
 

@@ -6,18 +6,21 @@ export const AllItems = [
     image: images.JustForYou1,
     name: 'Lorem ipsum dolor sit amet consectetur.',
     price: '$17.00',
+    fullImage: images.FullProduct1,
   },
   {
     id: '2',
     image: images.AllItems2,
     name: 'Lorem ipsum dolor sit amet consectetur.',
     price: '$17.00',
+    fullImage: images.FullProduct2,
   },
   {
     id: '3',
     image: images.JustForYou6,
     name: 'Lorem ipsum dolor sit amet consectetur.',
     price: '$17.00',
+    fullImage: images.FullProduct2,
   },
   {
     id: '4',

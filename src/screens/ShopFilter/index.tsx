@@ -10,8 +10,8 @@ import { RootStackParamList } from '../../types/RootStackParamList';
 import ColorPicker from '../../components/ColorPicker';
 import Button from '../../components/Button';
 import { styles } from './styles';
-import { imageList1 } from './type';
-import { imageList2 } from './type';
+import { imageList1 } from './data';
+import { imageList2 } from './data';
 
 type NavigationProp = StackNavigationProp<
   RootStackParamList,

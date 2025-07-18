@@ -88,4 +88,9 @@ export const images = {
   AllItems10: require('../assets/images/allitems10.png'),
   Discover1: require('../assets/images/discover1.png'),
   Discover2: require('../assets/images/discover2.png'),
+  FullProduct1: require('../assets/images/fullProduct1.png'),
+  FullProduct2: require('../assets/images/fullProduct2.png'),
+  Varient1: require('../assets/images/varient1.png'),
+  Varient2: require('../assets/images/varient2.png'),
+  Varient3: require('../assets/images/varient3.png'),
 };

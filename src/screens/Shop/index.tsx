@@ -13,10 +13,10 @@ import { styles } from './styles';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../types/RootStackParamList';
 import HeaderShop from '../../components/HeaderShop';
-import { NewItemProducts } from './type';
-import { TopProducts } from './type';
-import { JustForYouProducts } from './type';
-import { categories } from './type';
+import { NewItemProducts } from './data';
+import { TopProducts } from './data';
+import { JustForYouProducts } from './data';
+import { categories } from './data';
 import Pagination from '../../components/Pagination';
 
 type NavigationProp = StackNavigationProp<

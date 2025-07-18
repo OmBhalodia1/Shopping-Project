@@ -4,6 +4,7 @@ import ShopScreen from '../../screens/Shop';
 import ShopCLothing from '../../screens/ShopClothing';
 
 import ShopSearch from '../../screens/ShopSearch';
+import CategoriesFilter from '../../screens/CategoriesFilter';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,6 +14,11 @@ export default function ShopStack() {
       <Stack.Screen name="Shop" component={ShopScreen} />
       <Stack.Screen name="ShopClothing" component={ShopCLothing} />
       <Stack.Screen name="ShopSearch" component={ShopSearch} />
+      <Stack.Screen
+        name="CategoriesFilter"
+        component={CategoriesFilter}
+        options={{ headerShown: false, presentation: 'fullScreenModal' }}
+      />
     </Stack.Navigator>
   );
 }

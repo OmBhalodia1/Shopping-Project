@@ -12,9 +12,9 @@ import Title from '../../components/Title';
 import NewItemsList from '../../components/NewItemsList';
 import SearchList from '../../components/SearchList';
 import { styles } from './styles';
-import { DEFAULT_HISTORY } from './type';
-import { DiscoverProducts } from './type';
-import { RECOMMENDATIONS } from './type';
+import { DEFAULT_HISTORY } from './data';
+import { DiscoverProducts } from './data';
+import { RECOMMENDATIONS } from './data';
 
 const ShopSearch = () => {
   const [history, setHistory] = useState(DEFAULT_HISTORY);

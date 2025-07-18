@@ -10,12 +10,12 @@ import {
 import { images } from '../../utils/images';
 import { styles } from './styles';
 
-export interface Product {
+export type Product = {
   id: string;
   image: any;
   name: string;
   price: string;
-}
+};
 
 type NewItemsListProps = {
   products: Product[];

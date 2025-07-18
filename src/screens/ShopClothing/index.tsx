@@ -15,9 +15,9 @@ import Section from '../../components/Section';
 import Title from '../../components/Title';
 import JustForYouList from '../../components/JustForYouList';
 import { RootStackParamList } from '../../types/RootStackParamList';
-import { AllItems } from './type';
-import { imageList1 } from './type';
-import { imageList2 } from './type';
+import { AllItems } from './data';
+import { imageList1 } from './data';
+import { imageList2 } from './data';
 import { StackNavigationProp } from '@react-navigation/stack';
 
 type ShopClothingRouteProp = RouteProp<RootStackParamList, 'ShopClothing'>;
@@ -31,6 +31,11 @@ const ShopClothing: React.FC<{ navigation: NavigationProp }> = ({
   navigation,
 }) => {
   const route = useRoute<ShopClothingRouteProp>();
+
+  const handleProductPress = (product: { id: string }) => {
+    navigation.navigate('Product', { id: product.id });
+  };
+
   const { category } = route.params || {};
 
   const [showFilter, setShowFilter] = useState(false);
@@ -67,7 +72,6 @@ const ShopClothing: React.FC<{ navigation: NavigationProp }> = ({
               />,
             ]}
           />
-
           <Section
             title={
               <Title
@@ -76,7 +80,12 @@ const ShopClothing: React.FC<{ navigation: NavigationProp }> = ({
                 onPress={() => navigation.navigate('ShopFilter')}
               />
             }
-            sectionContent={<JustForYouList products={AllItems} />}
+            sectionContent={
+              <JustForYouList
+                products={AllItems}
+                onProductPress={handleProductPress}
+              />
+            }
           />
         </ScrollView>
       </View>

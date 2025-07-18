@@ -15,6 +15,7 @@ import BottomTabNavigator from './BottomTabNavigator';
 import AllCategories from '../screens/CategoriesFilter';
 import CategoriesFilter from '../screens/CategoriesFilter';
 import ShopFilter from '../screens/ShopFilter';
+import { Product } from '../screens/Product';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -87,6 +88,11 @@ const AppNavigator = () => (
       <Stack.Screen
         name="ShopFilter"
         component={ShopFilter}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Product"
+        component={Product}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

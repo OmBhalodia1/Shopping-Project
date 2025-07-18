@@ -23,4 +23,6 @@ export const icons = {
   arrowUp: require('../assets/icons/arrowUp.png'),
   delete: require('../assets/icons/delete.png'),
   share: require('../assets/icons/Share.png'),
+  heart: require('../assets/icons/heart.png'),
+  heartRed: require('../assets/icons/heartRed.png'),
 };
