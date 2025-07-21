@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Image } from 'react-native';
 import { icons } from '../../utils/icons';
 import { styles } from './styles';
 
-const Timer = () => (
+const TitleTimer = () => (
   <View style={styles.container}>
     <View style={styles.timerRow}>
       <Image source={icons.clock} resizeMode="contain" style={styles.icon} />
@@ -22,4 +22,4 @@ const Timer = () => (
   </View>
 );
 
-export default Timer;
+export default TitleTimer;

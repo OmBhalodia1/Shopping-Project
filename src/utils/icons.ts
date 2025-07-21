@@ -25,4 +25,6 @@ export const icons = {
   share: require('../assets/icons/Share.png'),
   heart: require('../assets/icons/heart.png'),
   heartRed: require('../assets/icons/heartRed.png'),
+  starFilled: require('../assets/icons/starFilled.png'),
+  starNotFilled: require('../assets/icons/starNotFilled.png'),
 };

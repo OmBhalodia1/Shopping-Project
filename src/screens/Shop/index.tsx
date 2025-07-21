@@ -18,6 +18,8 @@ import { TopProducts } from './data';
 import { JustForYouProducts } from './data';
 import { categories } from './data';
 import Pagination from '../../components/Pagination';
+import ShopSeeAllSection from '../../components/ShopSeeAllSection';
+import TitleTimer from '../../components/TitleTimer';
 
 type NavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -62,8 +64,11 @@ const ShopScreen: React.FC<{ navigation: NavigationProp }> = ({
           title={
             <Title
               label="Categories"
-              button
-              onPress={() => navigation.navigate('CategoriesFilter')}
+              rightElement={
+                <ShopSeeAllSection
+                  onPress={() => navigation.navigate('CategoriesFilter')}
+                />
+              }
             />
           }
           sectionContent={
@@ -80,17 +85,21 @@ const ShopScreen: React.FC<{ navigation: NavigationProp }> = ({
         />
 
         <Section
-          title={<Title label="New Items" button />}
+          title={
+            <Title label="New Items" rightElement={<ShopSeeAllSection />} />
+          }
           sectionContent={<NewItemsList products={NewItemProducts} />}
         />
 
         <Section
-          title={<Title label="Flash Sale" timer />}
+          title={<Title label="Flash Sale" rightElement={<TitleTimer />} />}
           sectionContent={<FlashSaleImageGrid />}
         />
 
         <Section
-          title={<Title label="Most Popular" button />}
+          title={
+            <Title label="Most Popular" rightElement={<ShopSeeAllSection />} />
+          }
           sectionContent={<MostPopularItemList />}
         />
 

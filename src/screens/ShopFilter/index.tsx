@@ -12,6 +12,8 @@ import Button from '../../components/Button';
 import { styles } from './styles';
 import { imageList1 } from './data';
 import { imageList2 } from './data';
+import TitleCancel from '../../components/TitleCancel';
+import TitleCategoryButton from '../../components/TitleCategoryButton';
 
 type NavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -30,8 +32,9 @@ const ShopFilter: React.FC<{ navigation: NavigationProp }> = ({
               <Title
                 label="Filter"
                 textStyle={{ fontSize: 25 }}
-                cancel
-                onPress={() => navigation.goBack()}
+                rightElement={
+                  <TitleCancel onPress={() => navigation.goBack()} />
+                }
               />
             }
             sectionContent={[
@@ -49,7 +52,9 @@ const ShopFilter: React.FC<{ navigation: NavigationProp }> = ({
             ]}
           />
           <Section
-            title={<Title label="Size" categoryButton />}
+            title={
+              <Title label="Size" rightElement={<TitleCategoryButton />} />
+            }
             sectionContent={<SizePicker />}
           />
           <Section

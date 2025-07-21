@@ -16,6 +16,8 @@ import AllCategories from '../screens/CategoriesFilter';
 import CategoriesFilter from '../screens/CategoriesFilter';
 import ShopFilter from '../screens/ShopFilter';
 import { Product } from '../screens/Product';
+import ProductVariations from '../screens/ProductVariations';
+import Reviews from '../screens/Reviews';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -93,6 +95,16 @@ const AppNavigator = () => (
       <Stack.Screen
         name="Product"
         component={Product}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="ProductVariations"
+        component={ProductVariations}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Reviews"
+        component={Reviews}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

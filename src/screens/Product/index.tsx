@@ -18,6 +18,15 @@ import VariationSection from '../../components/VariationSection';
 import Title from '../../components/Title';
 import VariationRow from '../../components/VariationRow';
 import Section from '../../components/Section';
+import DeliveryOptions from '../../components/DeliveryOptions';
+import Ratings from '../../components/Ratings';
+import ReviewsComponent from '../../components/ReviewsComponent';
+import Button from '../../components/Button';
+import ShopSeeAllSection from '../../components/ShopSeeAllSection';
+import MostPopularItemList from '../../components/MostPopularItemList';
+import JustForYouList from '../../components/JustForYouList';
+import { JustForYouProducts } from '../Shop/data';
+import { styles } from './styles';
 
 type ShopClothingRouteProp = RouteProp<RootStackParamList, 'Product'>;
 type Props = {
@@ -25,10 +34,15 @@ type Props = {
   navigation: NavigationProp<RootStackParamList, 'Product'>;
 };
 
-export const Product: React.FC<Props> = ({ route }) => {
+export const Product: React.FC<Props> = ({ route, navigation }) => {
   const { id } = route.params;
   const product = AllItems.find(item => item.id === id);
-  const variations = [images.Varient1, images.Varient2, images.Varient3];
+  const variations = [
+    images.Varient1,
+    images.Varient2,
+    images.Varient3,
+    images.Varient4,
+  ];
 
   const mainImageSource = product?.fullImage || product?.image;
 
@@ -71,14 +85,18 @@ export const Product: React.FC<Props> = ({ route }) => {
             mauris, scelerisque eu mauris id, pretium pulvinar sapien.
           </ReactText>
 
-          <VariationSection data={variations} />
+          <VariationSection
+            data={variations}
+            onPressArrow={() => navigation.navigate('ProductVariations')}
+          />
 
           <Section
             title={
               <Title label="Specifications" textStyle={{ fontSize: 26 }} />
             }
-            sectionContent={
+            sectionContent={[
               <Section
+                key={'material'}
                 title={<Title label="Material" />}
                 sectionContent={
                   <View style={{ marginLeft: -20 }}>
@@ -93,8 +111,72 @@ export const Product: React.FC<Props> = ({ route }) => {
                     />
                   </View>
                 }
-              />
-            }
+              />,
+              <Section
+                key={'origin'}
+                title={<Title label="Origin" />}
+                sectionContent={
+                  <VariationRow
+                    button1
+                    buttonText1="EU"
+                    arrowCircle={false}
+                    button1Style={{
+                      backgroundColor: '#E5EBFC',
+                      left: -17,
+                    }}
+                  />
+                }
+              />,
+              <Section
+                key={'delivery'}
+                title={<Title label="Delivery" />}
+                sectionContent={[
+                  <DeliveryOptions
+                    key={'1'}
+                    deliveryType="Standard"
+                    days="5-7"
+                    price={3}
+                  />,
+                  <DeliveryOptions
+                    key={'2'}
+                    deliveryType="Express"
+                    days="1-2"
+                    price={12}
+                  />,
+                ]}
+              />,
+              <Section
+                key={'ratings'}
+                title={<Title label="Ratings & Reviews" />}
+                sectionContent={[
+                  <Ratings key={'r1'} />,
+                  <ReviewsComponent starCount={4} key={'r2'} />,
+                  <View key={'r3'} style={{ marginTop: 10 }}>
+                    <Button
+                      title="View All Reviews"
+                      onPress={() => navigation.navigate('Reviews')}
+                    />
+                  </View>,
+                ]}
+              />,
+              <Section
+                key={'most popular'}
+                title={
+                  <Title
+                    label="Most Popular"
+                    rightElement={<ShopSeeAllSection />}
+                  />
+                }
+                sectionContent={<MostPopularItemList />}
+              />,
+              <Section
+                key={'you might like '}
+                title={<Title label="You Might Like" />}
+                sectionContent={
+                  <JustForYouList products={JustForYouProducts} />
+                }
+              />,
+            ]}
           />
         </View>
       </ScrollView>
@@ -102,53 +184,3 @@ export const Product: React.FC<Props> = ({ route }) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FFFFFF',
-  },
-  imageSection: {
-    width: '100%',
-    height: 460,
-    backgroundColor: '#F9F9F9',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    position: 'relative',
-  },
-  productImage: {
-    flex: 1,
-    resizeMode: 'cover',
-    position: 'absolute',
-    height: '100%',
-  },
-  carouselDots: {
-    position: 'absolute',
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  detailsSection: {
-    paddingBottom: 32,
-    paddingHorizontal: 20,
-    borderTopLeftRadius: 22,
-    borderTopRightRadius: 22,
-    backgroundColor: '#FFFFFF',
-    position: 'relative',
-  },
-  price: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    color: '#202020',
-    marginBottom: 7,
-    marginTop: 9,
-    letterSpacing: 0.5,
-  },
-  description: {
-    fontSize: 15,
-    color: '#292929',
-    marginVertical: 12,
-    lineHeight: 21,
-  },
-});

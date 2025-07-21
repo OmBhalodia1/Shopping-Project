@@ -19,6 +19,7 @@ import { AllItems } from './data';
 import { imageList1 } from './data';
 import { imageList2 } from './data';
 import { StackNavigationProp } from '@react-navigation/stack';
+import TitleFilter from '../../components/TitleFilter';
 
 type ShopClothingRouteProp = RouteProp<RootStackParamList, 'ShopClothing'>;
 
@@ -76,8 +77,11 @@ const ShopClothing: React.FC<{ navigation: NavigationProp }> = ({
             title={
               <Title
                 label="All Items"
-                filter
-                onPress={() => navigation.navigate('ShopFilter')}
+                rightElement={
+                  <TitleFilter
+                    onPress={() => navigation.navigate('ShopFilter')}
+                  />
+                }
               />
             }
             sectionContent={

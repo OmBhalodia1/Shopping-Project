@@ -93,4 +93,7 @@ export const images = {
   Varient1: require('../assets/images/varient1.png'),
   Varient2: require('../assets/images/varient2.png'),
   Varient3: require('../assets/images/varient3.png'),
+  Varient4: require('../assets/images/varient4.png'),
+  ReviewGirl: require('../assets/images/reviewGirl.png'),
+  ProductVariationsGirl: require('../assets/images/productVariationsGirl.png'),
 };

@@ -7,6 +7,7 @@ import {
   ScrollView,
   Dimensions,
   Platform,
+  TouchableOpacity,
 } from 'react-native';
 import { images } from '../../utils/images';
 import { styles } from './styles';
@@ -23,7 +24,7 @@ export default function MostPopularItemList() {
     <View style={styles.container}>
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         {products.map(item => (
-          <View key={item.id} style={styles.shadowWrapper}>
+          <TouchableOpacity key={item.id} style={styles.shadowWrapper}>
             <View style={styles.card}>
               <Image source={item.image} resizeMode="cover" />
               <View style={styles.infoRow}>
@@ -33,7 +34,7 @@ export default function MostPopularItemList() {
                 <Text style={styles.label}>{item.label}</Text>
               </View>
             </View>
-          </View>
+          </TouchableOpacity>
         ))}
       </ScrollView>
     </View>

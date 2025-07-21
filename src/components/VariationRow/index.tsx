@@ -18,6 +18,7 @@ type VariationRowProps = {
   button1Style?: StyleProp<ViewStyle>;
   button2Style?: StyleProp<ViewStyle>;
   arrowCircle?: boolean;
+  onPressArrow?: () => void;
 };
 
 const VariationRow: React.FC<VariationRowProps> = ({
@@ -29,6 +30,7 @@ const VariationRow: React.FC<VariationRowProps> = ({
   button2Style,
   title,
   arrowCircle = true,
+  onPressArrow,
 }) => {
   return (
     <View style={styles.variationRow}>
@@ -47,7 +49,7 @@ const VariationRow: React.FC<VariationRowProps> = ({
       ) : null}
 
       {arrowCircle ? (
-        <TouchableOpacity style={styles.variationArrow}>
+        <TouchableOpacity style={styles.variationArrow} onPress={onPressArrow}>
           <Text style={styles.variationArrowIcon}>→</Text>
         </TouchableOpacity>
       ) : null}

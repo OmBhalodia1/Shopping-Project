@@ -44,4 +44,9 @@ export const styles = StyleSheet.create({
   categoryButtonTextActive: {
     color: '#004CFF',
   },
+  rightContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+  },
 });
