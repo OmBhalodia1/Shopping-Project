@@ -20,4 +20,7 @@ export type RootStackParamList = {
     category: string;
   };
   Product: { id: string };
+  Wishlist: undefined;
+  WishlistEmpty: undefined;
+  WishlistRecentlyViewed: undefined;
 };

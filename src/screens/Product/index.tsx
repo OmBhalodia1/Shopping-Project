@@ -27,6 +27,7 @@ import MostPopularItemList from '../../components/MostPopularItemList';
 import JustForYouList from '../../components/JustForYouList';
 import { JustForYouProducts } from '../Shop/data';
 import { styles } from './styles';
+import ProductVariations from '../ProductVariations';
 
 type ShopClothingRouteProp = RouteProp<RootStackParamList, 'Product'>;
 type Props = {
@@ -36,6 +37,7 @@ type Props = {
 
 export const Product: React.FC<Props> = ({ route, navigation }) => {
   const { id } = route.params;
+  const [isProductVariantOpen, setIsProductVariantOpen] = useState(false);
   const product = AllItems.find(item => item.id === id);
   const variations = [
     images.Varient1,
@@ -55,6 +57,10 @@ export const Product: React.FC<Props> = ({ route, navigation }) => {
       </View>
     );
   }
+
+  const toggleProductVariantSheet = () => {
+    setIsProductVariantOpen(!isProductVariantOpen);
+  };
 
   return (
     <View style={styles.container}>
@@ -87,7 +93,7 @@ export const Product: React.FC<Props> = ({ route, navigation }) => {
 
           <VariationSection
             data={variations}
-            onPressArrow={() => navigation.navigate('ProductVariations')}
+            onPressArrow={() => setIsProductVariantOpen(true)}
           />
 
           <Section
@@ -181,6 +187,10 @@ export const Product: React.FC<Props> = ({ route, navigation }) => {
         </View>
       </ScrollView>
       <FooterButton />
+      <ProductVariations
+        isOpen={isProductVariantOpen}
+        onClose={() => setIsProductVariantOpen(false)}
+      />
     </View>
   );
 };

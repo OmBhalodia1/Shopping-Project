@@ -5,6 +5,8 @@ import ProfileScreen from '../screens/Profile';
 import { icons } from '../utils/icons';
 import { styles } from './styles';
 import ShopStack from './ShopStack';
+import WishlistStack from './WishlistStack';
+import CartStack from './CartStack';
 const Tab = createBottomTabNavigator();
 
 type TabIconProps = {
@@ -49,10 +51,10 @@ export default function BottomTabNavigator() {
             case 'ShopStack':
               icon = icons.shop;
               break;
-            case 'Wishlist':
+            case 'WishlistStack':
               icon = icons.wislist;
               break;
-            case 'Cart':
+            case 'CartStack':
               icon = icons.cart;
               break;
             case 'Categories':
@@ -68,9 +70,9 @@ export default function BottomTabNavigator() {
       })}
     >
       <Tab.Screen name="ShopStack" component={ShopStack} />
-      <Tab.Screen name="Wishlist" component={DummyScreen} />
+      <Tab.Screen name="WishlistStack" component={WishlistStack} />
       <Tab.Screen name="Categories" component={DummyScreen} />
-      <Tab.Screen name="Cart" component={DummyScreen} />
+      <Tab.Screen name="CartStack" component={CartStack} />
       <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
   );

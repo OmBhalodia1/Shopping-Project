@@ -18,6 +18,9 @@ import ShopFilter from '../screens/ShopFilter';
 import { Product } from '../screens/Product';
 import ProductVariations from '../screens/ProductVariations';
 import Reviews from '../screens/Reviews';
+import Wishlist from '../screens/Wishlist';
+import WishlistEmpty from '../screens/WishlistEmpty';
+import WishlistRecentlyViewed from '../screens/WishlistRecentlyViewed';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -97,14 +100,25 @@ const AppNavigator = () => (
         component={Product}
         options={{ headerShown: false }}
       />
-      <Stack.Screen
-        name="ProductVariations"
-        component={ProductVariations}
-        options={{ headerShown: false }}
-      />
+
       <Stack.Screen
         name="Reviews"
         component={Reviews}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Wishlist"
+        component={Wishlist}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="WishlistEmpty"
+        component={WishlistEmpty}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="WishlistRecentlyViewed"
+        component={WishlistRecentlyViewed}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

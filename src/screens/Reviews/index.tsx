@@ -4,19 +4,18 @@ import Section from '../../components/Section';
 import Title from '../../components/Title';
 import ReviewsComponent from '../../components/ReviewsComponent';
 import { styles } from './styles';
+
 const Reviews = () => {
+  const reviewData = [4, 5, 5, 5, 5];
+
   return (
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContent}>
         <Section
           title={<Title label="Reviews" />}
-          sectionContent={[
-            <ReviewsComponent starCount={4} key={'r1'} />,
-            <ReviewsComponent starCount={5} key={'r2'} />,
-            <ReviewsComponent starCount={5} key={'r3'} />,
-            <ReviewsComponent starCount={5} key={'r4'} />,
-            <ReviewsComponent starCount={5} key={'r5'} />,
-          ]}
+          sectionContent={reviewData.map((stars, index) => (
+            <ReviewsComponent starCount={stars} key={index} />
+          ))}
         />
       </ScrollView>
     </View>

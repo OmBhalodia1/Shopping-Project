@@ -23,11 +23,6 @@ export default function ShopStack() {
           presentation: 'fullScreenModal',
         }}
       />
-      <Stack.Screen
-        name="ProductVariations"
-        component={ProductVariations}
-        options={{ headerShown: false, presentation: 'modal' }}
-      />
     </Stack.Navigator>
   );
 }

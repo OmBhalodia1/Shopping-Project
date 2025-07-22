@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import {
   View,
   Image,
@@ -15,8 +15,18 @@ import Section from '../../components/Section';
 import QuantitySelector from '../../components/QuantitySelector';
 import FooterButton from '../../components/FooterButton';
 import { styles } from './styles';
+import BottomSheet from '../../components/BottomSheet';
+import { RootStackParamList } from '../../types/RootStackParamList';
+import { NavigationProp } from '@react-navigation/native';
+type ProductVariationsProps = Readonly<{
+  isOpen: boolean;
+  onClose: () => void;
+}>;
 
-const ProductVariations = () => {
+const ProductVariations: React.FC<ProductVariationsProps> = ({
+  isOpen,
+  onClose,
+}) => {
   const variations = [
     images.Varient1,
     images.Varient2,
@@ -25,7 +35,7 @@ const ProductVariations = () => {
   ];
 
   return (
-    <SafeAreaView style={styles.container}>
+    <BottomSheet isOpen={isOpen} onClose={onClose}>
       <ScrollView contentContainerStyle={styles.card}>
         <View style={styles.row}>
           <Image
@@ -64,7 +74,7 @@ const ProductVariations = () => {
         </View>
       </ScrollView>
       <FooterButton />
-    </SafeAreaView>
+    </BottomSheet>
   );
 };
 

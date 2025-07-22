@@ -27,4 +27,6 @@ export const icons = {
   heartRed: require('../assets/icons/heartRed.png'),
   starFilled: require('../assets/icons/starFilled.png'),
   starNotFilled: require('../assets/icons/starNotFilled.png'),
+  wishlistAdd: require('../assets/icons/wishlistAdd.png'),
+  edit: require('../assets/icons/edit.png'),
 };
