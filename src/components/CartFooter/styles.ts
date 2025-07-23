@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
-    backgroundColor: '#fff',
+    backgroundColor: '#f0f0f0',
   },
   totalContainer: {
     flexDirection: 'row',

@@ -6,7 +6,7 @@ type DeliveryType = 'Standard' | 'Express';
 type DeliveryOptionsProps = {
   deliveryType: DeliveryType;
   days: string;
-  price: number;
+  price: string;
 };
 
 const DeliveryOptions: React.FC<DeliveryOptionsProps> = ({
@@ -19,7 +19,7 @@ const DeliveryOptions: React.FC<DeliveryOptionsProps> = ({
       <TouchableOpacity style={styles.optionContainer}>
         <Text style={styles.optionLabel}>{deliveryType}</Text>
         <Text style={styles.optionDetail}>{days} days</Text>
-        <Text style={styles.optionPrice}>${price}.00</Text>
+        <Text style={styles.optionPrice}>{price}</Text>
       </TouchableOpacity>
     </View>
   );

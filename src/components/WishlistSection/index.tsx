@@ -55,7 +55,7 @@ const WishlistSection: React.FC<WishlistSectionProps> = ({
               <Text style={styles.price}>${discountedPrice},00</Text>
             </>
           ) : (
-            <Text style={styles.price}>${price}</Text>
+            <Text style={styles.price}>${price},00</Text>
           )}
         </View>
 

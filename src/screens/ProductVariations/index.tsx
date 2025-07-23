@@ -1,11 +1,5 @@
 import React, { useRef } from 'react';
-import {
-  View,
-  Image,
-  StyleSheet,
-  SafeAreaView,
-  ScrollView,
-} from 'react-native';
+import { View, Image, ScrollView } from 'react-native';
 import { images } from '../../utils/images';
 import Title from '../../components/Title';
 import VariationRow from '../../components/VariationRow';
@@ -16,8 +10,6 @@ import QuantitySelector from '../../components/QuantitySelector';
 import FooterButton from '../../components/FooterButton';
 import { styles } from './styles';
 import BottomSheet from '../../components/BottomSheet';
-import { RootStackParamList } from '../../types/RootStackParamList';
-import { NavigationProp } from '@react-navigation/native';
 type ProductVariationsProps = Readonly<{
   isOpen: boolean;
   onClose: () => void;

@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
     borderColor: '#004CFF',
   },
   plain: {
-    backgroundColor: 'transparent',
+    backgroundColor: '#ffffff',
   },
   buttonText: {
     fontSize: 18,

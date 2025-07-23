@@ -1,36 +1,35 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   View,
   Text,
   Image,
   TouchableOpacity,
-  StyleSheet,
   ImageSourcePropType,
 } from 'react-native';
 import { icons } from '../../utils/icons';
 import { styles } from './styles';
-export type WishlistItemProps = {
+
+export type CartSectionProps = {
+  id: string;
   image: ImageSourcePropType;
   subtext?: string;
   price?: number;
   discountedPrice?: number;
-  optionColor?: string;
-  optionSize?: string;
-  onDelete?: () => void;
-  onAdd?: () => void;
+  quantity: number;
+  onQuantityChange: (id: string, newQuantity: number) => void;
 };
 
-const CartSection: React.FC<WishlistItemProps> = ({
+const CartSection: React.FC<CartSectionProps> = ({
+  id,
   image,
   subtext = 'Lorem ipsum dolor sit amet consectetur.',
   price = 17,
   discountedPrice,
-  onDelete,
+  quantity,
+  onQuantityChange,
 }) => {
-  const [quantity, setQuantity] = useState(1);
-
-  const increment = () => setQuantity(q => q + 1);
-  const decrement = () => setQuantity(q => (q > 1 ? q - 1 : 1));
+  const increment = () => onQuantityChange(id, quantity + 1);
+  const decrement = () => onQuantityChange(id, quantity - 1);
 
   return (
     <View style={styles.container}>
@@ -38,11 +37,7 @@ const CartSection: React.FC<WishlistItemProps> = ({
         <View style={styles.imageWrapper}>
           <Image source={image} style={styles.productImage} />
         </View>
-        <TouchableOpacity
-          style={styles.deleteButton}
-          onPress={onDelete}
-          activeOpacity={0.7}
-        >
+        <TouchableOpacity style={styles.deleteButton} activeOpacity={0.7}>
           <Image source={icons.delete} style={styles.deleteIcon} />
         </TouchableOpacity>
       </View>
@@ -56,7 +51,7 @@ const CartSection: React.FC<WishlistItemProps> = ({
               <Text style={styles.price}>${discountedPrice}</Text>
             </>
           ) : (
-            <Text style={styles.price}>${price}</Text>
+            <Text style={styles.price}>${price},00</Text>
           )}
           <View style={styles.controls}>
             <TouchableOpacity style={styles.button} onPress={decrement}>

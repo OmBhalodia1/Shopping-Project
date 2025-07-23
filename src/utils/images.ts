@@ -97,4 +97,5 @@ export const images = {
   ReviewGirl: require('../assets/images/reviewGirl.png'),
   ProductVariationsGirl: require('../assets/images/productVariationsGirl.png'),
   wishlistEmpty: require('../assets/images/wishlistEmpty.png'),
+  CartEmpty: require('../assets/images/cartEmpty.png'),
 };

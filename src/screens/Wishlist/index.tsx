@@ -39,31 +39,28 @@ const Wishlist: React.FC<{ navigation: NavigationProp }> = ({ navigation }) => {
       showsVerticalScrollIndicator={false}
     >
       <View style={styles.innerContainer}>
+        <Title label="Wishlist" textStyle={{ fontSize: 25, marginTop: 10 }} />
         <Section
           title={
             <Title
-              label="Wishlist"
-              textStyle={{ fontSize: 25, marginTop: 10 }}
+              label="Recently Viewed"
+              rightElement={
+                <ArrowButton
+                  title=""
+                  style={styles.arrowButton}
+                  onPress={() => navigation.navigate('WishlistEmpty')}
+                />
+              }
             />
           }
           sectionContent={
             <>
-              <View key="recently-viewed-title">
-                <Title
-                  label="Recently Viewed"
-                  rightElement={
-                    <ArrowButton
-                      title=""
-                      style={styles.arrowButton}
-                      onPress={() => navigation.navigate('WishlistEmpty')}
-                    />
-                  }
-                />
-              </View>
+              <View key="recently-viewed-title"></View>
               <ImageRow
                 key="recently-viewed-images"
                 imageList={recentlyViewed}
               />
+
               {wishlistItems.map((item, index) => (
                 <WishlistSection
                   key={`wishlist-item-${index}`}

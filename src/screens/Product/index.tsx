@@ -141,13 +141,13 @@ export const Product: React.FC<Props> = ({ route, navigation }) => {
                     key={'1'}
                     deliveryType="Standard"
                     days="5-7"
-                    price={3}
+                    price="$3,00"
                   />,
                   <DeliveryOptions
                     key={'2'}
                     deliveryType="Express"
                     days="1-2"
-                    price={12}
+                    price="$12,00"
                   />,
                 ]}
               />,

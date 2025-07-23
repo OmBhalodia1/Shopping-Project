@@ -21,6 +21,7 @@ import Reviews from '../screens/Reviews';
 import Wishlist from '../screens/Wishlist';
 import WishlistEmpty from '../screens/WishlistEmpty';
 import WishlistRecentlyViewed from '../screens/WishlistRecentlyViewed';
+import CartPayment from '../screens/CartPayment';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -119,6 +120,11 @@ const AppNavigator = () => (
       <Stack.Screen
         name="WishlistRecentlyViewed"
         component={WishlistRecentlyViewed}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="CartPayment"
+        component={CartPayment}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
