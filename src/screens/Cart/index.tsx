@@ -14,13 +14,24 @@ import { CartItems } from './data';
 import { wishlistItems } from './data';
 import { RootStackParamList } from '../../types/RootStackParamList';
 import { StackNavigationProp } from '@react-navigation/stack';
+import CartEditShipping from '../CartEditShipping';
 
 type NavigationProp = StackNavigationProp<
   RootStackParamList,
   'BottomTabNavigator'
 >;
+
 const Cart: React.FC<{ navigation: NavigationProp }> = ({ navigation }) => {
   const [cartItems, setCartItems] = useState(CartItems);
+  const [isCartEdit, setIsCartEdit] = useState(false);
+
+  const [address, setAddress] = useState('');
+  const [city, setCity] = useState('');
+  const [postcode, setPostcode] = useState('');
+
+  const toggle = () => {
+    setIsCartEdit(!isCartEdit);
+  };
 
   const total = cartItems.reduce((sum, item) => {
     const price = item.discountedPrice ?? item.price;
@@ -36,6 +47,10 @@ const Cart: React.FC<{ navigation: NavigationProp }> = ({ navigation }) => {
         .filter(item => item.quantity > 0),
     );
   };
+
+  const formattedAddress = `${address ? address + ', ' : ''}${
+    city ? city + ', ' : ''
+  }${postcode ? 'Postcode: ' + postcode : ''}`;
 
   return (
     <View style={styles.root}>
@@ -55,7 +70,12 @@ const Cart: React.FC<{ navigation: NavigationProp }> = ({ navigation }) => {
 
           <InfoSection
             info="Shipping Address"
-            address="26, Duong So 2, Thao Dien Ward, An Phu, District 2, Ho Chi Minh city"
+            address={
+              formattedAddress.length > 0
+                ? formattedAddress
+                : '26, Duong So 2, Thao Dien Ward, An Phu, District 2, Ho Chi Minh city'
+            }
+            onEdit={() => setIsCartEdit(true)}
           />
 
           {cartItems.length === 0 ? (
@@ -89,6 +109,7 @@ const Cart: React.FC<{ navigation: NavigationProp }> = ({ navigation }) => {
             ))}
           />
         </View>
+
         <Section
           title={
             <Title label="Most Popular" rightElement={<ShopSeeAllSection />} />
@@ -101,6 +122,17 @@ const Cart: React.FC<{ navigation: NavigationProp }> = ({ navigation }) => {
         total={total}
         isCartEmpty={cartItems.length === 0}
         onPress={() => navigation.navigate('CartPayment')}
+      />
+
+      <CartEditShipping
+        isOpen={isCartEdit}
+        onClose={() => setIsCartEdit(false)}
+        address={address}
+        setAddress={setAddress}
+        city={city}
+        setCity={setCity}
+        postcode={postcode}
+        setPostcode={setPostcode}
       />
     </View>
   );

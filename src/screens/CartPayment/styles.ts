@@ -30,6 +30,7 @@ export const styles = StyleSheet.create({
     paddingVertical: 4,
     paddingHorizontal: 18,
     alignSelf: 'flex-start',
+    marginBottom: 20,
   },
   cardText: {
     color: '#004CFF',

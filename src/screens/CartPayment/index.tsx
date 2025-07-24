@@ -11,14 +11,13 @@ import { icons } from '../../utils/icons';
 import { styles } from './styles';
 import CartVouchers from '../CartVouchers';
 import CartFooter from '../../components/CartFooter';
+import CartPaymentMethod from '../CartPaymentMethod';
 
 const CartPayment = () => {
   const [appliedVoucher, setAppliedVoucher] = useState<string | null>(null);
-
   const [isCartVouchersOpen, setIsCartVouchersOpen] = useState(false);
-  const toggleProductVariantSheet = () => {
-    setIsCartVouchersOpen(!isCartVouchersOpen);
-  };
+  const [isCartPaymentOpen, setIsCartPaymentOpen] = useState(false);
+
   return (
     <View style={styles.root}>
       <ScrollView
@@ -91,6 +90,7 @@ const CartPayment = () => {
               </>
             }
           />
+
           <Section
             title={<Title label="Shipping Options" />}
             sectionContent={
@@ -111,6 +111,7 @@ const CartPayment = () => {
               </>
             }
           />
+
           <View style={styles.paymentContainer}>
             <Title label="Payment Method" />
             <TouchableOpacity>
@@ -121,11 +122,13 @@ const CartPayment = () => {
               />
             </TouchableOpacity>
           </View>
+
           <TouchableOpacity style={styles.cardContainer} activeOpacity={0.7}>
             <Text style={styles.cardText}>Card</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
+
       <CartVouchers
         isOpen={isCartVouchersOpen}
         onClose={() => setIsCartVouchersOpen(false)}
@@ -134,10 +137,17 @@ const CartPayment = () => {
           setIsCartVouchersOpen(false);
         }}
       />
+
+      <CartPaymentMethod
+        isOpen={isCartPaymentOpen}
+        onClose={() => setIsCartPaymentOpen(false)}
+      />
+
       <CartFooter
         total={34}
         title="Pay"
         style={{ backgroundColor: '#000000' }}
+        onPress={() => setIsCartPaymentOpen(true)}
       />
     </View>
   );

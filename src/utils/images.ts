@@ -98,4 +98,9 @@ export const images = {
   ProductVariationsGirl: require('../assets/images/productVariationsGirl.png'),
   wishlistEmpty: require('../assets/images/wishlistEmpty.png'),
   CartEmpty: require('../assets/images/cartEmpty.png'),
+  MasterCard: require('../assets/images/Mastercard.png'),
+  VisaCard: require('../assets/images/Visacard.png'),
+  PaymentError: require('../assets/images/paymentError.png'),
+  PaymentSuccess: require('../assets/images/paymentSuccess.png'),
+  PaymentProcessing: require('../assets/images/paymentProcessing.png'),
 };

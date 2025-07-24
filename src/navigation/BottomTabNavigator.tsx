@@ -1,12 +1,12 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Image, View, StyleSheet } from 'react-native';
-import ProfileScreen from '../screens/Profile';
 import { icons } from '../utils/icons';
 import { styles } from './styles';
 import ShopStack from './ShopStack';
 import WishlistStack from './WishlistStack';
 import CartStack from './CartStack';
+import ProfileStack from './ProfileStack';
 const Tab = createBottomTabNavigator();
 
 type TabIconProps = {
@@ -60,7 +60,7 @@ export default function BottomTabNavigator() {
             case 'Categories':
               icon = icons.categories;
               break;
-            case 'Profile':
+            case 'ProfileStack':
               icon = icons.bottomProfile;
               break;
           }
@@ -73,7 +73,7 @@ export default function BottomTabNavigator() {
       <Tab.Screen name="WishlistStack" component={WishlistStack} />
       <Tab.Screen name="Categories" component={DummyScreen} />
       <Tab.Screen name="CartStack" component={CartStack} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
+      <Tab.Screen name="ProfileStack" component={ProfileStack} />
     </Tab.Navigator>
   );
 }

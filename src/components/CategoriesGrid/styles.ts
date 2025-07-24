@@ -60,6 +60,5 @@ export const styles = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'space-between',
     rowGap: 10,
-    paddingBottom: 6,
   },
 });

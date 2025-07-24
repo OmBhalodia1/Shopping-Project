@@ -24,4 +24,5 @@ export type RootStackParamList = {
   WishlistEmpty: undefined;
   WishlistRecentlyViewed: undefined;
   CartPayment: undefined;
+  ProfileToReceive: undefined;
 };

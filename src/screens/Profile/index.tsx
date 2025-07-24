@@ -12,6 +12,8 @@ import { images } from '../../utils/images';
 import { icons } from '../../utils/icons';
 import ImageRow from '../../components/ImageRow';
 import { styles } from './styles';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../types/RootStackParamList';
 
 const recentlyViewed = [
   { source: images.RecentlyViewed1 },
@@ -26,8 +28,14 @@ const stories = [
   images.Stories3,
   images.Stories3,
 ];
+type NavigationProp = StackNavigationProp<
+  RootStackParamList,
+  'BottomTabNavigator'
+>;
 
-export default function ProfileScreen() {
+export const Profile: React.FC<{ navigation: NavigationProp }> = ({
+  navigation,
+}) => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
       <ScrollView style={styles.container}>
@@ -91,7 +99,10 @@ export default function ProfileScreen() {
           </TouchableOpacity>
 
           <View style={{ position: 'relative' }}>
-            <TouchableOpacity style={styles.orderBtn}>
+            <TouchableOpacity
+              style={styles.orderBtn}
+              onPress={() => navigation.navigate('ProfileToReceive')}
+            >
               <Text style={styles.orderBtnText}>To Receive</Text>
             </TouchableOpacity>
             <View style={styles.whiteCircle} />
@@ -116,4 +127,4 @@ export default function ProfileScreen() {
       </ScrollView>
     </SafeAreaView>
   );
-}
+};

@@ -1,6 +1,7 @@
 export const icons = {
   home: require('../assets/icons/home.png'),
   settings: require('../assets/icons/settings.png'),
+  settings2: require('../assets/icons/settings2.png'),
   call: require('../assets/icons/phone-call.png'),
   plus: require('../assets/icons/plus.png'),
   profile: require('../assets/icons/profilePhoto.png'),
@@ -30,4 +31,5 @@ export const icons = {
   wishlistAdd: require('../assets/icons/wishlistAdd.png'),
   edit: require('../assets/icons/edit.png'),
   activeVoucher: require('../assets/icons/activeVoucher.png'),
+  check: require('../assets/icons/Check.png'),
 };

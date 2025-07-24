@@ -17,6 +17,7 @@ import Avatar from '../../components/Avatar';
 import Button from '../../components/Button';
 import Text from '../../components/Text';
 import Modal from '../../components/Modal';
+
 import { styles } from './styles';
 
 const OTP_LENGTH = 4;
@@ -102,7 +103,11 @@ const PasswordRecoveryCode: React.FC<Props> = ({ navigation }) => {
           mode="plain"
           onPress={() => navigation.goBack()}
         />
-        <Modal visible={locked} onOkay={handleOkay} />
+        <Modal
+          visible={locked}
+          mode="maxAttempts"
+          onRequestClose={handleOkay}
+        />
       </View>
     </TouchableWithoutFeedback>
   );

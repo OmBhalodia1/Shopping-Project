@@ -22,6 +22,7 @@ import Wishlist from '../screens/Wishlist';
 import WishlistEmpty from '../screens/WishlistEmpty';
 import WishlistRecentlyViewed from '../screens/WishlistRecentlyViewed';
 import CartPayment from '../screens/CartPayment';
+import ProfileToReceive from '../screens/ProfileToReceive';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -125,6 +126,11 @@ const AppNavigator = () => (
       <Stack.Screen
         name="CartPayment"
         component={CartPayment}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="ProfileToReceive"
+        component={ProfileToReceive}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
