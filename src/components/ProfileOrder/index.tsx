@@ -2,16 +2,18 @@ import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 import Button from '../Button';
 import { icons } from '../../utils/icons';
+import { styles } from './styles';
 
 type StatusMode = 'packed' | 'shipped' | 'delivered';
 
-type ProfileOrderProps = {
-  images: string[];
+export type ProfileOrderProps = {
+  images: any[];
   orderId: string;
   itemsCount: number;
   deliveryType?: string;
   mode: StatusMode;
-  onButtonPress?: () => void;
+  onReviewButtonPress?: () => void;
+  onTrackButtonPress?: () => void;
   buttonText: string;
 };
 
@@ -21,7 +23,8 @@ const ProfileOrder: React.FC<ProfileOrderProps> = ({
   itemsCount,
   deliveryType = 'Standard Delivery',
   mode,
-  onButtonPress,
+  onReviewButtonPress,
+  onTrackButtonPress,
   buttonText,
 }) => {
   const renderStatus = () => {
@@ -34,36 +37,105 @@ const ProfileOrder: React.FC<ProfileOrderProps> = ({
 
     return (
       <View style={styles.statusRow}>
-        <Text
-          style={[
-            styles.statusText,
-            mode === 'delivered' ? styles.delivered : styles.shipped,
-          ]}
-        >
-          {text}
-        </Text>
+        <Text style={[styles.statusText]}>{text}</Text>
         {mode === 'delivered' && (
-          <Image source={icons.check} style={styles.checkIcon} />
+          <Image
+            source={icons.check}
+            style={styles.checkIcon}
+            resizeMode="contain"
+          />
         )}
+      </View>
+    );
+  };
+
+  const renderGrid = () => {
+    if (images.length === 1) {
+      return (
+        <View style={styles.singleRow}>
+          <Image
+            source={images[0]}
+            style={styles.singleImage}
+            resizeMode="cover"
+          />
+        </View>
+      );
+    }
+    if (images.length === 2) {
+      return (
+        <View style={styles.twoRow}>
+          <Image
+            source={images[0]}
+            style={styles.twoImage}
+            resizeMode="cover"
+          />
+          <Image
+            source={images[1]}
+            style={styles.twoImage}
+            resizeMode="cover"
+          />
+        </View>
+      );
+    }
+    if (images.length === 3) {
+      return (
+        <View style={styles.threeGrid}>
+          <View style={styles.threeRow}>
+            <Image
+              source={images[0]}
+              style={styles.threeImage}
+              resizeMode="cover"
+            />
+            <Image
+              source={images[1]}
+              style={styles.threeImage}
+              resizeMode="cover"
+            />
+          </View>
+          <View style={styles.threeRow}>
+            <Image
+              source={images[2]}
+              style={styles.threeImage1}
+              resizeMode="stretch"
+            />
+          </View>
+        </View>
+      );
+    }
+
+    return (
+      <View style={styles.fourGrid}>
+        <View style={styles.fourRow}>
+          <Image
+            source={images[0]}
+            style={styles.fourImage}
+            resizeMode="cover"
+          />
+          <Image
+            source={images[1]}
+            style={styles.fourImage}
+            resizeMode="cover"
+          />
+        </View>
+        <View style={styles.fourRow}>
+          <Image
+            source={images[2]}
+            style={styles.fourImage}
+            resizeMode="cover"
+          />
+          <Image
+            source={images[3]}
+            style={styles.fourImage}
+            resizeMode="cover"
+          />
+        </View>
       </View>
     );
   };
 
   return (
     <View style={styles.card}>
-      {/* Image grid */}
-      <View style={styles.imageGrid}>
-        {images.slice(0, 4).map((img, i) => (
-          <Image
-            key={img + i}
-            source={{ uri: img }}
-            style={styles.gridImage}
-            resizeMode="cover"
-          />
-        ))}
-      </View>
-
-      {/* Middle Info */}
+      <View style={styles.imageGrid}>{renderGrid()}</View>
       <View style={styles.middle}>
         <Text style={styles.orderText}>
           Order <Text style={styles.bold}>#{orderId}</Text>
@@ -71,111 +143,30 @@ const ProfileOrder: React.FC<ProfileOrderProps> = ({
         <Text style={styles.deliveryText}>{deliveryType}</Text>
         {renderStatus()}
       </View>
-
-      {/* Right Side */}
       <View style={styles.right}>
         <View style={styles.itemBadge}>
           <Text style={styles.itemText}>
             {itemsCount} {itemsCount === 1 ? 'item' : 'items'}
           </Text>
         </View>
-        <Button
-          title={buttonText}
-          mode={mode === 'delivered' ? 'outline' : 'contained'}
-          onPress={onButtonPress}
-          style={styles.actionButton}
-        />
+        {mode === 'delivered' ? (
+          <Button
+            title={buttonText}
+            mode="outline"
+            onPress={onReviewButtonPress}
+            style={styles.actionButton}
+          />
+        ) : (
+          <Button
+            title={buttonText}
+            mode="contained"
+            onPress={onTrackButtonPress}
+            style={styles.actionButton1}
+          />
+        )}
       </View>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  card: {
-    flexDirection: 'row',
-    backgroundColor: '#fff',
-    padding: 14,
-    borderRadius: 16,
-    marginVertical: 10,
-    shadowColor: '#000',
-    shadowOpacity: 0.05,
-    shadowRadius: 8,
-    elevation: 2,
-    alignItems: 'flex-start',
-  },
-  imageGrid: {
-    width: 64,
-    height: 64,
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    borderRadius: 12,
-    overflow: 'hidden',
-    marginRight: 14,
-  },
-  gridImage: {
-    width: 30,
-    height: 30,
-    margin: 2,
-    borderRadius: 6,
-    backgroundColor: '#f0f0f0',
-  },
-  middle: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-  orderText: {
-    fontSize: 14,
-    color: '#111',
-    marginBottom: 2,
-  },
-  bold: {
-    fontWeight: 'bold',
-  },
-  deliveryText: {
-    fontSize: 13,
-    color: '#555',
-    marginBottom: 6,
-  },
-  statusRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  statusText: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginRight: 6,
-  },
-  shipped: {
-    color: '#155CFF',
-  },
-  delivered: {
-    color: '#155CFF',
-  },
-  checkIcon: {
-    width: 18,
-    height: 18,
-    tintColor: '#155CFF',
-  },
-  right: {
-    alignItems: 'flex-end',
-    justifyContent: 'space-between',
-    height: 64,
-  },
-  itemBadge: {
-    backgroundColor: '#F5F5F5',
-    borderRadius: 12,
-    paddingHorizontal: 10,
-    paddingVertical: 2,
-    marginBottom: 6,
-  },
-  itemText: {
-    fontSize: 13,
-    color: '#111',
-  },
-  actionButton: {
-    height: 36,
-    paddingHorizontal: 18,
-  },
-});
 
 export default ProfileOrder;

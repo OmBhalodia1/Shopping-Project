@@ -25,4 +25,6 @@ export type RootStackParamList = {
   WishlistRecentlyViewed: undefined;
   CartPayment: undefined;
   ProfileToReceive: undefined;
+  ProfileToReceiveProgress: undefined;
+  ProfileHistory: undefined;
 };

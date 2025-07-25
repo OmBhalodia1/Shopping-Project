@@ -1,26 +1,55 @@
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
-import React from 'react';
+import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
 import ProfileHeader from '../../components/ProfileHeader';
-import ProfileOrder from '../../components/ProfileOrder';
-import { images } from '../../utils/images';
+import ProfileOrder, { ProfileOrderProps } from '../../components/ProfileOrder';
 
-const ProfileToReceive = () => {
+import { styles } from './styles';
+import { ORDERS } from './data';
+import ProfileReviewOption from '../ProfileReviewOption';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../types/RootStackParamList';
+
+type NavigationProp = StackNavigationProp<
+  RootStackParamList,
+  'BottomTabNavigator'
+>;
+
+const ProfileToReceive: React.FC<{ navigation: NavigationProp }> = ({
+  navigation,
+}) => {
+  const [isProfileReviewOption, setIsProfileReviewOption] = useState(false);
+  const toggle = () => {
+    setIsProfileReviewOption(!isProfileReviewOption);
+  };
+
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#FFFFFF' }}>
-      <View style={{ flex: 1, padding: 20 }}>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.innerContainer}>
         <ProfileHeader subtext="My Orders" />
       </View>
-      <ProfileOrder
-        images={[images.AllItems10, images.AllItems2]}
-        orderId="#113131313"
-        itemsCount={2}
-        mode="delivered"
-        buttonText="Review"
+      <ScrollView>
+        {ORDERS.map((order, idx) => (
+          <ProfileOrder
+            key={idx}
+            images={order.images}
+            orderId={order.orderId}
+            itemsCount={order.itemsCount}
+            deliveryType={order.deliveryType}
+            mode={order.mode}
+            buttonText={order.buttonText}
+            onReviewButtonPress={() => setIsProfileReviewOption(true)}
+            onTrackButtonPress={() =>
+              navigation.navigate('ProfileToReceiveProgress')
+            }
+          />
+        ))}
+      </ScrollView>
+      <ProfileReviewOption
+        onClose={() => setIsProfileReviewOption(false)}
+        isOpen={isProfileReviewOption}
       />
     </SafeAreaView>
   );
 };
 
 export default ProfileToReceive;
-
-const styles = StyleSheet.create({});

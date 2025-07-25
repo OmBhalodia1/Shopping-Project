@@ -65,7 +65,9 @@ export const Profile: React.FC<{ navigation: NavigationProp }> = ({
                   <Image source={icons.topMenu} style={styles.icon} />
                 </TouchableOpacity>
               </View>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => navigation.navigate('ProfileHistory')}
+              >
                 <Image source={icons.settings} style={styles.icon} />
               </TouchableOpacity>
             </View>

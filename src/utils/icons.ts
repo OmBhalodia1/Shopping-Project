@@ -32,4 +32,5 @@ export const icons = {
   edit: require('../assets/icons/edit.png'),
   activeVoucher: require('../assets/icons/activeVoucher.png'),
   check: require('../assets/icons/Check.png'),
+  copy: require('../assets/icons/Copy.png'),
 };

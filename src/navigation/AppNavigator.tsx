@@ -23,6 +23,9 @@ import WishlistEmpty from '../screens/WishlistEmpty';
 import WishlistRecentlyViewed from '../screens/WishlistRecentlyViewed';
 import CartPayment from '../screens/CartPayment';
 import ProfileToReceive from '../screens/ProfileToReceive';
+import ProfileToReceiveProgress from '../screens/ProfileToReceiveProgress';
+import ProfileDeliveryNotifications from '../screens/ProfileDeliveryNotification';
+import ProfileHistory from '../screens/ProfileHistory';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -131,6 +134,16 @@ const AppNavigator = () => (
       <Stack.Screen
         name="ProfileToReceive"
         component={ProfileToReceive}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="ProfileToReceiveProgress"
+        component={ProfileToReceiveProgress}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="ProfileHistory"
+        component={ProfileHistory}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
