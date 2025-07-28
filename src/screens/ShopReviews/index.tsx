@@ -5,7 +5,7 @@ import Title from '../../components/Title';
 import ReviewsComponent from '../../components/ReviewsComponent';
 import { styles } from './styles';
 
-const Reviews = () => {
+const ShopReviews = () => {
   const reviewData = [4, 5, 5, 5, 5];
 
   return (
@@ -22,4 +22,4 @@ const Reviews = () => {
   );
 };
 
-export default Reviews;
+export default ShopReviews;

@@ -1,0 +1,79 @@
+import { StyleSheet } from 'react-native';
+
+export const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  container: {
+    flex: 1,
+    paddingHorizontal: 24,
+    backgroundColor: '#fff',
+  },
+  header: {
+    fontSize: 36,
+    fontWeight: 'bold',
+    marginTop: 8,
+    marginBottom: 0,
+  },
+  subtitle: {
+    fontSize: 18,
+    marginTop: 8,
+    marginBottom: 24,
+    color: '#222',
+    fontWeight: '500',
+  },
+  profilePicWrapper: {
+    alignSelf: 'flex-start',
+    marginBottom: 36,
+    position: 'relative',
+    shadowColor: '#222',
+    shadowOpacity: 0.1608,
+    shadowRadius: 60,
+    shadowOffset: { width: 0, height: 4 },
+  },
+  profilePic: {
+    width: 120,
+    height: 120,
+    borderRadius: 60,
+    borderWidth: 8,
+    borderColor: '#FFFFFF',
+    backgroundColor: '#eaeaff',
+  },
+  editIconWrapper: {
+    position: 'absolute',
+    right: 8,
+    top: 0,
+    borderRadius: 18,
+    width: 36,
+    height: 36,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 6,
+    borderColor: '#fff',
+  },
+  editIcon: {
+    width: 22,
+    height: 22,
+  },
+  inputWrapper: {
+    width: '100%',
+    marginBottom: 32,
+  },
+  input: {
+    backgroundColor: '#F4F6FA',
+    fontSize: 17,
+    borderRadius: 12,
+    marginBottom: 16,
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    color: '#000000',
+    fontFamily: 'Raleway',
+    fontWeight: '400',
+    lineHeight: 21,
+    letterSpacing: -0.17,
+  },
+  saveButton: {
+    marginTop: 165,
+  },
+});

@@ -5,14 +5,17 @@ import {
   Text,
   TouchableOpacity,
   Image,
+  TouchableWithoutFeedback,
 } from 'react-native';
 import { images } from '../../utils/images';
 import { styles } from './styles';
+import { icons } from '../../utils/icons';
 
 export type ModalMode =
   | 'maxAttempts'
   | 'paymentInProgress'
   | 'paymentFailed'
+  | 'reviewSuccess'
   | 'paymentSuccess';
 
 export type ModalProps = {
@@ -20,6 +23,7 @@ export type ModalProps = {
   mode: ModalMode;
   onRequestClose: () => void;
   onTryAgain?: () => void;
+  rating?: number;
 };
 
 const modalMessages: Record<
@@ -46,6 +50,11 @@ const modalMessages: Record<
     message: 'Your card has been successfully charged',
     iconSource: images.PaymentSuccess,
   },
+  reviewSuccess: {
+    title: 'Done!',
+    message: 'Thank you for your review',
+    iconSource: images.reviewDone,
+  },
 };
 
 const Modal: React.FC<ModalProps> = ({
@@ -53,6 +62,7 @@ const Modal: React.FC<ModalProps> = ({
   mode,
   onRequestClose,
   onTryAgain,
+  rating = 0,
 }) => {
   const { title, message, iconSource } = modalMessages[mode];
 
@@ -77,7 +87,7 @@ const Modal: React.FC<ModalProps> = ({
         </TouchableOpacity>
         <TouchableOpacity
           style={[styles.primaryButton, styles.buttonHalfWidth]}
-          onPress={onTryAgain || onRequestClose} // ✅ Use fallback if undefined
+          onPress={onTryAgain || onRequestClose}
         >
           <Text style={styles.buttonText}>Try Again</Text>
         </TouchableOpacity>
@@ -98,21 +108,43 @@ const Modal: React.FC<ModalProps> = ({
       animationType="fade"
       onRequestClose={onRequestClose}
     >
-      <View style={styles.modalOverlay}>
-        <View style={styles.modalContainer}>
-          <View style={styles.iconWrapper}>
-            <Image source={iconSource} style={styles.iconImage} />
-          </View>
-          <View style={styles.modalContentBox}>
-            <Text style={styles.modalTitle}>{title}</Text>
-            <Text style={styles.modalText}>{message}</Text>
+      <TouchableWithoutFeedback onPress={onRequestClose}>
+        <View style={styles.modalOverlay}>
+          {/* <TouchableWithoutFeedback onPress={() => {}}> */}
+          <View style={styles.modalContainer}>
+            <View style={styles.iconWrapper}>
+              <Image source={iconSource} style={styles.iconImage} />
+            </View>
+            <View style={styles.modalContentBox}>
+              <Text style={styles.modalTitle}>{title}</Text>
+              <Text style={styles.modalText}>{message}</Text>
 
-            {mode !== 'paymentInProgress' && (
-              <View style={styles.buttonsOuterWrap}>{buttons}</View>
-            )}
+              {!['paymentInProgress', 'reviewSuccess'].includes(mode) && (
+                <View style={styles.buttonsOuterWrap}>{buttons}</View>
+              )}
+
+              {mode === 'reviewSuccess' && (
+                <View style={styles.star}>
+                  {[0, 1, 2, 3, 4].map(idx => (
+                    <Image
+                      key={idx}
+                      source={
+                        idx < rating ? icons.starFilled : icons.starNotFilled
+                      }
+                      resizeMode="contain"
+                      style={[
+                        styles.imageStar,
+                        idx === 4 && { marginRight: 0 },
+                      ]}
+                    />
+                  ))}
+                </View>
+              )}
+            </View>
           </View>
+          {/* </TouchableWithoutFeedback> */}
         </View>
-      </View>
+      </TouchableWithoutFeedback>
     </ReactModal>
   );
 };

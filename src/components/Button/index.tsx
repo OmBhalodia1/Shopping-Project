@@ -3,7 +3,6 @@ import {
   TouchableOpacity,
   Text,
   TouchableOpacityProps,
-  StyleProp,
   TextProps,
 } from 'react-native';
 import { styles } from './styles';

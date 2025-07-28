@@ -6,15 +6,19 @@ import {
   Image,
   SafeAreaView,
   ScrollView,
+  FlatList,
 } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import { icons } from '../../utils/icons';
 import { images } from '../../utils/images';
 import ReviewOrders from '../../components/ReviewOrders';
 import { styles } from './styles';
 import { orders1 } from './data';
+import ProfileReview from '../ProfileReview';
 
 const ProfileHistory = () => {
+  const [isProfileReview, setIsProfileReview] = useState(false);
+
   return (
     <SafeAreaView style={{ backgroundColor: '#FFFFFF' }}>
       <View style={styles.headerRow}>
@@ -49,17 +53,25 @@ const ProfileHistory = () => {
           </View>
         </View>
       </View>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        {orders1.map(order => (
+      <FlatList
+        data={orders1}
+        keyExtractor={item => item.id.toString()}
+        showsVerticalScrollIndicator={false}
+        renderItem={({ item }) => (
           <ReviewOrders
-            key={order.id}
-            id={order.id}
-            image={order.image}
-            description={order.description}
-            date={order.date}
+            id={item.id}
+            image={item.image}
+            description={item.description}
+            date={item.date}
+            onPress={() => setIsProfileReview(true)}
           />
-        ))}
-      </ScrollView>
+        )}
+      />
+
+      <ProfileReview
+        isOpen={isProfileReview}
+        onClose={() => setIsProfileReview(false)}
+      />
     </SafeAreaView>
   );
 };

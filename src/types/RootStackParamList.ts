@@ -27,4 +27,7 @@ export type RootStackParamList = {
   ProfileToReceive: undefined;
   ProfileToReceiveProgress: undefined;
   ProfileHistory: undefined;
+  ProfileVoucher: undefined;
+  Settings: undefined;
+  SettingsProfile: undefined;
 };

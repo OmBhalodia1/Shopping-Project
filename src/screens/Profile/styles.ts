@@ -7,6 +7,14 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 16,
   },
+  imageContainer: {
+    shadowRadius: 3,
+    shadowColor: '#222',
+    shadowOpacity: 0.1608,
+    borderRadius: 30,
+    borderWidth: 4,
+    borderColor: '#FFFFFF',
+  },
   avatar: {
     width: 48,
     height: 48,

@@ -103,4 +103,6 @@ export const images = {
   PaymentError: require('../assets/images/paymentError.png'),
   PaymentSuccess: require('../assets/images/paymentSuccess.png'),
   PaymentProcessing: require('../assets/images/paymentProcessing.png'),
+  reviewDone: require('../assets/images/reviewDone.png'),
+  avatarProfile: require('../assets/images/avatarProfile.png'),
 };

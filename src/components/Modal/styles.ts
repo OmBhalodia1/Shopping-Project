@@ -12,6 +12,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     position: 'relative',
   },
+
   iconWrapper: {
     alignSelf: 'center',
     position: 'absolute',
@@ -117,5 +118,14 @@ export const styles = StyleSheet.create({
   },
   buttonDisabled: {
     opacity: 0.6,
+  },
+  star: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  imageStar: {
+    height: 40,
+    width: 40,
+    marginRight: 10,
   },
 });

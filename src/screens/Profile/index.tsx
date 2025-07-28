@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
-  StyleSheet,
   Image,
   ScrollView,
   TouchableOpacity,
@@ -40,16 +39,7 @@ export const Profile: React.FC<{ navigation: NavigationProp }> = ({
     <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
       <ScrollView style={styles.container}>
         <View style={styles.headerRow}>
-          <View
-            style={{
-              shadowRadius: 3,
-              shadowColor: '#222',
-              shadowOpacity: 0.1608,
-              borderRadius: 30,
-              borderWidth: 4,
-              borderColor: '#FFFFFF',
-            }}
-          >
+          <View style={styles.imageContainer}>
             <Image source={images.ProfilePhoto} style={styles.avatar} />
           </View>
           <View style={styles.headerRight}>
@@ -57,7 +47,10 @@ export const Profile: React.FC<{ navigation: NavigationProp }> = ({
               <Text style={styles.activityText}>My Activity</Text>
             </View>
             <View style={styles.headerIcons}>
-              <TouchableOpacity style={styles.headerIcons}>
+              <TouchableOpacity
+                style={styles.headerIcons}
+                onPress={() => navigation.navigate('ProfileVoucher')}
+              >
                 <Image source={icons.vouchers} style={styles.icon} />
               </TouchableOpacity>
               <View style={{ position: 'relative' }}>
@@ -65,9 +58,7 @@ export const Profile: React.FC<{ navigation: NavigationProp }> = ({
                   <Image source={icons.topMenu} style={styles.icon} />
                 </TouchableOpacity>
               </View>
-              <TouchableOpacity
-                onPress={() => navigation.navigate('ProfileHistory')}
-              >
+              <TouchableOpacity onPress={() => navigation.navigate('Settings')}>
                 <Image source={icons.settings} style={styles.icon} />
               </TouchableOpacity>
             </View>
@@ -111,7 +102,10 @@ export const Profile: React.FC<{ navigation: NavigationProp }> = ({
             <View style={styles.greenDot} />
           </View>
 
-          <TouchableOpacity style={styles.orderBtn}>
+          <TouchableOpacity
+            style={styles.orderBtn}
+            onPress={() => navigation.navigate('ProfileHistory')}
+          >
             <Text style={styles.orderBtnText}>To Review</Text>
           </TouchableOpacity>
         </View>

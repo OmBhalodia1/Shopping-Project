@@ -12,20 +12,19 @@ import NewPassword from '../screens/NewPassword';
 import HelloCard from '../screens/HelloCard';
 import ReadyCard from '../screens/ReadyCard';
 import BottomTabNavigator from './BottomTabNavigator';
-import AllCategories from '../screens/CategoriesFilter';
 import CategoriesFilter from '../screens/CategoriesFilter';
 import ShopFilter from '../screens/ShopFilter';
 import { Product } from '../screens/Product';
-import ProductVariations from '../screens/ProductVariations';
-import Reviews from '../screens/Reviews';
+import Reviews from '../screens/ShopReviews';
 import Wishlist from '../screens/Wishlist';
 import WishlistEmpty from '../screens/WishlistEmpty';
 import WishlistRecentlyViewed from '../screens/WishlistRecentlyViewed';
 import CartPayment from '../screens/CartPayment';
 import ProfileToReceive from '../screens/ProfileToReceive';
 import ProfileToReceiveProgress from '../screens/ProfileToReceiveProgress';
-import ProfileDeliveryNotifications from '../screens/ProfileDeliveryNotification';
 import ProfileHistory from '../screens/ProfileHistory';
+import Settings from '../screens/Settings';
+import SettingsProfile from '../screens/SettingsProfile';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -144,6 +143,16 @@ const AppNavigator = () => (
       <Stack.Screen
         name="ProfileHistory"
         component={ProfileHistory}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Settings"
+        component={Settings}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="SettingsProfile"
+        component={SettingsProfile}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

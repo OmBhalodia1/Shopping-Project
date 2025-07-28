@@ -1,12 +1,18 @@
 import { StyleSheet } from 'react-native';
+
 export const styles = StyleSheet.create({
   card: {
-    backgroundColor: '#fff',
     borderRadius: 10,
     borderWidth: 1.5,
-    borderColor: '#2179ee',
     marginBottom: 16,
     padding: 20,
+    backgroundColor: '#fff',
+  },
+  redCard: {
+    borderColor: '#FF7D7D',
+  },
+  blueCard: {
+    borderColor: '#2179ee',
   },
   headerRow: {
     flexDirection: 'row',
@@ -14,27 +20,48 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   voucherLabel: {
-    color: '#004CFF',
     fontSize: 19,
     fontWeight: 'bold',
   },
+  redText: {
+    color: '#DD7E7E',
+  },
+  blueText: {
+    color: '#004CFF',
+  },
+  redDaysLeft: {
+    color: '#DD7E7E',
+    marginRight: 10,
+    fontSize: 14,
+  },
   validUntil: {
-    color: '#202020',
-    backgroundColor: '#FFEBEB',
     paddingHorizontal: 10,
     paddingVertical: 5,
     borderRadius: 6,
     fontSize: 14,
+    marginLeft: 6,
+  },
+  redValidUntil: {
+    color: '#A05B5B',
+    backgroundColor: '#FFEDED',
+  },
+  blueValidUntil: {
+    color: '#004CFF',
+    backgroundColor: 'transparent',
   },
   dottedLine: {
-    borderWidth: 1,
-    borderColor: '#004CFF',
-    borderStyle: 'dashed',
     marginVertical: 10,
+    borderStyle: 'dashed',
+    borderWidth: 1,
+  },
+  redDottedLine: {
+    borderColor: '#FF7D7D',
+  },
+  blueDottedLine: {
+    borderColor: '#004CFF',
   },
   contentRow: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
   },
   iconTextWrapper: {
@@ -62,6 +89,14 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 8,
     alignSelf: 'center',
+  },
+  collectedButton: {
+    backgroundColor: '#004CFF',
+    borderRadius: 12,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    marginLeft: 10,
+    alignItems: 'baseline',
   },
   buttonText: {
     color: '#fff',

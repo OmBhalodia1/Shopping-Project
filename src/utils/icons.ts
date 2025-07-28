@@ -33,4 +33,7 @@ export const icons = {
   activeVoucher: require('../assets/icons/activeVoucher.png'),
   check: require('../assets/icons/Check.png'),
   copy: require('../assets/icons/Copy.png'),
+  voucherHeart: require('../assets/icons/voucherHeart.png'),
+  voucherFilled: require('../assets/icons/voucherFilled.png'),
+  voucherGift: require('../assets/icons/voucherGift.png'),
 };

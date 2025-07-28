@@ -2,12 +2,18 @@ import { StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
 import React from 'react';
 import { icons } from '../../utils/icons';
 import { styles } from './styles';
+
+export type Mode = 'red' | 'blue';
+
 type VoucherCardProps = {
   label: string;
   validUntil: string;
   title: string;
   subtitle: string;
-  onApply: (voucher: { title: string }) => void;
+  mode?: Mode;
+  isCollected: boolean;
+  daysLeft?: string;
+  onApply?: (voucher: { title: string }) => void;
 };
 
 const VoucherCard: React.FC<VoucherCardProps> = ({
@@ -15,42 +21,65 @@ const VoucherCard: React.FC<VoucherCardProps> = ({
   validUntil,
   title,
   subtitle,
+  mode = 'blue',
+  isCollected,
+  daysLeft,
   onApply,
 }) => {
+  let icon = icons.activeVoucher;
+  if (title === 'Gift From Customer Care') icon = icons.voucherGift;
+  if (title === 'Loyal Customer') icon = icons.voucherHeart;
+
+  const isRed = mode === 'red';
+
   return (
-    <View style={styles.card}>
+    <View style={[styles.card, isRed ? styles.redCard : styles.blueCard]}>
       <View style={styles.headerRow}>
-        <Text style={styles.voucherLabel}>{label}</Text>
-        <Text style={styles.validUntil}>Valid Until {validUntil}</Text>
+        <Text
+          style={[
+            styles.voucherLabel,
+            isRed ? styles.redText : styles.blueText,
+          ]}
+        >
+          {label}
+        </Text>
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          {isRed && daysLeft && (
+            <Text style={styles.redDaysLeft}>{daysLeft} left</Text>
+          )}
+          <Text
+            style={[
+              styles.validUntil,
+              isRed ? styles.redValidUntil : styles.blueValidUntil,
+            ]}
+          >
+            Valid Until {validUntil}
+          </Text>
+        </View>
       </View>
-      <View style={styles.dottedLine} />
+      <View
+        style={[
+          styles.dottedLine,
+          isRed ? styles.redDottedLine : styles.blueDottedLine,
+        ]}
+      />
       <View style={styles.contentRow}>
         <View style={styles.iconTextWrapper}>
-          <Image source={icons.activeVoucher} style={styles.icon} />
+          <Image source={icon} style={styles.icon} />
           <View>
             <Text style={styles.voucherTitle}>{title}</Text>
+            <Text style={styles.voucherSubtitle}>{subtitle}</Text>
           </View>
         </View>
 
         <TouchableOpacity
-          style={styles.button}
-          onPress={() => {
-            let discountMessage = '';
-            if (title === 'First Purchase') {
-              discountMessage = '5% Discount';
-            } else if (title === 'Gift From Customer Care') {
-              discountMessage = '15% Discount';
-            } else {
-              discountMessage = 'Default Discount';
-            }
-
-            onApply({ title: discountMessage });
-          }}
+          style={isCollected ? styles.collectedButton : styles.button}
         >
-          <Text style={styles.buttonText}>Apply</Text>
+          <Text style={styles.buttonText}>
+            {isCollected ? 'Collected' : 'Apply'}
+          </Text>
         </TouchableOpacity>
       </View>
-      <Text style={styles.voucherSubtitle}>{subtitle}</Text>
     </View>
   );
 };
