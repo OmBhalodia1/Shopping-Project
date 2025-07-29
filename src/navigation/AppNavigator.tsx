@@ -25,6 +25,7 @@ import ProfileToReceiveProgress from '../screens/ProfileToReceiveProgress';
 import ProfileHistory from '../screens/ProfileHistory';
 import Settings from '../screens/Settings';
 import SettingsProfile from '../screens/SettingsProfile';
+import SettingsPaymentMethod from '../screens/SettingsPaymentMethod';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -153,6 +154,11 @@ const AppNavigator = () => (
       <Stack.Screen
         name="SettingsProfile"
         component={SettingsProfile}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="SettingsPaymentMethod"
+        component={SettingsPaymentMethod}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

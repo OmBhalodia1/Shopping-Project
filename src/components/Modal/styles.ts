@@ -128,4 +128,42 @@ export const styles = StyleSheet.create({
     width: 40,
     marginRight: 10,
   },
+  cancelButton: {
+    backgroundColor: '#202020', // black
+    borderRadius: 11,
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    alignItems: 'center',
+    minWidth: 120,
+    minHeight: 47,
+    flex: 1,
+    marginHorizontal: 5,
+  },
+  cancelButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontFamily: 'Nunito Sans',
+    fontWeight: '500',
+    textAlign: 'center',
+    letterSpacing: 0,
+  },
+  deleteButton: {
+    backgroundColor: '#ED7F7F', // red
+    borderRadius: 11,
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    alignItems: 'center',
+    minWidth: 120,
+    minHeight: 47,
+    flex: 1,
+    marginHorizontal: 5,
+  },
+  deleteButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontFamily: 'Nunito Sans',
+    fontWeight: '500',
+    textAlign: 'center',
+    letterSpacing: 0,
+  },
 });

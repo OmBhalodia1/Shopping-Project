@@ -7,7 +7,6 @@ export const styles = StyleSheet.create({
     paddingVertical: 15,
     borderBottomWidth: 0.6,
     borderColor: '#eee',
-    justifyContent: 'space-between',
   },
   label: {
     fontSize: 16,
@@ -17,9 +16,5 @@ export const styles = StyleSheet.create({
     color: '#222',
     marginRight: 10,
     fontSize: 16,
-  },
-  arrow: {
-    fontSize: 16,
-    color: '#222',
   },
 });

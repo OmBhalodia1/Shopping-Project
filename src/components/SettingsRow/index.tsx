@@ -1,6 +1,7 @@
 import React from 'react';
-import { TouchableOpacity, View, Text, StyleSheet } from 'react-native';
+import { TouchableOpacity, View, Text, StyleSheet, Image } from 'react-native';
 import { styles } from './styles';
+import { icons } from '../../utils/icons';
 
 type SettingsRowProps = {
   label: string;
@@ -13,7 +14,7 @@ const SettingsRow: React.FC<SettingsRowProps> = ({ label, value, onPress }) => {
     <TouchableOpacity style={styles.row} onPress={onPress}>
       <Text style={styles.label}>{label}</Text>
       {value && <Text style={styles.value}>{value}</Text>}
-      <Text style={styles.arrow}>{'>'}</Text>
+      <Image source={icons.arrowRight} resizeMode="contain" />
     </TouchableOpacity>
   );
 };

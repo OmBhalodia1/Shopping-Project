@@ -11,7 +11,7 @@ type VoucherCardProps = {
   title: string;
   subtitle: string;
   mode?: Mode;
-  isCollected: boolean;
+  isCollected?: boolean;
   daysLeft?: string;
   onApply?: (voucher: { title: string }) => void;
 };
@@ -22,7 +22,7 @@ const VoucherCard: React.FC<VoucherCardProps> = ({
   title,
   subtitle,
   mode = 'blue',
-  isCollected,
+  isCollected = false,
   daysLeft,
   onApply,
 }) => {

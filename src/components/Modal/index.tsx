@@ -16,7 +16,8 @@ export type ModalMode =
   | 'paymentInProgress'
   | 'paymentFailed'
   | 'reviewSuccess'
-  | 'paymentSuccess';
+  | 'paymentSuccess'
+  | 'deleteAccountConfirm';
 
 export type ModalProps = {
   visible: boolean;
@@ -54,6 +55,11 @@ const modalMessages: Record<
     title: 'Done!',
     message: 'Thank you for your review',
     iconSource: images.reviewDone,
+  },
+  deleteAccountConfirm: {
+    title: 'You are going to delete\nyour account',
+    message: "You won't be able to restore your data",
+    iconSource: images.PaymentError,
   },
 };
 
@@ -99,6 +105,20 @@ const Modal: React.FC<ModalProps> = ({
         <Text style={styles.buttonText}>Track My Order</Text>
       </TouchableOpacity>
     );
+  } else if (mode === 'deleteAccountConfirm') {
+    buttons = (
+      <View style={styles.buttonsRow}>
+        <TouchableOpacity style={styles.cancelButton} onPress={onRequestClose}>
+          <Text style={styles.cancelButtonText}>Cancel</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.deleteButton}
+          onPress={onTryAgain || onRequestClose}
+        >
+          <Text style={styles.deleteButtonText}>Delete</Text>
+        </TouchableOpacity>
+      </View>
+    );
   }
 
   return (
@@ -110,7 +130,6 @@ const Modal: React.FC<ModalProps> = ({
     >
       <TouchableWithoutFeedback onPress={onRequestClose}>
         <View style={styles.modalOverlay}>
-          {/* <TouchableWithoutFeedback onPress={() => {}}> */}
           <View style={styles.modalContainer}>
             <View style={styles.iconWrapper}>
               <Image source={iconSource} style={styles.iconImage} />
@@ -118,11 +137,9 @@ const Modal: React.FC<ModalProps> = ({
             <View style={styles.modalContentBox}>
               <Text style={styles.modalTitle}>{title}</Text>
               <Text style={styles.modalText}>{message}</Text>
-
               {!['paymentInProgress', 'reviewSuccess'].includes(mode) && (
                 <View style={styles.buttonsOuterWrap}>{buttons}</View>
               )}
-
               {mode === 'reviewSuccess' && (
                 <View style={styles.star}>
                   {[0, 1, 2, 3, 4].map(idx => (
@@ -142,7 +159,6 @@ const Modal: React.FC<ModalProps> = ({
               )}
             </View>
           </View>
-          {/* </TouchableWithoutFeedback> */}
         </View>
       </TouchableWithoutFeedback>
     </ReactModal>

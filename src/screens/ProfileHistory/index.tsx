@@ -1,11 +1,9 @@
 import {
-  StyleSheet,
   Text,
   View,
   TouchableOpacity,
   Image,
   SafeAreaView,
-  ScrollView,
   FlatList,
 } from 'react-native';
 import React, { useState } from 'react';
@@ -53,20 +51,22 @@ const ProfileHistory = () => {
           </View>
         </View>
       </View>
-      <FlatList
-        data={orders1}
-        keyExtractor={item => item.id.toString()}
-        showsVerticalScrollIndicator={false}
-        renderItem={({ item }) => (
-          <ReviewOrders
-            id={item.id}
-            image={item.image}
-            description={item.description}
-            date={item.date}
-            onPress={() => setIsProfileReview(true)}
-          />
-        )}
-      />
+      <View style={styles.list}>
+        <FlatList
+          data={orders1}
+          keyExtractor={item => item.id.toString()}
+          showsVerticalScrollIndicator={false}
+          renderItem={({ item }) => (
+            <ReviewOrders
+              id={item.id}
+              image={item.image}
+              description={item.description}
+              date={item.date}
+              onPress={() => setIsProfileReview(true)}
+            />
+          )}
+        />
+      </View>
 
       <ProfileReview
         isOpen={isProfileReview}

@@ -58,10 +58,6 @@ export const Product: React.FC<Props> = ({ route, navigation }) => {
     );
   }
 
-  const toggleProductVariantSheet = () => {
-    setIsProductVariantOpen(!isProductVariantOpen);
-  };
-
   return (
     <View style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>

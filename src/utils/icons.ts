@@ -36,4 +36,7 @@ export const icons = {
   voucherHeart: require('../assets/icons/voucherHeart.png'),
   voucherFilled: require('../assets/icons/voucherFilled.png'),
   voucherGift: require('../assets/icons/voucherGift.png'),
+  arrowRight: require('../assets/icons/arrowRight.png'),
+  orderHistory: require('../assets/icons/orderHistory.png'),
+  orderHistoryRed: require('../assets/icons/orderHistoryRed.png'),
 };

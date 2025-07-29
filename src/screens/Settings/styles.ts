@@ -43,7 +43,7 @@ export const styles = StyleSheet.create({
     color: '#D97474',
     marginTop: 32,
     fontSize: 15,
-    marginBottom: 60,
+    marginBottom: 40,
     textAlign: 'left',
   },
   footer: {
@@ -51,12 +51,16 @@ export const styles = StyleSheet.create({
     marginBottom: 30,
   },
   footerBrand: {
-    fontWeight: 'bold',
-    fontSize: 16,
+    fontWeight: '800',
+    fontSize: 20,
+    fontFamily: 'Raleway',
     marginBottom: 2,
   },
   footerVersion: {
-    fontSize: 13,
-    color: '#999',
+    fontSize: 12,
+    fontFamily: 'Nunito-Sans',
+    fontWeight: '400',
+    lineHeight: 20,
+    color: '#000000',
   },
 });

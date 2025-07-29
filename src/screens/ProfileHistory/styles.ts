@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
   headerRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 16,
+    marginBottom: 10,
     paddingHorizontal: 20,
   },
   avatar: {
@@ -42,5 +42,8 @@ export const styles = StyleSheet.create({
     marginLeft: 16,
     borderRadius: 30,
     backgroundColor: '#F8F8F8',
+  },
+  list: {
+    marginBottom: 130,
   },
 });

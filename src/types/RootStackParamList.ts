@@ -30,4 +30,10 @@ export type RootStackParamList = {
   ProfileVoucher: undefined;
   Settings: undefined;
   SettingsProfile: undefined;
+  SettingsPaymentMethod: undefined;
+  SettingsShippingAddress: undefined;
+  SettingsCountry: undefined;
+  SettingsLanguage: undefined;
+  SettingsCurrency: undefined;
+  SettingsSizes: undefined;
 };
