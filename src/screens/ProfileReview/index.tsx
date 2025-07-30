@@ -6,6 +6,7 @@ import { icons } from '../../utils/icons';
 import Button from '../../components/Button';
 import Modal from '../../components/Modal';
 import { styles } from './styles';
+import ModalReviewSuccess from '../../components/ModalReviewSuccess';
 
 type ProfileReviewProps = {
   isOpen: boolean;
@@ -72,11 +73,14 @@ const ProfileReview: React.FC<ProfileReviewProps> = ({ isOpen, onClose }) => {
       <Button title="Say it!" onPress={handleSubmit} style={styles.button} />
 
       <Modal
-        visible={isModalVisible}
-        onRequestClose={handleModalClose}
-        mode="reviewSuccess"
-        rating={rating}
-      ></Modal>
+        modalContent={
+          <ModalReviewSuccess
+            visible={isModalVisible}
+            onRequestClose={handleModalClose}
+            rating={rating}
+          />
+        }
+      />
     </BottomSheet>
   );
 };

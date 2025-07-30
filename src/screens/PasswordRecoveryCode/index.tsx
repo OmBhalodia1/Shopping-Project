@@ -1,11 +1,9 @@
 import React, { useRef, useState } from 'react';
 import {
-  StyleSheet,
   View,
   Text as ReactText,
   TextInput,
   Image,
-  TouchableOpacity,
   FlatList,
   TouchableWithoutFeedback,
   Keyboard,
@@ -17,9 +15,9 @@ import Avatar from '../../components/Avatar';
 import Button from '../../components/Button';
 import Text from '../../components/Text';
 import Modal from '../../components/Modal';
-
 import { styles } from './styles';
 import Section from '../../components/Section';
+import ModalMaximumAttempts from '../../components/ModalMaximumAttempts';
 
 const OTP_LENGTH = 4;
 const DEFAULT_OTP = '1234';
@@ -121,9 +119,12 @@ const PasswordRecoveryCode: React.FC<Props> = ({ navigation }) => {
           }
         />
         <Modal
-          visible={locked}
-          mode="maxAttempts"
-          onRequestClose={handleOkay}
+          modalContent={
+            <ModalMaximumAttempts
+              visible={locked}
+              onRequestClose={handleOkay}
+            />
+          }
         />
       </View>
     </TouchableWithoutFeedback>

@@ -7,6 +7,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../types/RootStackParamList';
 import Section from '../../components/Section';
 import Modal from '../../components/Modal';
+import ModalDeleteAccountConfirm from '../../components/ModalDeleteAccountConfirm';
 
 type NavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -97,9 +98,13 @@ export const Settings: React.FC<{ navigation: NavigationProp }> = ({
         }
       />
       <Modal
-        visible={modalVisible}
-        mode="deleteAccountConfirm"
-        onRequestClose={() => setModalVisible(false)}
+        modalContent={
+          <ModalDeleteAccountConfirm
+            visible={modalVisible}
+            onRequestClose={() => setModalVisible(false)}
+            onDelete={() => setModalVisible(false)}
+          />
+        }
       />
     </ScrollView>
   );

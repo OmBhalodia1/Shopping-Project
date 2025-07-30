@@ -4,7 +4,10 @@ import { images } from '../../utils/images';
 import { icons } from '../../utils/icons';
 import BottomSheet from '../../components/BottomSheet';
 import { styles } from './styles';
-import Modal, { ModalMode } from '../../components/Modal';
+import ModalPaymentInProgress from '../../components/ModalPaymentInProgress';
+import ModalPaymentFailed from '../../components/ModalPaymentFailed';
+import ModalPaymentSuccess from '../../components/ModalPaymentSuccess';
+import Modal from '../../components/Modal';
 
 type CartPaymentMethodProps = {
   isOpen: boolean;
@@ -24,7 +27,9 @@ const CartPaymentMethod: React.FC<CartPaymentMethodProps> = ({
   onClose,
 }) => {
   const [modalVisible, setModalVisible] = useState(false);
-  const [modalMode, setModalMode] = useState<ModalMode>('paymentInProgress');
+  const [modalMode, setModalMode] = useState<
+    'paymentInProgress' | 'paymentFailed' | 'paymentSuccess'
+  >('paymentInProgress');
   const [cards, setCards] = useState<CardType[]>([
     {
       id: 1,
@@ -58,10 +63,15 @@ const CartPaymentMethod: React.FC<CartPaymentMethodProps> = ({
 
   const handleTryAgain = () => {
     setModalMode('paymentInProgress');
+    setModalVisible(true);
 
     setTimeout(() => {
       setModalMode('paymentSuccess');
     }, 3000);
+  };
+
+  const handleCloseModal = () => {
+    setModalVisible(false);
   };
 
   return (
@@ -117,11 +127,33 @@ const CartPaymentMethod: React.FC<CartPaymentMethodProps> = ({
             </TouchableOpacity>
           </View>
         </ScrollView>
+
         <Modal
-          visible={modalVisible}
-          mode={modalMode}
-          onRequestClose={() => setModalVisible(false)}
-          onTryAgain={handleTryAgain}
+          modalContent={
+            <>
+              {modalVisible && modalMode === 'paymentInProgress' && (
+                <ModalPaymentInProgress
+                  visible={modalVisible}
+                  onRequestClose={handleCloseModal}
+                />
+              )}
+
+              {modalVisible && modalMode === 'paymentFailed' && (
+                <ModalPaymentFailed
+                  visible={modalVisible}
+                  onRequestClose={handleCloseModal}
+                  onTryAgain={handleTryAgain}
+                />
+              )}
+
+              {modalVisible && modalMode === 'paymentSuccess' && (
+                <ModalPaymentSuccess
+                  visible={modalVisible}
+                  onRequestClose={handleCloseModal}
+                />
+              )}
+            </>
+          }
         />
       </View>
     </BottomSheet>
