@@ -19,11 +19,18 @@ export const styles = StyleSheet.create({
   content: {
     alignItems: 'center',
     gap: 20,
+    marginTop: 140,
   },
   iconWrapper: {
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 40,
+    borderRadius: 70,
+    padding: 15,
+    backgroundColor: '#FFFFFF',
+    shadowColor: '#000',
+    shadowOpacity: 0.1608,
+    shadowRadius: 6,
+    shadowOffset: { width: 0, height: 4 },
   },
   icon: {
     width: 100,

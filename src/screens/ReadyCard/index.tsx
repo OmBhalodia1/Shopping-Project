@@ -13,6 +13,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../types/RootStackParamList';
 import Card from '../../components/Card';
 import { styles } from './styles';
+import Section from '../../components/Section';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'ReadyCard'>;
 
@@ -36,12 +37,16 @@ const ReadyCard: React.FC<Props> = ({ navigation }) => {
           onButtonPress={() => navigation.navigate('BottomTabNavigator')}
         />
 
-        <View style={styles.paginationWrapper}>
-          <View style={[styles.dot, styles.dotInactive]} />
-          <View style={[styles.dot, styles.dotInactive]} />
-          <View style={[styles.dot, styles.dotInactive]} />
-          <View style={[styles.dot, styles.dotActive]} />
-        </View>
+        <Section
+          sectionContent={
+            <View style={styles.paginationWrapper}>
+              <View style={[styles.dot, styles.dotInactive]} />
+              <View style={[styles.dot, styles.dotInactive]} />
+              <View style={[styles.dot, styles.dotInactive]} />
+              <View style={[styles.dot, styles.dotActive]} />
+            </View>
+          }
+        />
       </View>
     </SafeAreaView>
   );

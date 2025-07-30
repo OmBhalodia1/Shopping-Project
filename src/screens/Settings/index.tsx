@@ -72,7 +72,10 @@ export const Settings: React.FC<{ navigation: NavigationProp }> = ({
               value="English"
               onPress={() => navigation.navigate('SettingsLanguage')}
             />
-            <SettingsRow label="About Slada" />
+            <SettingsRow
+              label="About Slada"
+              onPress={() => navigation.navigate('About')}
+            />
           </>
         }
       />

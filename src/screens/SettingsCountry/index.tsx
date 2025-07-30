@@ -5,6 +5,7 @@ import Title from '../../components/Title';
 import { countries } from './data';
 import { icons } from '../../utils/icons';
 import { styles } from './styles';
+import Section from '../../components/Section';
 
 function groupCountriesByInitial(
   countriesArr: string[],
@@ -36,18 +37,28 @@ const SettingsCountry = () => {
     <SafeAreaView style={styles.container}>
       <View style={styles.innerContainer}>
         <Title label="Settings" textStyle={{ fontSize: 28 }} />
-        <Title
-          label="Country"
-          textStyle={{ fontWeight: '300', fontSize: 20, marginBottom: 10 }}
+        <Section
+          sectionContent={
+            <>
+              <Title
+                label="Country"
+                textStyle={{
+                  fontWeight: '300',
+                  fontSize: 20,
+                  marginBottom: 10,
+                }}
+              />
+              <View style={styles.pickerBox}>
+                <Text style={styles.pickerText}>{selectedCountry}</Text>
+                <Image
+                  source={icons.check}
+                  style={styles.checkIcon}
+                  resizeMode="contain"
+                />
+              </View>
+            </>
+          }
         />
-        <View style={styles.pickerBox}>
-          <Text style={styles.pickerText}>{selectedCountry}</Text>
-          <Image
-            source={icons.check}
-            style={styles.checkIcon}
-            resizeMode="contain"
-          />
-        </View>
         <ScrollView showsVerticalScrollIndicator={false}>
           {Object.keys(groupedCountries)
             .sort()

@@ -8,7 +8,6 @@ import {
 } from 'react-native';
 import { useRoute, RouteProp } from '@react-navigation/native';
 import { styles } from './styles';
-import { images } from '../../utils/images';
 import HeaderShop from '../../components/HeaderShop';
 import ImageRow from '../../components/ImageRow';
 import Section from '../../components/Section';

@@ -39,27 +39,33 @@ const ShopScreen: React.FC<{ navigation: NavigationProp }> = ({
         showsVerticalScrollIndicator={false}
         style={{ paddingHorizontal: 20 }}
       >
-        <HeaderShop onSubmit={() => navigation.navigate('ShopSearch')} />
-        <View style={styles.bannerWrapper}>
-          <Image
-            source={images.BigSale1}
-            style={styles.bannerImage}
-            resizeMode="contain"
-          />
-          <Image
-            source={images.BigSale2}
-            style={styles.bannerImage}
-            resizeMode="contain"
-          />
+        <Section
+          sectionContent={
+            <>
+              <HeaderShop onSubmit={() => navigation.navigate('ShopSearch')} />
+              <View style={styles.bannerWrapper}>
+                <Image
+                  source={images.BigSale1}
+                  style={styles.bannerImage}
+                  resizeMode="contain"
+                />
+                <Image
+                  source={images.BigSale2}
+                  style={styles.bannerImage}
+                  resizeMode="contain"
+                />
 
-          <View style={styles.bannerContent}>
-            <Text style={styles.bannerTitle}>Big Sale</Text>
-            <Text style={styles.bannerSubtitle}>Up to 50%</Text>
-            <Text style={styles.bannerDesc}>Happening{'\n'}now</Text>
-          </View>
-        </View>
+                <View style={styles.bannerContent}>
+                  <Text style={styles.bannerTitle}>Big Sale</Text>
+                  <Text style={styles.bannerSubtitle}>Up to 50%</Text>
+                  <Text style={styles.bannerDesc}>Happening{'\n'}now</Text>
+                </View>
+              </View>
 
-        <Pagination />
+              <Pagination />
+            </>
+          }
+        />
         <Section
           title={
             <Title

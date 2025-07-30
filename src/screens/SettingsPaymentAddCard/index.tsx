@@ -4,6 +4,7 @@ import BottomSheet from '../../components/BottomSheet';
 import Button from '../../components/Button';
 import { styles } from './styles';
 import { CardType } from '../SettingsPaymentMethod';
+import Section from '../../components/Section';
 type SettingsPaymentAddCardProps = {
   isOpen: boolean;
   onClose: () => void;
@@ -57,48 +58,60 @@ const SettingsPaymentAddCard: React.FC<SettingsPaymentAddCardProps> = ({
       </View>
       <View>
         <View style={styles.innerContainer}>
-          <Text style={styles.label}>Card Holder</Text>
-          <TextInput
-            style={styles.input}
-            placeholder="Required"
-            placeholderTextColor="#B0BCEB"
-            value={cardHolder}
-            onChangeText={setCardHolder}
+          <Section
+            sectionContent={
+              <>
+                <Text style={styles.label}>Card Holder</Text>
+                <TextInput
+                  style={styles.input}
+                  placeholder="Required"
+                  placeholderTextColor="#B0BCEB"
+                  value={cardHolder}
+                  onChangeText={setCardHolder}
+                />
+
+                <Text style={[styles.label, { marginTop: 24 }]}>
+                  Card Number
+                </Text>
+                <TextInput
+                  style={styles.input}
+                  placeholder="Required"
+                  placeholderTextColor="#B0BCEB"
+                  keyboardType="numeric"
+                  value={cardNumber}
+                  onChangeText={handleCardNumberChange}
+                />
+              </>
+            }
           />
 
-          <Text style={[styles.label, { marginTop: 24 }]}>Card Number</Text>
-          <TextInput
-            style={styles.input}
-            placeholder="Required"
-            placeholderTextColor="#B0BCEB"
-            keyboardType="numeric"
-            value={cardNumber}
-            onChangeText={handleCardNumberChange}
+          <Section
+            sectionContent={
+              <View style={styles.row}>
+                <View style={styles.column}>
+                  <Text style={styles.label}>Valid</Text>
+                  <TextInput
+                    style={styles.inputSmall}
+                    placeholder="Required"
+                    placeholderTextColor="#B0BCEB"
+                    value={valid}
+                    onChangeText={setValid}
+                  />
+                </View>
+                <View style={styles.column}>
+                  <Text style={styles.label}>CVV</Text>
+                  <TextInput
+                    style={styles.inputSmall}
+                    placeholder="Required"
+                    placeholderTextColor="#B0BCEB"
+                    secureTextEntry
+                    value={cvv}
+                    onChangeText={setCvv}
+                  />
+                </View>
+              </View>
+            }
           />
-
-          <View style={styles.row}>
-            <View style={styles.column}>
-              <Text style={styles.label}>Valid</Text>
-              <TextInput
-                style={styles.inputSmall}
-                placeholder="Required"
-                placeholderTextColor="#B0BCEB"
-                value={valid}
-                onChangeText={setValid}
-              />
-            </View>
-            <View style={styles.column}>
-              <Text style={styles.label}>CVV</Text>
-              <TextInput
-                style={styles.inputSmall}
-                placeholder="Required"
-                placeholderTextColor="#B0BCEB"
-                secureTextEntry
-                value={cvv}
-                onChangeText={setCvv}
-              />
-            </View>
-          </View>
           <Button title="Save Changes" onPress={handleSave} />
         </View>
       </View>

@@ -112,20 +112,28 @@ const CartPayment = () => {
             }
           />
 
-          <View style={styles.paymentContainer}>
-            <Title label="Payment Method" />
-            <TouchableOpacity>
-              <Image
-                source={icons.edit}
-                resizeMode="contain"
-                style={{ marginTop: 10 }}
-              />
-            </TouchableOpacity>
-          </View>
-
-          <TouchableOpacity style={styles.cardContainer} activeOpacity={0.7}>
-            <Text style={styles.cardText}>Card</Text>
-          </TouchableOpacity>
+          <Section
+            sectionContent={
+              <>
+                <View style={styles.paymentContainer}>
+                  <Title label="Payment Method" />
+                  <TouchableOpacity>
+                    <Image
+                      source={icons.edit}
+                      resizeMode="contain"
+                      style={{ marginTop: 10 }}
+                    />
+                  </TouchableOpacity>
+                </View>
+                <TouchableOpacity
+                  style={styles.cardContainer}
+                  activeOpacity={0.7}
+                >
+                  <Text style={styles.cardText}>Card</Text>
+                </TouchableOpacity>
+              </>
+            }
+          />
         </View>
       </ScrollView>
 

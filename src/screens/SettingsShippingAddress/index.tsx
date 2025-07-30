@@ -100,7 +100,11 @@ const SettingsShippingAddress: React.FC<{ navigation: NavigationProp }> = ({
             </>
           }
         />
-        <Button title="Save Changes" style={{ marginTop: 80 }} />
+        <Section
+          sectionContent={
+            <Button title="Save Changes" style={{ marginTop: 80 }} />
+          }
+        />
       </View>
     </SafeAreaView>
   );

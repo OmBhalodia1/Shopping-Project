@@ -24,14 +24,9 @@ type NavigationProp = StackNavigationProp<
 const Cart: React.FC<{ navigation: NavigationProp }> = ({ navigation }) => {
   const [cartItems, setCartItems] = useState(CartItems);
   const [isCartEdit, setIsCartEdit] = useState(false);
-
   const [address, setAddress] = useState('');
   const [city, setCity] = useState('');
   const [postcode, setPostcode] = useState('');
-
-  const toggle = () => {
-    setIsCartEdit(!isCartEdit);
-  };
 
   const total = cartItems.reduce((sum, item) => {
     const price = item.discountedPrice ?? item.price;
@@ -61,21 +56,29 @@ const Cart: React.FC<{ navigation: NavigationProp }> = ({ navigation }) => {
         keyboardShouldPersistTaps="handled"
       >
         <View style={styles.innerContainer}>
-          <View style={styles.header}>
-            <Title label="Cart" />
-            <View style={styles.circle}>
-              <Text style={styles.number}>{cartItems.length}</Text>
-            </View>
-          </View>
-
-          <InfoSection
-            info="Shipping Address"
-            address={
-              formattedAddress.length > 0
-                ? formattedAddress
-                : '26, Duong So 2, Thao Dien Ward, An Phu, District 2, Ho Chi Minh city'
+          <Section
+            sectionContent={
+              <View style={styles.header}>
+                <Title label="Cart" />
+                <View style={styles.circle}>
+                  <Text style={styles.number}>{cartItems.length}</Text>
+                </View>
+              </View>
             }
-            onEdit={() => setIsCartEdit(true)}
+          />
+
+          <Section
+            sectionContent={
+              <InfoSection
+                info="Shipping Address"
+                address={
+                  formattedAddress.length > 0
+                    ? formattedAddress
+                    : '26, Duong So 2, Thao Dien Ward, An Phu, District 2, Ho Chi Minh city'
+                }
+                onEdit={() => setIsCartEdit(true)}
+              />
+            }
           />
 
           {cartItems.length === 0 ? (
@@ -118,21 +121,29 @@ const Cart: React.FC<{ navigation: NavigationProp }> = ({ navigation }) => {
         />
       </ScrollView>
 
-      <CartFooter
-        total={total}
-        isCartEmpty={cartItems.length === 0}
-        onPress={() => navigation.navigate('CartPayment')}
+      <Section
+        sectionContent={
+          <CartFooter
+            total={total}
+            isCartEmpty={cartItems.length === 0}
+            onPress={() => navigation.navigate('CartPayment')}
+          />
+        }
       />
 
-      <CartEditShipping
-        isOpen={isCartEdit}
-        onClose={() => setIsCartEdit(false)}
-        address={address}
-        setAddress={setAddress}
-        city={city}
-        setCity={setCity}
-        postcode={postcode}
-        setPostcode={setPostcode}
+      <Section
+        sectionContent={
+          <CartEditShipping
+            isOpen={isCartEdit}
+            onClose={() => setIsCartEdit(false)}
+            address={address}
+            setAddress={setAddress}
+            city={city}
+            setCity={setCity}
+            postcode={postcode}
+            setPostcode={setPostcode}
+          />
+        }
       />
     </View>
   );

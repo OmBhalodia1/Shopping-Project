@@ -3,7 +3,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Profile } from '../../screens/Profile';
 import ProfileToReceive from '../../screens/ProfileToReceive';
 import ProfileToReceiveProgress from '../../screens/ProfileToReceiveProgress';
-import ProfileDeliveryNotifications from '../../screens/ProfileDeliveryNotification';
 import ProfileHistory from '../../screens/ProfileHistory';
 import ProfileVoucher from '../../screens/ProfileVoucher';
 import Settings from '../../screens/Settings';
@@ -14,6 +13,7 @@ import SettingsCountry from '../../screens/SettingsCountry';
 import SettingsLanguage from '../../screens/SettingsLanguage';
 import SettingsCurrency from '../../screens/SettingsCurrency';
 import SettingsSizes from '../../screens/SettingsSizes';
+import About from '../../screens/About';
 
 const Stack = createNativeStackNavigator();
 
@@ -42,6 +42,7 @@ export default function ProfileStack() {
       <Stack.Screen name="SettingsLanguage" component={SettingsLanguage} />
       <Stack.Screen name="SettingsCurrency" component={SettingsCurrency} />
       <Stack.Screen name="SettingsSizes" component={SettingsSizes} />
+      <Stack.Screen name="About" component={About} />
     </Stack.Navigator>
   );
 }

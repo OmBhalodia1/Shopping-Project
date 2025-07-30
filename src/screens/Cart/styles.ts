@@ -2,7 +2,12 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: '#FFFFFF' },
-  container: { flex: 1, backgroundColor: '#FFFFFF', padding: 20 },
+  container: {
+    flex: 1,
+    backgroundColor: '#FFFFFF',
+    padding: 20,
+    paddingTop: 40,
+  },
   innerContainer: { flex: 1, marginTop: 10 },
   header: { flexDirection: 'row', alignItems: 'center' },
   circle: {

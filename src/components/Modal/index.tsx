@@ -32,7 +32,7 @@ const modalMessages: Record<
   { title: string; message: string; iconSource: any }
 > = {
   maxAttempts: {
-    title: 'Error!',
+    title: '',
     message: 'You reached out maximum\namount of attempts.\nPlease, try later.',
     iconSource: images.PaymentError,
   },

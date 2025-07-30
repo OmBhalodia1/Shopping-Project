@@ -18,6 +18,7 @@ import { categories } from './data';
 import { genderTabs } from './data';
 import { styles } from './styles';
 import RenderSubcategories from '../../components/RenderSubCategories';
+import Section from '../../components/Section';
 
 type NavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -32,19 +33,23 @@ const CategoriesFilter: React.FC<{ navigation: NavigationProp }> = ({
   return (
     <SafeAreaView style={styles.safe}>
       <View style={styles.container}>
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginBottom: 10,
-          }}
-        >
-          <Title label="All Categories" />
-          <TouchableOpacity onPress={() => navigation.goBack()}>
-            <Text style={{ fontSize: 18, color: '#444' }}>X</Text>
-          </TouchableOpacity>
-        </View>
+        <Section
+          sectionContent={
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                marginBottom: 10,
+              }}
+            >
+              <Title label="All Categories" />
+              <TouchableOpacity onPress={() => navigation.goBack()}>
+                <Text style={{ fontSize: 18, color: '#444' }}>X</Text>
+              </TouchableOpacity>
+            </View>
+          }
+        />
 
         <View style={styles.tabs}>
           {genderTabs.map(tab => (

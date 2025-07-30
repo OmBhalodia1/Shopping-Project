@@ -105,4 +105,5 @@ export const images = {
   PaymentProcessing: require('../assets/images/paymentProcessing.png'),
   reviewDone: require('../assets/images/reviewDone.png'),
   avatarProfile: require('../assets/images/avatarProfile.png'),
+  about: require('../assets/images/about.png'),
 };

@@ -19,6 +19,7 @@ import Text from '../../components/Text';
 import Modal from '../../components/Modal';
 
 import { styles } from './styles';
+import Section from '../../components/Section';
 
 const OTP_LENGTH = 4;
 const DEFAULT_OTP = '1234';
@@ -63,11 +64,21 @@ const PasswordRecoveryCode: React.FC<Props> = ({ navigation }) => {
         <Image source={images.Recovery} style={styles.background} />
         <Avatar />
 
-        <Text label="Password Recovery" mode="title" style={styles.title} />
-        <ReactText style={styles.subtitle}>
-          Enter 4-digits code we sent you{'\n'}on your phone number
-        </ReactText>
-        <ReactText style={styles.phoneNumber}>+98******00</ReactText>
+        <Section
+          sectionContent={
+            <>
+              <Text
+                label="Password Recovery"
+                mode="title"
+                style={styles.title}
+              />
+              <ReactText style={styles.subtitle}>
+                Enter 4-digits code we sent you{'\n'}on your phone number
+              </ReactText>
+              <ReactText style={styles.phoneNumber}>+98******00</ReactText>
+            </>
+          }
+        />
         <View style={styles.dotsRow}>
           <FlatList
             data={inputDots}
@@ -96,12 +107,18 @@ const PasswordRecoveryCode: React.FC<Props> = ({ navigation }) => {
             editable={!locked}
           />
         </View>
-        <Button title="Send Again" style={styles.sendAgainButton} />
-        <Button
-          title="Cancel"
-          style={styles.cancelButton}
-          mode="plain"
-          onPress={() => navigation.goBack()}
+        <Section
+          sectionContent={
+            <>
+              <Button title="Send Again" style={styles.sendAgainButton} />
+              <Button
+                title="Cancel"
+                style={styles.cancelButton}
+                mode="plain"
+                onPress={() => navigation.goBack()}
+              />
+            </>
+          }
         />
         <Modal
           visible={locked}

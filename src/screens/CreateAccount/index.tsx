@@ -17,6 +17,7 @@ import { RootStackParamList } from '../../types/RootStackParamList';
 import Button from '../../components/Button';
 import { styles } from './styles';
 import TextInput from '../../components/TextInput';
+import Section from '../../components/Section';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'CreateAccount'>;
 
@@ -45,30 +46,38 @@ const CreateAccount: React.FC<Props> = ({ navigation }) => {
               <TextInput title="Email" />
               <TextInput title="Password" secureTextEntry />
 
-              <View style={styles.inputRow}>
-                <Text style={styles.flag}>🇬🇧</Text>
-                <Text style={styles.dropdown}>▼</Text>
-                <Text style={styles.separator}>|</Text>
-                <ReactTextInput
-                  style={styles.inputInner}
-                  placeholder="Your number"
-                  placeholderTextColor="#bcbcbc"
-                />
-              </View>
+              <Section
+                sectionContent={
+                  <View style={styles.inputRow}>
+                    <Text style={styles.flag}>🇬🇧</Text>
+                    <Text style={styles.dropdown}>▼</Text>
+                    <Text style={styles.separator}>|</Text>
+                    <ReactTextInput
+                      style={styles.inputInner}
+                      placeholder="Your number"
+                      placeholderTextColor="#bcbcbc"
+                    />
+                  </View>
+                }
+              />
 
-              <View style={styles.buttonContainer}>
-                <Button
-                  title="Done"
-                  style={styles.doneText}
-                  onPress={() => navigation.navigate('HelloCard')}
-                />
-                <Button
-                  mode="plain"
-                  title="Cancel"
-                  style={styles.cancelText}
-                  onPress={() => navigation.goBack()}
-                />
-              </View>
+              <Section
+                sectionContent={
+                  <View style={styles.buttonContainer}>
+                    <Button
+                      title="Done"
+                      style={styles.doneText}
+                      onPress={() => navigation.navigate('HelloCard')}
+                    />
+                    <Button
+                      mode="plain"
+                      title="Cancel"
+                      style={styles.cancelText}
+                      onPress={() => navigation.goBack()}
+                    />
+                  </View>
+                }
+              />
             </View>
           </View>
         </ScrollView>

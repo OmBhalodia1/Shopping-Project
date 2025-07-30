@@ -37,7 +37,11 @@ const CartSection: React.FC<CartSectionProps> = ({
         <View style={styles.imageWrapper}>
           <Image source={image} style={styles.productImage} />
         </View>
-        <TouchableOpacity style={styles.deleteButton} activeOpacity={0.7}>
+        <TouchableOpacity
+          style={styles.deleteButton}
+          activeOpacity={0.7}
+          onPress={() => onQuantityChange(id, 0)}
+        >
           <Image source={icons.delete} style={styles.deleteIcon} />
         </TouchableOpacity>
       </View>

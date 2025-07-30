@@ -7,6 +7,7 @@ import { icons } from '../../utils/icons';
 import OrderStatus from '../../components/OrderStatus';
 import { completedSteps, steps } from './data';
 import ProfileDeliveryNotifications from '../ProfileDeliveryNotification';
+import Section from '../../components/Section';
 
 const ProfileToReceiveProgress = () => {
   const [progress, setProgress] = useState(0.3);
@@ -30,19 +31,25 @@ const ProfileToReceiveProgress = () => {
         <ProfileHeader subtext="My Orders" />
         <ProgressBar progress={progress} />
 
-        <View style={styles.card}>
-          <View style={styles.cardContent}>
-            <View style={{ flex: 1 }}>
-              <Text style={styles.label}>Tracking Number</Text>
-              <Text style={styles.trackingNumber}>LGS-i92927839300763731</Text>
+        <Section
+          sectionContent={
+            <View style={styles.card}>
+              <View style={styles.cardContent}>
+                <View style={{ flex: 1 }}>
+                  <Text style={styles.label}>Tracking Number</Text>
+                  <Text style={styles.trackingNumber}>
+                    LGS-i92927839300763731
+                  </Text>
+                </View>
+                <Image
+                  source={icons.copy}
+                  style={styles.icon}
+                  resizeMode="contain"
+                />
+              </View>
             </View>
-            <Image
-              source={icons.copy}
-              style={styles.icon}
-              resizeMode="contain"
-            />
-          </View>
-        </View>
+          }
+        />
 
         <ScrollView
           contentContainerStyle={{ marginTop: 20 }}

@@ -15,6 +15,7 @@ import Avatar from '../../components/Avatar';
 import { styles } from './styles';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../types/RootStackParamList';
+import Section from '../../components/Section';
 const { width, height } = Dimensions.get('window');
 type Props = NativeStackScreenProps<RootStackParamList, 'Password'>;
 
@@ -28,22 +29,28 @@ const Password: React.FC<Props> = ({ navigation }) => {
       />
       <Avatar />
 
-      <View style={[styles.content, { marginTop: height * 0.34 }]}>
-        <Text style={styles.header} label="Hello, Romina!!" mode="title" />
-        <Text
-          style={styles.subtext}
-          label="Type your password"
-          mode="subtext"
-        />
-        <TextInput
-          title="Password here..             "
-          secureTextEntry
-          onSubmitEditing={() => navigation.navigate('HelloCard')}
-        />
-        <Pressable onPress={() => navigation.navigate('PasswordRecovery')}>
-          <ReactText style={{ marginTop: 30 }}>Forget your password?</ReactText>
-        </Pressable>
-      </View>
+      <Section
+        sectionContent={
+          <View style={[styles.content, { marginTop: height * 0.34 }]}>
+            <Text style={styles.header} label="Hello, Romina!!" mode="title" />
+            <Text
+              style={styles.subtext}
+              label="Type your password"
+              mode="subtext"
+            />
+            <TextInput
+              title="Password here..             "
+              secureTextEntry
+              onSubmitEditing={() => navigation.navigate('HelloCard')}
+            />
+            <Pressable onPress={() => navigation.navigate('PasswordRecovery')}>
+              <ReactText style={{ marginTop: 30 }}>
+                Forget your password?
+              </ReactText>
+            </Pressable>
+          </View>
+        }
+      />
 
       <ArrowButton
         title="Not you?"

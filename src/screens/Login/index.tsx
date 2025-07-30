@@ -15,6 +15,7 @@ import TextInput from '../../components/TextInput';
 import Button from '../../components/Button';
 import Text from '../../components/Text';
 import { styles } from './styles';
+import Section from '../../components/Section';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Login'>;
 
@@ -36,17 +37,21 @@ const Login: React.FC<Props> = ({ navigation }) => {
           style={styles.keyboardAvoiding}
         >
           <View style={styles.container}>
-            <View style={styles.headerSection}>
-              <Text style={styles.header} label="Login" mode="title" />
-              <View style={{ flexDirection: 'row' }}>
-                <Text
-                  style={styles.subHeader}
-                  label="Good to see you back!"
-                  mode="subtext"
-                />
-                <Image source={images.Heart} style={styles.heart} />
-              </View>
-            </View>
+            <Section
+              sectionContent={
+                <View style={styles.headerSection}>
+                  <Text style={styles.header} label="Login" mode="title" />
+                  <View style={{ flexDirection: 'row' }}>
+                    <Text
+                      style={styles.subHeader}
+                      label="Good to see you back!"
+                      mode="subtext"
+                    />
+                    <Image source={images.Heart} style={styles.heart} />
+                  </View>
+                </View>
+              }
+            />
             <View style={styles.gap}>
               <TextInput title="Email" />
               <Button

@@ -3,6 +3,7 @@ import { View, Text, TextInput, StyleSheet } from 'react-native';
 import BottomSheet from '../../components/BottomSheet';
 import Button from '../../components/Button';
 import { styles } from './styles';
+import Section from '../../components/Section';
 
 type CartEditShippingProps = Readonly<{
   isOpen: boolean;
@@ -44,32 +45,38 @@ const CartEditShipping: React.FC<CartEditShippingProps> = ({
           </View>
         </View>
 
-        <Text style={styles.label}>Address</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Enter your address"
-          value={address}
-          onChangeText={setAddress}
-          autoCorrect={false}
-        />
+        <Section
+          sectionContent={
+            <>
+              <Text style={styles.label}>Address</Text>
+              <TextInput
+                style={styles.input}
+                placeholder="Enter your address"
+                value={address}
+                onChangeText={setAddress}
+                autoCorrect={false}
+              />
 
-        <Text style={styles.label}>Town / City</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Enter your city"
-          value={city}
-          onChangeText={setCity}
-          autoCorrect={false}
-        />
+              <Text style={styles.label}>Town / City</Text>
+              <TextInput
+                style={styles.input}
+                placeholder="Enter your city"
+                value={city}
+                onChangeText={setCity}
+                autoCorrect={false}
+              />
 
-        <Text style={styles.label}>Postcode</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Enter your postcode"
-          value={postcode}
-          onChangeText={setPostcode}
-          keyboardType="numeric"
-          autoCorrect={false}
+              <Text style={styles.label}>Postcode</Text>
+              <TextInput
+                style={styles.input}
+                placeholder="Enter your postcode"
+                value={postcode}
+                onChangeText={setPostcode}
+                keyboardType="numeric"
+                autoCorrect={false}
+              />
+            </>
+          }
         />
 
         <View style={{ marginTop: 10 }}>

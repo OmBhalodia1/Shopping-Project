@@ -61,35 +61,54 @@ export const Product: React.FC<Props> = ({ route, navigation }) => {
   return (
     <View style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.imageSection}>
-          <Image
-            source={mainImageSource}
-            style={[styles.productImage, { width: '100%' }]}
-          />
-          <View style={styles.carouselDots}>
-            <Pagination />
-          </View>
-        </View>
+        <Section
+          sectionContent={
+            <View style={styles.imageSection}>
+              <Image
+                source={mainImageSource}
+                style={[styles.productImage, { width: '100%' }]}
+              />
+              <View style={styles.carouselDots}>
+                <Pagination />
+              </View>
+            </View>
+          }
+        />
 
         <View style={styles.detailsSection}>
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              paddingTop: 10,
-            }}
-          >
-            <Text mode="title" label={product.price} style={{ fontSize: 26 }} />
-            <Image source={icons.share} />
-          </View>
-          <ReactText style={styles.description}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam arcu
-            mauris, scelerisque eu mauris id, pretium pulvinar sapien.
-          </ReactText>
+          <Section
+            sectionContent={
+              <>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    paddingTop: 10,
+                  }}
+                >
+                  <Text
+                    mode="title"
+                    label={product.price}
+                    style={{ fontSize: 26 }}
+                  />
+                  <Image source={icons.share} />
+                </View>
+                <ReactText style={styles.description}>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+                  arcu mauris, scelerisque eu mauris id, pretium pulvinar
+                  sapien.
+                </ReactText>
+              </>
+            }
+          />
 
-          <VariationSection
-            data={variations}
-            onPressArrow={() => setIsProductVariantOpen(true)}
+          <Section
+            sectionContent={
+              <VariationSection
+                data={variations}
+                onPressArrow={() => setIsProductVariantOpen(true)}
+              />
+            }
           />
 
           <Section

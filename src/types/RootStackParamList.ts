@@ -36,4 +36,5 @@ export type RootStackParamList = {
   SettingsLanguage: undefined;
   SettingsCurrency: undefined;
   SettingsSizes: undefined;
+  About: undefined;
 };

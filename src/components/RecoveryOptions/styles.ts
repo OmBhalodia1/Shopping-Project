@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     width: 260,
     paddingVertical: 14,
     paddingHorizontal: 24,
-    borderRadius: 25,
+    borderRadius: 20,
     marginBottom: 18,
   },
   selectedOption: {

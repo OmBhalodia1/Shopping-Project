@@ -16,6 +16,7 @@ import Avatar from '../../components/Avatar';
 import Text from '../../components/Text';
 import RecoveryOptions from '../../components/RecoveryOptions';
 import { styles } from './styles';
+import Section from '../../components/Section';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'PasswordRecovery'>;
 const { width, height } = Dimensions.get('window');
@@ -48,15 +49,21 @@ const PasswordRecovery: React.FC<Props> = ({ navigation }) => {
             />
           ))}
         </View>
-        <Button
-          style={styles.nextButton}
-          title="Next"
-          onPress={() => navigation.navigate('PasswordRecoveryCode')}
-        />
-        <Button
-          title="Cancel"
-          mode="plain"
-          onPress={() => navigation.goBack()}
+        <Section
+          sectionContent={
+            <>
+              <Button
+                style={styles.nextButton}
+                title="Next"
+                onPress={() => navigation.navigate('PasswordRecoveryCode')}
+              />
+              <Button
+                title="Cancel"
+                mode="plain"
+                onPress={() => navigation.goBack()}
+              />
+            </>
+          }
         />
       </View>
     </View>

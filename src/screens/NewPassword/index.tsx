@@ -17,6 +17,7 @@ import TextInput from '../../components/TextInput';
 import Text from '../../components/Text';
 import Button from '../../components/Button';
 import { styles } from './styles';
+import Section from '../../components/Section';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'NewPassword'>;
 
@@ -50,38 +51,52 @@ const NewPassword: React.FC<Props> = ({ navigation }) => {
           Please, setup a new password for{'\n'}your account
         </ReactText>
 
-        <View style={{ gap: 10 }}>
-          <TextInput
-            style={styles.input}
-            title="New Password"
-            secureTextEntry={secureNew}
-            value={newPassword}
-            onChangeText={setNewPassword}
-            autoCapitalize="none"
-            autoCorrect={false}
-            placeholder="Enter new password"
-          />
+        <Section
+          sectionContent={
+            <View style={{ gap: 10 }}>
+              <TextInput
+                style={styles.input}
+                title="New Password"
+                secureTextEntry={secureNew}
+                value={newPassword}
+                onChangeText={setNewPassword}
+                autoCapitalize="none"
+                autoCorrect={false}
+                placeholder="Enter new password"
+              />
 
-          <TextInput
-            style={styles.input}
-            title="Repeat Password"
-            secureTextEntry={secureRepeat}
-            value={repeatPassword}
-            onChangeText={setRepeatPassword}
-            autoCapitalize="none"
-            autoCorrect={false}
-            placeholder="Repeat new password"
-          />
-        </View>
+              <TextInput
+                style={styles.input}
+                title="Repeat Password"
+                secureTextEntry={secureRepeat}
+                value={repeatPassword}
+                onChangeText={setRepeatPassword}
+                autoCapitalize="none"
+                autoCorrect={false}
+                placeholder="Repeat new password"
+              />
+            </View>
+          }
+        />
 
         <View style={{ flex: 1 }} />
 
-        <Button style={styles.saveButton} title="Save" onPress={handleSave} />
-        <Button
-          style={styles.cancelButton}
-          title="Cancel"
-          mode="plain"
-          onPress={() => navigation.goBack()}
+        <Section
+          sectionContent={
+            <>
+              <Button
+                style={styles.saveButton}
+                title="Save"
+                onPress={handleSave}
+              />
+              <Button
+                style={styles.cancelButton}
+                title="Cancel"
+                mode="plain"
+                onPress={() => navigation.goBack()}
+              />
+            </>
+          }
         />
       </View>
     </KeyboardAvoidingView>
