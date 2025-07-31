@@ -38,12 +38,9 @@ export default function BottomTabNavigator() {
         tabBarShowLabel: false,
         tabBarStyle: {
           height: 70,
-          borderTopLeftRadius: 24,
-          borderTopRightRadius: 24,
+          // borderTopLeftRadius: 24,
+          // borderTopRightRadius: 24,
           backgroundColor: '#FFFFFF',
-          shadowColor: '#222',
-          shadowOpacity: 0.08,
-          shadowRadius: 16,
         },
         tabBarIcon: ({ focused }) => {
           let icon;
