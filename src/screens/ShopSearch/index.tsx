@@ -4,6 +4,7 @@ import {
   SafeAreaView,
   Keyboard,
   TouchableWithoutFeedback,
+  StatusBar,
 } from 'react-native';
 import React, { useState } from 'react';
 import HeaderShop from '../../components/HeaderShop';
@@ -30,6 +31,7 @@ const ShopSearch = () => {
   const handleClearHistory = () => setHistory([]);
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar translucent backgroundColor="transparent" />
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View style={{ flex: 1, padding: 18 }}>
           <HeaderShop

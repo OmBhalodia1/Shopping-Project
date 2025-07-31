@@ -12,7 +12,6 @@ export const styles = StyleSheet.create({
     top: 0,
     width: 500,
     height: 852,
-    zIndex: -1,
   },
   paginationWrapper: {
     marginTop: 32,

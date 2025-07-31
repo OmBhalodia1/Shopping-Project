@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TextInput, StyleSheet } from 'react-native';
+import { View, Text, TextInput, StyleSheet, Platform } from 'react-native';
 import BottomSheet from '../../components/BottomSheet';
 import Button from '../../components/Button';
 import { styles } from './styles';
@@ -33,7 +33,11 @@ const CartEditShipping: React.FC<CartEditShippingProps> = ({
   return (
     <BottomSheet isOpen={isOpen} onClose={onClose}>
       <View style={styles.container}>
-        <View style={{ backgroundColor: '#F8FAFF' }}>
+        <View
+          style={{
+            backgroundColor: '#F8FAFF',
+          }}
+        >
           <Text style={styles.header}>Shipping Address</Text>
         </View>
 

@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   card: {
@@ -14,6 +14,8 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.1608,
     shadowRadius: 32,
     alignItems: 'center',
+    elevation: 4,
+    marginTop: Platform.OS === 'android' ? 40 : 0,
   },
   cardImage: {
     width: '100%',

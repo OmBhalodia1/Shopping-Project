@@ -63,6 +63,7 @@ export const styles = StyleSheet.create({
   contentRow: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-around',
   },
   iconTextWrapper: {
     flexDirection: 'row',

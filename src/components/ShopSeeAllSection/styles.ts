@@ -32,6 +32,6 @@ export const styles = StyleSheet.create({
   arrow: {
     color: '#ffffff',
     fontSize: 19,
-    marginBottom: Platform.OS === 'android' ? 5 : 0,
+    bottom: Platform.OS === 'android' ? 4 : 0,
   },
 });

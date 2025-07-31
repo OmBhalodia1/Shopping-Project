@@ -19,6 +19,7 @@ export const styles = StyleSheet.create({
     position: 'relative',
     borderWidth: 5.7,
     borderColor: '#FFFFFF',
+    elevation: 4,
   },
 
   image: {

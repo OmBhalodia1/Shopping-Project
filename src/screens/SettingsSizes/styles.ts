@@ -1,7 +1,11 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#fff' },
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    paddingTop: Platform.OS === 'android' ? 40 : 0,
+  },
   innerContainer: { paddingHorizontal: 20, paddingTop: 10 },
   title1: { fontSize: 32, fontWeight: '700', marginBottom: 10 },
   title2: { fontSize: 20, fontWeight: '400' },

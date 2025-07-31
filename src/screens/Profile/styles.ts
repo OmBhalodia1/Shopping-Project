@@ -1,7 +1,12 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#FFFFFF', padding: 20 },
+  container: {
+    flex: 1,
+    backgroundColor: '#FFFFFF',
+    padding: 20,
+    paddingTop: Platform.OS === 'android' ? 60 : 0,
+  },
   headerRow: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -19,6 +24,7 @@ export const styles = StyleSheet.create({
     width: 48,
     height: 48,
     borderRadius: 24,
+    elevation: 4,
   },
   headerRight: {
     flex: 1,
@@ -140,5 +146,6 @@ export const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 22,
     fontWeight: 'bold',
+    bottom: Platform.OS === 'android' ? 4 : 0,
   },
 });

@@ -25,6 +25,7 @@ export const styles = StyleSheet.create({
     borderColor: '#FFFFFF',
     alignSelf: 'center',
     marginBottom: 10,
+    elevation: 4,
   },
   name: {
     fontSize: 12,

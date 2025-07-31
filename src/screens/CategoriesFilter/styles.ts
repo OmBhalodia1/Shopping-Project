@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   safe: { flex: 1, backgroundColor: '#fff' },
@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 20,
     backgroundColor: '#fff',
+    paddingTop: Platform.OS === 'android' ? 40 : 0,
   },
   title: {
     fontSize: 22,
@@ -70,6 +71,7 @@ export const styles = StyleSheet.create({
   arrowText: {
     color: '#ffffff',
     fontSize: 19,
+    bottom: Platform.OS === 'android' ? 4 : 0,
   },
   catLabel: {
     flex: 1,

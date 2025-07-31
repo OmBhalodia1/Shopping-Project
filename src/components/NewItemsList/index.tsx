@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  View,
-  StyleSheet,
-  Text,
-  Image,
-  ScrollView,
-  TouchableOpacity,
-} from 'react-native';
-import { images } from '../../utils/images';
+import { Text, Image, ScrollView, TouchableOpacity } from 'react-native';
 import { styles } from './styles';
 
 export type Product = {

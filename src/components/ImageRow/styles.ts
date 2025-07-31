@@ -20,6 +20,7 @@ export const styles = StyleSheet.create({
     borderRadius: 30,
     borderWidth: 4,
     borderColor: '#FFFFFF',
+    elevation: 4,
   },
   title: {
     marginTop: 5,

@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   colorList: {
@@ -22,6 +22,7 @@ export const styles = StyleSheet.create({
     shadowColor: '#000',
     shadowOpacity: 0.16,
     shadowOffset: { width: 0, height: 5 },
+    elevation: 3,
   },
   colorSelected: {
     borderWidth: 1,
@@ -32,6 +33,7 @@ export const styles = StyleSheet.create({
     position: 'absolute',
     top: -4,
     right: -4,
+    zIndex: Platform.OS === 'android' ? 2 : 0,
   },
   tickCircle: {
     width: 20,

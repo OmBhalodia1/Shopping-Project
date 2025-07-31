@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   headerRow: {
@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 10,
     paddingHorizontal: 20,
+    paddingTop: Platform.OS === 'android' ? 40 : 0,
   },
   avatar: {
     width: 48,

@@ -12,6 +12,7 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.07,
     shadowOffset: { width: 1, height: 6 },
     shadowRadius: 18,
+    elevation: 2,
   },
   imagesRow: {
     flexDirection: 'row',

@@ -78,83 +78,93 @@ const CartPaymentMethod: React.FC<CartPaymentMethodProps> = ({
     <BottomSheet isOpen={isOpen} onClose={onClose}>
       <View
         style={{
-          backgroundColor: '#F1F4FE',
-          marginBottom: 10,
-          paddingVertical: 25,
-          paddingLeft: 25,
-          borderRadius: 10,
+          backgroundColor: '#FFFFFF',
+          borderTopLeftRadius: 16,
+          borderTopRightRadius: 16,
         }}
       >
-        <Text style={styles.header}>Payment Methods</Text>
-      </View>
+        <View
+          style={{
+            backgroundColor: '#F1F4FE',
+            marginBottom: 10,
+            paddingVertical: 25,
+            paddingLeft: 25,
+            borderRadius: 10,
+          }}
+        >
+          <Text style={styles.header}>Payment Methods</Text>
+        </View>
+        <View style={styles.container}>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            <View style={styles.cardRow}>
+              {cards.map(card => (
+                <TouchableOpacity
+                  key={card.id}
+                  style={styles.card}
+                  onPress={handlePayment}
+                >
+                  <View style={styles.topRow}>
+                    <Image
+                      source={
+                        card.brand === 'mastercard'
+                          ? images.MasterCard
+                          : images.VisaCard
+                      }
+                      style={styles.mastercardLogo}
+                    />
+                    <TouchableOpacity>
+                      <Image source={icons.settings2} />
+                    </TouchableOpacity>
+                  </View>
 
-      <View style={styles.container}>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-          <View style={styles.cardRow}>
-            {cards.map(card => (
+                  <Text style={styles.cardNumber}>
+                    **** **** **** {card.last4}
+                  </Text>
+
+                  <View style={styles.cardFooter}>
+                    <Text style={styles.cardName}>{card.name}</Text>
+                    <Text style={styles.cardExpiry}>{card.expiry}</Text>
+                  </View>
+                </TouchableOpacity>
+              ))}
+
               <TouchableOpacity
-                key={card.id}
-                style={styles.card}
-                onPress={handlePayment}
+                style={styles.addButton}
+                onPress={handleAddCard}
               >
-                <View style={styles.topRow}>
-                  <Image
-                    source={
-                      card.brand === 'mastercard'
-                        ? images.MasterCard
-                        : images.VisaCard
-                    }
-                    style={styles.mastercardLogo}
-                  />
-                  <TouchableOpacity>
-                    <Image source={icons.settings2} />
-                  </TouchableOpacity>
-                </View>
-
-                <Text style={styles.cardNumber}>
-                  **** **** **** {card.last4}
-                </Text>
-
-                <View style={styles.cardFooter}>
-                  <Text style={styles.cardName}>{card.name}</Text>
-                  <Text style={styles.cardExpiry}>{card.expiry}</Text>
-                </View>
+                <Text style={styles.addButtonText}>+</Text>
               </TouchableOpacity>
-            ))}
+            </View>
+          </ScrollView>
 
-            <TouchableOpacity style={styles.addButton} onPress={handleAddCard}>
-              <Text style={styles.addButtonText}>+</Text>
-            </TouchableOpacity>
-          </View>
-        </ScrollView>
+          <Modal
+            modalContent={
+              <>
+                {modalVisible && modalMode === 'paymentInProgress' && (
+                  <ModalPaymentInProgress
+                    visible={modalVisible}
+                    onRequestClose={handleCloseModal}
+                  />
+                )}
 
-        <Modal
-          modalContent={
-            <>
-              {modalVisible && modalMode === 'paymentInProgress' && (
-                <ModalPaymentInProgress
-                  visible={modalVisible}
-                  onRequestClose={handleCloseModal}
-                />
-              )}
+                {modalVisible && modalMode === 'paymentFailed' && (
+                  <ModalPaymentFailed
+                    visible={modalVisible}
+                    onRequestClose={handleCloseModal}
+                    onTryAgain={handleTryAgain}
+                  />
+                )}
 
-              {modalVisible && modalMode === 'paymentFailed' && (
-                <ModalPaymentFailed
-                  visible={modalVisible}
-                  onRequestClose={handleCloseModal}
-                  onTryAgain={handleTryAgain}
-                />
-              )}
-
-              {modalVisible && modalMode === 'paymentSuccess' && (
-                <ModalPaymentSuccess
-                  visible={modalVisible}
-                  onRequestClose={handleCloseModal}
-                />
-              )}
-            </>
-          }
-        />
+                {modalVisible && modalMode === 'paymentSuccess' && (
+                  <ModalPaymentSuccess
+                    visible={modalVisible}
+                    onRequestClose={handleCloseModal}
+                  />
+                )}
+              </>
+            }
+          />
+        </View>
       </View>
     </BottomSheet>
   );

@@ -16,6 +16,7 @@ export const styles = StyleSheet.create({
     shadowRadius: 8,
     marginBottom: 8,
     marginTop: 3,
+    elevation: 3,
   },
   card: {
     borderRadius: 12,

@@ -1,9 +1,11 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#FFF',
+    paddingTop: Platform.OS === 'android' ? 40 : 0,
+    paddingBottom: Platform.OS === 'android' ? 20 : 0,
   },
   content: {
     flex: 1,

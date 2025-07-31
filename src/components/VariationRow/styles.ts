@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   variationRow: {
@@ -38,5 +38,6 @@ export const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 20,
     fontWeight: '900',
+    bottom: Platform.OS === 'android' ? 4 : 0,
   },
 });

@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View } from 'react-native';
-import React from 'react';
+import { Platform, StyleSheet, Text, View } from 'react-native';
+
 export const styles = StyleSheet.create({
   loginRow: {
     flexDirection: 'row',
@@ -27,5 +27,6 @@ export const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 22,
     fontWeight: 'bold',
+    bottom: Platform.OS === 'android' ? 4 : 0,
   },
 });

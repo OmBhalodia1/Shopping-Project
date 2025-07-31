@@ -53,66 +53,74 @@ const SettingsPaymentAddCard: React.FC<SettingsPaymentAddCardProps> = ({
 
   return (
     <BottomSheet isOpen={isOpen} onClose={onClose}>
-      <View style={styles.headerContainer}>
-        <Text style={styles.header}>{card ? 'Edit Card' : 'Add Card'}</Text>
-      </View>
-      <View>
-        <View style={styles.innerContainer}>
-          <Section
-            sectionContent={
-              <>
-                <Text style={styles.label}>Card Holder</Text>
-                <TextInput
-                  style={styles.input}
-                  placeholder="Required"
-                  placeholderTextColor="#B0BCEB"
-                  value={cardHolder}
-                  onChangeText={setCardHolder}
-                />
-
-                <Text style={[styles.label, { marginTop: 24 }]}>
-                  Card Number
-                </Text>
-                <TextInput
-                  style={styles.input}
-                  placeholder="Required"
-                  placeholderTextColor="#B0BCEB"
-                  keyboardType="numeric"
-                  value={cardNumber}
-                  onChangeText={handleCardNumberChange}
-                />
-              </>
-            }
-          />
-
-          <Section
-            sectionContent={
-              <View style={styles.row}>
-                <View style={styles.column}>
-                  <Text style={styles.label}>Valid</Text>
+      <View
+        style={{
+          backgroundColor: '#FFFFFF',
+          borderTopLeftRadius: 16,
+          borderTopRightRadius: 16,
+        }}
+      >
+        <View style={styles.headerContainer}>
+          <Text style={styles.header}>{card ? 'Edit Card' : 'Add Card'}</Text>
+        </View>
+        <View>
+          <View style={styles.innerContainer}>
+            <Section
+              sectionContent={
+                <>
+                  <Text style={styles.label}>Card Holder</Text>
                   <TextInput
-                    style={styles.inputSmall}
+                    style={styles.input}
                     placeholder="Required"
                     placeholderTextColor="#B0BCEB"
-                    value={valid}
-                    onChangeText={setValid}
+                    value={cardHolder}
+                    onChangeText={setCardHolder}
                   />
-                </View>
-                <View style={styles.column}>
-                  <Text style={styles.label}>CVV</Text>
+
+                  <Text style={[styles.label, { marginTop: 24 }]}>
+                    Card Number
+                  </Text>
                   <TextInput
-                    style={styles.inputSmall}
+                    style={styles.input}
                     placeholder="Required"
                     placeholderTextColor="#B0BCEB"
-                    secureTextEntry
-                    value={cvv}
-                    onChangeText={setCvv}
+                    keyboardType="numeric"
+                    value={cardNumber}
+                    onChangeText={handleCardNumberChange}
                   />
+                </>
+              }
+            />
+
+            <Section
+              sectionContent={
+                <View style={styles.row}>
+                  <View style={styles.column}>
+                    <Text style={styles.label}>Valid</Text>
+                    <TextInput
+                      style={styles.inputSmall}
+                      placeholder="Required"
+                      placeholderTextColor="#B0BCEB"
+                      value={valid}
+                      onChangeText={setValid}
+                    />
+                  </View>
+                  <View style={styles.column}>
+                    <Text style={styles.label}>CVV</Text>
+                    <TextInput
+                      style={styles.inputSmall}
+                      placeholder="Required"
+                      placeholderTextColor="#B0BCEB"
+                      secureTextEntry
+                      value={cvv}
+                      onChangeText={setCvv}
+                    />
+                  </View>
                 </View>
-              </View>
-            }
-          />
-          <Button title="Save Changes" onPress={handleSave} />
+              }
+            />
+            <Button title="Save Changes" onPress={handleSave} />
+          </View>
         </View>
       </View>
     </BottomSheet>

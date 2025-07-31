@@ -5,8 +5,9 @@ import {
   StyleSheet,
   Image,
   Dimensions,
-  SafeAreaView,
   TouchableOpacity,
+  StatusBar,
+  Platform,
 } from 'react-native';
 import { images } from '../../utils/images';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
@@ -21,19 +22,28 @@ const { width } = Dimensions.get('window');
 
 const HelloCard: React.FC<Props> = ({ navigation }) => {
   return (
-    <SafeAreaView style={styles.container}>
+    <View
+      style={[
+        styles.container,
+        Platform.OS === 'android' && { paddingTop: StatusBar.currentHeight },
+      ]}
+    >
+      <StatusBar
+        translucent
+        backgroundColor="transparent"
+        barStyle="dark-content"
+      />
       <Image
         source={images.HelloBack}
         style={styles.backgroundImage}
-        resizeMode="contain"
+        resizeMode="cover"
       />
       <View style={{ marginTop: 27 }}>
         <Card
           title="Hello"
-          subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed non consectetur turpis. Morbi eu eleifend lacus."
+          subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non consectetur turpis. Morbi eu eleifend lacus."
           image={images.Hello}
         />
-
         <Section
           sectionContent={
             <View style={styles.paginationWrapper}>
@@ -48,7 +58,7 @@ const HelloCard: React.FC<Props> = ({ navigation }) => {
           }
         />
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 

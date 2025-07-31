@@ -1,32 +1,34 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  Dimensions,
-  SafeAreaView,
-  TouchableOpacity,
-} from 'react-native';
+import { View, Image, Dimensions, Platform, StatusBar } from 'react-native';
 import { images } from '../../utils/images';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../types/RootStackParamList';
 import Card from '../../components/Card';
-import { styles } from './styles';
 import Section from '../../components/Section';
-
+import { styles } from './styles';
 type Props = NativeStackScreenProps<RootStackParamList, 'ReadyCard'>;
 
 const { width } = Dimensions.get('window');
 
 const ReadyCard: React.FC<Props> = ({ navigation }) => {
   return (
-    <SafeAreaView style={styles.container}>
+    <View
+      style={[
+        styles.container,
+        Platform.OS === 'android' && { paddingTop: StatusBar.currentHeight },
+      ]}
+    >
+      <StatusBar
+        translucent
+        backgroundColor="transparent"
+        barStyle="dark-content"
+      />
       <Image
         source={images.ReadyBack}
         style={styles.backgroundImage}
-        resizeMode="contain"
+        resizeMode="cover"
       />
+
       <View style={{ marginTop: 27 }}>
         <Card
           image={images.Ready}
@@ -48,7 +50,8 @@ const ReadyCard: React.FC<Props> = ({ navigation }) => {
           }
         />
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
+
 export default ReadyCard;
