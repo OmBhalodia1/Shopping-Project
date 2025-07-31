@@ -27,7 +27,7 @@ const CartPayment = () => {
         keyboardShouldPersistTaps="handled"
       >
         <View style={styles.innerContainer}>
-          <Title label="Payment" textStyle={{ fontSize: 26 }} />
+          <Title label="Payment" textStyle={{ fontSize: 28 }} />
 
           <Section
             sectionContent={

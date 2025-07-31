@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: '#FFFFFF' },
   container: { flex: 1, backgroundColor: '#FFFFFF', padding: 20 },
-  innerContainer: { flex: 1, marginTop: 10 },
+  innerContainer: { flex: 1, marginTop: 25 },
   circle: {
     width: 30,
     height: 30,

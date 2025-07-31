@@ -27,7 +27,6 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   detailsSection: {
-    paddingBottom: 32,
     paddingHorizontal: 20,
     borderTopLeftRadius: 22,
     borderTopRightRadius: 22,

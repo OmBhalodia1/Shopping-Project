@@ -9,7 +9,10 @@ import { styles } from './styles';
 const WishlistRecentlyViewed = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.innerContainer}>
+      <ScrollView
+        style={styles.innerContainer}
+        showsVerticalScrollIndicator={false}
+      >
         <Section
           title={<Title label="Recently Viewed" />}
           sectionContent={<JustForYouList products={AllItems} />}

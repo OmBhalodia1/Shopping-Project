@@ -4,11 +4,9 @@ import {
   Text,
   TouchableOpacity,
   Image,
-  StyleSheet,
   FlatList,
   SafeAreaView,
 } from 'react-native';
-import { images } from '../../utils/images';
 import { icons } from '../../utils/icons';
 import Title from '../../components/Title';
 import { StackNavigationProp } from '@react-navigation/stack';

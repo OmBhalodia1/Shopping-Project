@@ -59,7 +59,7 @@ const Cart: React.FC<{ navigation: NavigationProp }> = ({ navigation }) => {
           <Section
             sectionContent={
               <View style={styles.header}>
-                <Title label="Cart" />
+                <Title label="Cart" textStyle={{ fontSize: 28 }} />
                 <View style={styles.circle}>
                   <Text style={styles.number}>{cartItems.length}</Text>
                 </View>

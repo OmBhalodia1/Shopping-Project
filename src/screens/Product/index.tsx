@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text as ReactText,
-  Image,
-  StyleSheet,
-  ScrollView,
-} from 'react-native';
+import { View, Text as ReactText, Image, ScrollView } from 'react-native';
 import { RouteProp, NavigationProp } from '@react-navigation/native';
 import { RootStackParamList } from '../../types/RootStackParamList';
 import { images } from '../../utils/images';

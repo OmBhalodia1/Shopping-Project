@@ -3,8 +3,6 @@ import {
   View,
   Text,
   TextInput as ReactTextInput,
-  TouchableOpacity,
-  StyleSheet,
   SafeAreaView,
   Image,
   KeyboardAvoidingView,

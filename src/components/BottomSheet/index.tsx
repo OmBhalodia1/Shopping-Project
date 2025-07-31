@@ -23,7 +23,11 @@ export default function BottomSheet({
   }, [isOpen]);
 
   return (
-    <ActionSheet ref={actionSheetRef} onClose={onClose}>
+    <ActionSheet
+      ref={actionSheetRef}
+      onClose={onClose}
+      containerStyle={{ backgroundColor: 'transparent' }}
+    >
       {children}
     </ActionSheet>
   );

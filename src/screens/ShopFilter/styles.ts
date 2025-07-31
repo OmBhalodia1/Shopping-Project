@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    padding: 20,
+    paddingHorizontal: 20,
   },
   scrollView: {
     flexGrow: 1,

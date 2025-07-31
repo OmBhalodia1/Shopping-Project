@@ -4,7 +4,6 @@ export const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
     paddingBottom: 10,
-    paddingLeft: 10,
   },
   shadowWrapper: {
     width: CARD_WIDTH,

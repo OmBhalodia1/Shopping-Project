@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   header: {
@@ -32,5 +32,6 @@ export const styles = StyleSheet.create({
   arrow: {
     color: '#ffffff',
     fontSize: 19,
+    marginBottom: Platform.OS === 'android' ? 5 : 0,
   },
 });
