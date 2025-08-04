@@ -49,7 +49,9 @@ export const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 5 },
     shadowOpacity: 0.102,
     shadowRadius: 4,
+    elevation: 3,
   },
+
   icon: {
     width: 40,
     height: 40,
@@ -66,7 +68,7 @@ export const styles = StyleSheet.create({
     height: 30,
     alignItems: 'center',
     justifyContent: 'center',
-    marginLeft: 135,
+    marginLeft: Platform.OS === 'android' ? 160 : 135,
   },
   arrowText: {
     color: '#ffffff',

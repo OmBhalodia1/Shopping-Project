@@ -9,8 +9,8 @@ export const styles = StyleSheet.create({
     alignItems: 'flex-start',
   },
   image: {
-    width: 140,
-    height: 140,
+    width: 160,
+    height: 160,
     borderRadius: 10,
     alignSelf: 'center',
   },

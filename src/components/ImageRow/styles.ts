@@ -4,15 +4,19 @@ export const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
     marginBottom: 10,
-    shadowRadius: 3,
-    shadowColor: '#222',
-    shadowOpacity: 0.16,
-    padding: 5,
-    shadowOffset: { width: 0, height: 5 },
   },
+  contentContainer: {
+    flexGrow: 1,
+    justifyContent: 'space-around',
+  },
+
   itemContainer: {
     alignItems: 'center',
-    marginRight: 12,
+    shadowRadius: 10,
+    shadowColor: '#222',
+    shadowOpacity: 0.12,
+    shadowOffset: { width: 0, height: 4 },
+    paddingVertical: 2,
   },
   avatar: {
     width: 60,
@@ -20,7 +24,7 @@ export const styles = StyleSheet.create({
     borderRadius: 30,
     borderWidth: 4,
     borderColor: '#FFFFFF',
-    elevation: 4,
+    elevation: 3,
   },
   title: {
     marginTop: 5,

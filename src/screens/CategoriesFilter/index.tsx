@@ -43,7 +43,8 @@ const CategoriesFilter: React.FC<{ navigation: NavigationProp }> = ({
             >
               <Title label="All Categories" />
               <TouchableOpacity onPress={() => navigation.goBack()}>
-                <Text style={{ fontSize: 18, color: '#444' }}>X</Text>
+                <Image source={icons.Close} resizeMode="contain" />
+                ``
               </TouchableOpacity>
             </View>
           }
@@ -91,19 +92,14 @@ const CategoriesFilter: React.FC<{ navigation: NavigationProp }> = ({
                 />
               </TouchableOpacity>
               {openDropdown === item.label && item.subcategories && (
-                <RenderSubcategories
-                  subcategories={item.subcategories}
-                  onPressSubcategory={sub => console.log(sub)}
-                />
+                <RenderSubcategories subcategories={item.subcategories} />
               )}
             </View>
           )}
           ListFooterComponent={
-            <TouchableOpacity
-              style={styles.categoryRow}
-              onPress={() => console.log('Go to Just for You')}
-            >
+            <TouchableOpacity style={styles.categoryRow}>
               <Image source={categoryImages.JustForYou} style={styles.icon} />
+
               <Title
                 star
                 label="Just For You"

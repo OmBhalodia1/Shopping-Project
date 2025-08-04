@@ -84,7 +84,7 @@ const ShopScreen: React.FC<{ navigation: NavigationProp }> = ({
             />
           }
         />
-
+        <View style={{ marginTop: 10 }} />
         <Section
           title={<Title label="Top Products" />}
           sectionContent={<ImageRow imageList={TopProducts} />}
@@ -99,7 +99,11 @@ const ShopScreen: React.FC<{ navigation: NavigationProp }> = ({
 
         <Section
           title={<Title label="Flash Sale" rightElement={<TitleTimer />} />}
-          sectionContent={<FlashSaleImageGrid />}
+          sectionContent={
+            <View style={{ marginTop: 5 }}>
+              <FlashSaleImageGrid />
+            </View>
+          }
         />
 
         <Section

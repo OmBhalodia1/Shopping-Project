@@ -37,6 +37,7 @@ const ImageRow: React.FC<ImageRowProps> = ({
       horizontal
       showsHorizontalScrollIndicator={false}
       style={[styles.row, scrollViewStyle]}
+      contentContainerStyle={styles.contentContainer}
       {...scrollViewRestProps}
     >
       {imageList.map((item, index) => (

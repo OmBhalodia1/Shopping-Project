@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#f2f2f2',
-    borderRadius: 18,
+    borderRadius: 999,
     paddingHorizontal: 12,
     paddingVertical: 8,
   },
@@ -34,6 +34,8 @@ export const styles = StyleSheet.create({
     lineHeight: 21,
     letterSpacing: -0.16,
     fontWeight: '500',
+    paddingTop: 0,
+    paddingBottom: 0,
   },
   icon: {
     width: 22,

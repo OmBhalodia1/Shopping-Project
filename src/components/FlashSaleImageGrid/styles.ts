@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
   card: {
     borderRadius: 16,
     overflow: 'hidden',
-    margin: 3,
+    marginVertical: 4,
     justifyContent: 'center',
     alignItems: 'center',
     position: 'relative',

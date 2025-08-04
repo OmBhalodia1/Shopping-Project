@@ -1,11 +1,4 @@
-import {
-  StyleSheet,
-  View,
-  SafeAreaView,
-  Keyboard,
-  TouchableWithoutFeedback,
-  StatusBar,
-} from 'react-native';
+import { StyleSheet, View, SafeAreaView, StatusBar } from 'react-native';
 import React, { useState } from 'react';
 import HeaderShop from '../../components/HeaderShop';
 import Section from '../../components/Section';
@@ -32,34 +25,32 @@ const ShopSearch = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar translucent backgroundColor="transparent" />
-      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-        <View style={{ flex: 1, padding: 18 }}>
-          <HeaderShop
-            title="Search"
-            searchText={search}
-            onSubmit={handleSearch}
-          />
-          <Section
-            sectionContent={
-              <SearchList
-                mode="history"
-                items={history}
-                onClear={handleClearHistory}
-              />
-            }
-          />
-          <Section
-            sectionContent={
-              <SearchList mode="recommendation" items={RECOMMENDATIONS} />
-            }
-          />
+      <View style={{ flex: 1, paddingHorizontal: 18 }}>
+        <HeaderShop
+          title="Search"
+          searchText={search}
+          onSubmit={handleSearch}
+        />
+        <Section
+          sectionContent={
+            <SearchList
+              mode="history"
+              items={history}
+              onClear={handleClearHistory}
+            />
+          }
+        />
+        <Section
+          sectionContent={
+            <SearchList mode="recommendation" items={RECOMMENDATIONS} />
+          }
+        />
 
-          <Section
-            title={<Title label="Discover" />}
-            sectionContent={<NewItemsList products={DiscoverProducts} />}
-          />
-        </View>
-      </TouchableWithoutFeedback>
+        <Section
+          title={<Title label="Discover" />}
+          sectionContent={<NewItemsList products={DiscoverProducts} />}
+        />
+      </View>
     </SafeAreaView>
   );
 };

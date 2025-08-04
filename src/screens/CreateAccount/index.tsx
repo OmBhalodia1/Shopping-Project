@@ -8,6 +8,7 @@ import {
   KeyboardAvoidingView,
   Platform,
   ScrollView,
+  StatusBar,
 } from 'react-native';
 import { images } from '../../utils/images';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
@@ -22,10 +23,11 @@ type Props = NativeStackScreenProps<RootStackParamList, 'CreateAccount'>;
 const CreateAccount: React.FC<Props> = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.safeArea}>
+      <StatusBar translucent backgroundColor="transparent" />
       <Image
         source={images.bubbles}
         style={styles.background}
-        resizeMode="contain"
+        resizeMode="stretch"
       />
 
       <KeyboardAvoidingView

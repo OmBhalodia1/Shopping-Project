@@ -64,14 +64,4 @@ export const styles = StyleSheet.create({
     backgroundColor: '#0042E0',
     paddingHorizontal: 20,
   },
-
-  topProductText: {
-    fontWeight: '700',
-    lineHeight: 30,
-    letterSpacing: -0.21,
-    fontFamily: 'Raleway',
-    fontSize: 21,
-    marginTop: 18,
-    marginBottom: 12,
-  },
 });

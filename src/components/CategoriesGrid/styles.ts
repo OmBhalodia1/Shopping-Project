@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     width: ITEM_WIDTH,
     backgroundColor: '#fff',
     borderRadius: 18,
-    padding: 8,
+    padding: 10,
     shadowColor: '#000',
     shadowOpacity: 0.07,
     shadowOffset: { width: 1, height: 6 },
@@ -41,7 +41,7 @@ export const styles = StyleSheet.create({
   },
   countBadge: {
     backgroundColor: '#DFE9FF',
-    borderRadius: 12,
+    borderRadius: 5,
     minWidth: 38,
     alignItems: 'center',
   },

@@ -11,9 +11,8 @@ export const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
-
-    paddingVertical: 10,
+    // alignItems: 'center',
+    paddingVertical: 5,
   },
   star: {
     flexDirection: 'row',

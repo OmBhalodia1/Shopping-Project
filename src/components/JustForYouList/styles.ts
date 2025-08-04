@@ -1,10 +1,11 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    gap: 10,
+    columnGap: Platform.OS === 'android' ? 35 : 19,
+    rowGap: 5,
   },
   card: {
     width: 165,
@@ -14,12 +15,12 @@ export const styles = StyleSheet.create({
   },
   shadow: {
     shadowColor: '#222',
-    shadowOpacity: 0.105,
-    shadowOffset: { width: 2, height: 5 },
+    shadowOpacity: 0.125,
+    shadowOffset: { width: 0, height: 5 },
   },
   image: {
     width: 170,
-    height: 160,
+    height: 190,
     borderRadius: 10,
     borderWidth: 4,
     borderColor: '#FFFFFF',
@@ -30,7 +31,7 @@ export const styles = StyleSheet.create({
   name: {
     fontSize: 12,
     color: '#000000',
-    marginBottom: 8,
+    marginBottom: 5,
     fontWeight: '400',
     fontFamily: 'Nunito-Sans',
     lineHeight: 16,

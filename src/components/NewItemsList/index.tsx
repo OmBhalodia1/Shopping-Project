@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Image, ScrollView, TouchableOpacity } from 'react-native';
+import { Text, Image, ScrollView, TouchableOpacity, View } from 'react-native';
 import { styles } from './styles';
 
 export type Product = {
@@ -20,10 +20,12 @@ const ProductCard: React.FC<{ image: any; name: string; price: string }> = ({
 }) => (
   <TouchableOpacity style={styles.card}>
     <Image source={image} style={styles.image} resizeMode="cover" />
-    <Text style={styles.name} numberOfLines={2}>
-      {name}
-    </Text>
-    <Text style={styles.price}>{price}</Text>
+    <View style={{ marginLeft: 6 }}>
+      <Text style={styles.name} numberOfLines={2}>
+        {name}
+      </Text>
+      <Text style={styles.price}>{price}</Text>
+    </View>
   </TouchableOpacity>
 );
 
