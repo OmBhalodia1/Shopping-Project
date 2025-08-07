@@ -63,7 +63,7 @@ export const styles = StyleSheet.create({
   contentRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
   },
   iconTextWrapper: {
     flexDirection: 'row',
@@ -76,12 +76,12 @@ export const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   voucherTitle: {
-    fontSize: 16,
+    fontSize: 15,
     fontWeight: 'bold',
     marginBottom: 2,
   },
   voucherSubtitle: {
-    fontSize: 14,
+    fontSize: 13,
     fontWeight: '500',
   },
   button: {

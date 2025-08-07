@@ -6,6 +6,7 @@ import {
   Image,
   SafeAreaView,
   ScrollView,
+  Platform,
 } from 'react-native';
 import VoucherCard from '../../components/VoucherCard';
 import { images } from '../../utils/images';
@@ -16,7 +17,13 @@ import Section from '../../components/Section';
 
 const ProfileVoucher = () => {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#FFFFFF' }}>
+    <SafeAreaView
+      style={{
+        flex: 1,
+        backgroundColor: '#FFFFFF',
+        paddingTop: Platform.OS === 'android' ? 50 : 0,
+      }}
+    >
       <Section
         sectionContent={
           <View style={styles.headerRow}>

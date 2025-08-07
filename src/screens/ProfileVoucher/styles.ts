@@ -14,6 +14,7 @@ export const styles = StyleSheet.create({
     borderRadius: 30,
     borderWidth: 4,
     borderColor: '#FFFFFF',
+    elevation: 4,
   },
   avatar: {
     width: 48,
@@ -60,9 +61,6 @@ export const styles = StyleSheet.create({
     borderRadius: 20,
     paddingHorizontal: 32,
     paddingVertical: 7,
-    shadowColor: '#222',
-    shadowOpacity: 0.1,
-    shadowRadius: 5,
     alignSelf: 'flex-end',
     marginRight: 20,
   },

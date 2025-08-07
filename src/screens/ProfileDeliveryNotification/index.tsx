@@ -14,7 +14,7 @@ const ProfileDeliveryNotifications: React.FC<
   return (
     <BottomSheet isOpen={isOpen} onClose={onClose}>
       <View style={styles.header}>
-        <Text style={styles.headerText}>ProfileDeliveryNotifications</Text>
+        <Text style={styles.headerText}>Delivery was not successful</Text>
       </View>
       <View style={{ padding: 20, backgroundColor: '#FFFFFF' }}>
         <Text style={styles.headerText}>What should I do?</Text>

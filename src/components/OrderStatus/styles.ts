@@ -20,16 +20,15 @@ export const styles = StyleSheet.create({
   dateTime: {
     fontSize: 14,
     borderRadius: 6,
-    paddingHorizontal: 8,
-    paddingVertical: 2,
   },
   active: {
     color: '#151515',
   },
   activeDate: {
     color: '#323366',
-    backgroundColor: 'transparent',
+    backgroundColor: '#f9f9f9',
     fontWeight: '500',
+    padding: 4,
   },
   pending: {
     color: '#bfc1d0',

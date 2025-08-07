@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   card: {
@@ -8,9 +8,11 @@ export const styles = StyleSheet.create({
   },
   header: {
     backgroundColor: '#F8FAFF',
-    paddingHorizontal: 45,
+    paddingHorizontal: Platform.OS === 'android' ? 55 : 45,
     paddingVertical: 20,
     marginBottom: 20,
+    borderTopRightRadius: 16,
+    borderTopLeftRadius: 16,
   },
   headerText: {
     fontFamily: 'Raleway',
