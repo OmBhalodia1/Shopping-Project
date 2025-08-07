@@ -1,4 +1,11 @@
-import { StyleSheet, Text, View, SafeAreaView, ScrollView } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
 import React from 'react';
 import Title from '../../components/Title';
 import Section from '../../components/Section';
@@ -14,6 +21,7 @@ import { imageList1 } from './data';
 import { imageList2 } from './data';
 import TitleCancel from '../../components/TitleCancel';
 import TitleCategoryButton from '../../components/TitleCategoryButton';
+import PriceComponent from '../../components/PriceComponent';
 
 type NavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -61,15 +69,16 @@ const ShopFilter: React.FC<{ navigation: NavigationProp }> = ({
             title={<Title label="Colors" />}
             sectionContent={<ColorPicker />}
           />
+          <PriceComponent />
         </ScrollView>
 
         <View style={styles.buttonContainer}>
           <Button
             title="Clear"
             mode="outline"
-            style={{ height: 50, width: 91 }}
+            style={{ height: 50, flex: 1 }}
           />
-          <Button title="Apply" style={{ height: 50, width: 240 }} />
+          <Button title="Apply" style={{ height: 50, flex: 2 }} />
         </View>
       </View>
     </SafeAreaView>

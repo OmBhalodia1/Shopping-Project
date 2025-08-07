@@ -89,7 +89,8 @@ const CartPaymentMethod: React.FC<CartPaymentMethodProps> = ({
             marginBottom: 10,
             paddingVertical: 25,
             paddingLeft: 25,
-            borderRadius: 10,
+            borderTopLeftRadius: 10,
+            borderTopRightRadius: 10,
           }}
         >
           <Text style={styles.header}>Payment Methods</Text>

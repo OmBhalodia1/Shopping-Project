@@ -44,7 +44,6 @@ const CategoriesFilter: React.FC<{ navigation: NavigationProp }> = ({
               <Title label="All Categories" />
               <TouchableOpacity onPress={() => navigation.goBack()}>
                 <Image source={icons.Close} resizeMode="contain" />
-                ``
               </TouchableOpacity>
             </View>
           }

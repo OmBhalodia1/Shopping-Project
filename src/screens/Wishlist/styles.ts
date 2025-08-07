@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
   container: {
     paddingBottom: 20,
     backgroundColor: '#FFFFFF',
-    paddingTop: Platform.OS === 'android' ? 20 : 0,
+    paddingTop: Platform.OS === 'android' ? 20 : 20,
   },
   innerContainer: {
     flex: 1,
@@ -13,6 +13,6 @@ export const styles = StyleSheet.create({
   },
   arrowButton: {
     marginLeft: 'auto',
-    bottom: 10,
+    bottom: 20,
   },
 });

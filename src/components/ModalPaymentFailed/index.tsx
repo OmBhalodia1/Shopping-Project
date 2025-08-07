@@ -47,6 +47,12 @@ const ModalPaymentFailed: React.FC<ModalPaymentFailedProps> = ({
               <View style={styles.buttonsOuterWrap}>
                 <View style={styles.buttonsRow}>
                   <TouchableOpacity
+                    style={[styles.primaryButton, styles.buttonHalfWidth]}
+                    onPress={onTryAgain || onRequestClose}
+                  >
+                    <Text style={styles.buttonText}>Try Again</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
                     style={[styles.secondaryButton, styles.buttonHalfWidth]}
                     onPress={onRequestClose}
                   >
@@ -55,12 +61,6 @@ const ModalPaymentFailed: React.FC<ModalPaymentFailedProps> = ({
                     >
                       Change
                     </Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    style={[styles.primaryButton, styles.buttonHalfWidth]}
-                    onPress={onTryAgain || onRequestClose}
-                  >
-                    <Text style={styles.buttonText}>Try Again</Text>
                   </TouchableOpacity>
                 </View>
               </View>

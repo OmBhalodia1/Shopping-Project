@@ -34,25 +34,32 @@ const VariationRow: React.FC<VariationRowProps> = ({
 }) => {
   return (
     <View style={styles.variationRow}>
-      <Text style={styles.variationLabel}>{title}</Text>
+      <View style={{ flexDirection: 'row' }}>
+        <Text style={styles.variationLabel}>{title}</Text>
 
-      {button1 ? (
-        <View style={[styles.variationValueBox, button1Style]}>
-          <Text style={styles.variationValue}>{buttonText1}</Text>
-        </View>
-      ) : null}
+        {button1 ? (
+          <View style={[styles.variationValueBox, button1Style]}>
+            <Text style={styles.variationValue}>{buttonText1}</Text>
+          </View>
+        ) : null}
 
-      {button2 ? (
-        <View style={[styles.variationValueBox, button2Style]}>
-          <Text style={styles.variationValue}>{buttonText2}</Text>
-        </View>
-      ) : null}
+        {button2 ? (
+          <View style={[styles.variationValueBox, button2Style]}>
+            <Text style={styles.variationValue}>{buttonText2}</Text>
+          </View>
+        ) : null}
+      </View>
 
-      {arrowCircle ? (
-        <TouchableOpacity style={styles.variationArrow} onPress={onPressArrow}>
-          <Text style={styles.variationArrowIcon}>→</Text>
-        </TouchableOpacity>
-      ) : null}
+      <View>
+        {arrowCircle ? (
+          <TouchableOpacity
+            style={styles.variationArrow}
+            onPress={onPressArrow}
+          >
+            <Text style={styles.variationArrowIcon}>→</Text>
+          </TouchableOpacity>
+        ) : null}
+      </View>
     </View>
   );
 };

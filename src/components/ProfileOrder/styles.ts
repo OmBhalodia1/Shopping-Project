@@ -7,10 +7,6 @@ export const styles = StyleSheet.create({
     padding: 14,
     borderRadius: 16,
     marginVertical: 10,
-    shadowColor: '#000',
-    shadowOpacity: 0.05,
-    shadowRadius: 8,
-    elevation: 2,
     alignItems: 'flex-start',
   },
   imageGrid: {
@@ -18,9 +14,14 @@ export const styles = StyleSheet.create({
     height: 64,
     marginRight: 14,
     borderRadius: 12,
-    overflow: 'hidden',
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#fff',
+    shadowColor: '#000',
+    shadowOpacity: 0.1608,
+    shadowRadius: 6,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 4,
   },
   singleRow: {
     flex: 1,
@@ -115,7 +116,7 @@ export const styles = StyleSheet.create({
   },
   right: {
     alignItems: 'flex-end',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     height: 64,
   },
   itemBadge: {
@@ -124,6 +125,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 2,
     marginBottom: 6,
+    marginRight: 10,
   },
   itemText: {
     fontSize: 13,

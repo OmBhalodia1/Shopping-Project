@@ -48,6 +48,7 @@ const CartSection: React.FC<CartSectionProps> = ({
 
       <View style={styles.middle}>
         <Text style={styles.subtext}>{subtext}</Text>
+        <Text style={styles.subtext1}>Pink , Size M</Text>
         <View style={styles.priceRow}>
           {discountedPrice !== undefined ? (
             <>

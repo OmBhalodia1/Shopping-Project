@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
 
   imageWrapper: {
     width: 112,
-    height: 100,
+    height: 115,
     borderRadius: 12,
     backgroundColor: '#FFFFFF',
     borderWidth: 3,
@@ -87,10 +87,9 @@ export const styles = StyleSheet.create({
     marginRight: 12,
   },
   subtext: {
-    fontSize: 16,
+    fontSize: 14,
     color: '#222',
     fontWeight: '400',
-    marginBottom: 4,
     fontFamily: 'Nunito-Sans',
     lineHeight: 16,
     letterSpacing: 0,
@@ -98,11 +97,11 @@ export const styles = StyleSheet.create({
   priceRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 8,
-    marginTop: 1,
+    marginBottom: 15,
+    marginTop: 10,
   },
   discountedPrice: {
-    fontSize: 20,
+    fontSize: 17,
     color: '#df4183',
     textDecorationLine: 'line-through',
     fontWeight: '400',
@@ -110,7 +109,7 @@ export const styles = StyleSheet.create({
     opacity: 0.56,
   },
   price: {
-    fontSize: 18,
+    fontSize: 17,
     color: '#202020',
     fontWeight: '700',
     marginRight: 8,

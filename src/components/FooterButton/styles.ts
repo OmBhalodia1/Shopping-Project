@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
     height: 50,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#f9f9f9',
   },
   heartText: {
     fontSize: 27,
@@ -51,10 +51,12 @@ export const styles = StyleSheet.create({
     width: 26,
     height: 26,
     tintColor: 'black',
+    backgroundColor: '#f9f9f9',
   },
   heartIconActive: {
     width: 26,
     height: 26,
     tintColor: 'red',
+    backgroundColor: '#f9f9f9',
   },
 });

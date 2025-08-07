@@ -1,4 +1,10 @@
-import { StyleSheet, View, SafeAreaView, StatusBar } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  SafeAreaView,
+  StatusBar,
+  ScrollView,
+} from 'react-native';
 import React, { useState } from 'react';
 import HeaderShop from '../../components/HeaderShop';
 import Section from '../../components/Section';
@@ -9,7 +15,6 @@ import { styles } from './styles';
 import { DEFAULT_HISTORY } from './data';
 import { DiscoverProducts } from './data';
 import { RECOMMENDATIONS } from './data';
-
 const ShopSearch = () => {
   const [history, setHistory] = useState(DEFAULT_HISTORY);
   const [search, setSearch] = useState('');

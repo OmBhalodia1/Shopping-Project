@@ -1,11 +1,4 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-  FlatList,
-  Image,
-} from 'react-native';
+import { TouchableOpacity, FlatList, Image } from 'react-native';
 import React from 'react';
 import VariationRow from '../VariationRow';
 import { styles } from './styles';

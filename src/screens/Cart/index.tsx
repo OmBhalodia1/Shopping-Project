@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, View, Image } from 'react-native';
+import { ScrollView, Text, View, Image, Platform } from 'react-native';
 import React, { useState } from 'react';
 import Title from '../../components/Title';
 import InfoSection from '../../components/InfoSection';
@@ -119,6 +119,7 @@ const Cart: React.FC<{ navigation: NavigationProp }> = ({ navigation }) => {
           }
           sectionContent={<MostPopularItemList />}
         />
+        <View style={{ paddingBottom: Platform.OS === 'android' ? 40 : 0 }} />
       </ScrollView>
 
       <Section

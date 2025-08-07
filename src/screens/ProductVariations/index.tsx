@@ -64,8 +64,9 @@ const ProductVariations: React.FC<ProductVariationsProps> = ({
 
           <QuantitySelector />
         </View>
+
+        <FooterButton />
       </ScrollView>
-      <FooterButton />
     </BottomSheet>
   );
 };

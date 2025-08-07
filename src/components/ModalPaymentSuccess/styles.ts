@@ -81,6 +81,7 @@ export const styles = StyleSheet.create({
     minHeight: 47,
     flex: 1,
     marginHorizontal: 5,
+    marginBottom: 15,
   },
   buttonText: {
     color: '#202020',

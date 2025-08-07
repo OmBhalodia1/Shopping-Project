@@ -21,33 +21,36 @@ export const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#f2f2f2',
     borderRadius: 999,
     paddingHorizontal: 12,
     paddingVertical: 8,
   },
-  searchInput: {
+  inputRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    flex: 1,
+  },
+  searchText: {
+    fontSize: 16,
+    fontFamily: 'Raleway',
+    fontWeight: '500',
+  },
+  placeholder: {
     flex: 1,
     fontSize: 16,
-    color: '#000000',
     fontFamily: 'Raleway',
-    lineHeight: 21,
-    letterSpacing: -0.16,
     fontWeight: '500',
-    paddingTop: 0,
-    paddingBottom: 0,
+  },
+  clearButton: {
+    paddingHorizontal: 6,
+  },
+  clearText: {
+    fontSize: 18,
+    fontWeight: '600',
   },
   icon: {
     width: 22,
     height: 22,
-    tintColor: 'darkblue',
-  },
-  customText: {
-    color: '#0042E0',
-    fontSize: 20,
-    marginRight: 110,
-  },
-  clearButton: {
-    position: 'relative',
+    marginLeft: 8,
   },
 });

@@ -12,6 +12,7 @@ import { styles } from './styles';
 import CartVouchers from '../CartVouchers';
 import CartFooter from '../../components/CartFooter';
 import CartPaymentMethod from '../CartPaymentMethod';
+import DeliveryOptions2 from '../../components/DeliveryOptions2';
 
 const CartPayment = () => {
   const [appliedVoucher, setAppliedVoucher] = useState<string | null>(null);
@@ -27,7 +28,11 @@ const CartPayment = () => {
         keyboardShouldPersistTaps="handled"
       >
         <View style={styles.innerContainer}>
-          <Title label="Payment" textStyle={{ fontSize: 28 }} />
+          <Section
+            sectionContent={
+              <Title label="Payment" textStyle={{ fontSize: 28 }} />
+            }
+          />
 
           <Section
             sectionContent={
@@ -95,22 +100,14 @@ const CartPayment = () => {
             title={<Title label="Shipping Options" />}
             sectionContent={
               <>
-                <DeliveryOptions
-                  days="5-7"
-                  deliveryType="Standard"
-                  price="Free"
-                />
-                <DeliveryOptions
-                  days="1-2"
-                  deliveryType="Express"
-                  price="$12,00"
-                />
+                <DeliveryOptions2 />
                 <Text style={{ marginLeft: 5, fontSize: 12 }}>
                   Delivered on or before Thursday, 23 April 2020
                 </Text>
               </>
             }
           />
+          <View style={{ marginTop: 10 }} />
 
           <Section
             sectionContent={

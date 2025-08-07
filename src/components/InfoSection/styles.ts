@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 4 },
     shadowRadius: 12,
     elevation: 2,
-    margin: 8,
+    marginVertical: 8,
   },
   label: {
     fontSize: 16,

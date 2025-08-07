@@ -11,6 +11,7 @@ export const styles = StyleSheet.create({
     borderColor: '#004CFF',
     borderRadius: 14,
     padding: 12,
+
     marginBottom: 10,
     justifyContent: 'space-between',
     backgroundColor: '#ffffff',

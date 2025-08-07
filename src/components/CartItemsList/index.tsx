@@ -12,17 +12,20 @@ const CartItemsList: React.FC<CartItemsListProps> = ({
 }) => {
   return (
     <View style={styles.container}>
-      <View style={styles.imageWrapper}>
-        <Image source={imageSource} style={styles.profileImage} />
-        <View style={styles.badgeWrapper}>
-          <View style={styles.badge}>
-            <Text style={styles.badgeText}>1</Text>
+      <View style={{ flexDirection: 'row' }}>
+        <View style={styles.imageWrapper}>
+          <Image source={imageSource} style={styles.profileImage} />
+          <View style={styles.badgeWrapper}>
+            <View style={styles.badge}>
+              <Text style={styles.badgeText}>1</Text>
+            </View>
           </View>
         </View>
+
+        <Text style={styles.text}>
+          Lorem ipsum dolor sit amet{'\n'}consectetur.
+        </Text>
       </View>
-      <Text style={styles.text}>
-        Lorem ipsum dolor sit amet{'\n'}consectetur.
-      </Text>
       <Text style={styles.textPrice}>{price}</Text>
     </View>
   );

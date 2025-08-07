@@ -48,6 +48,7 @@ const ShopClothing: React.FC<{ navigation: NavigationProp }> = ({
     <SafeAreaView style={styles.container}>
       <View style={styles.contentWrapper}>
         <HeaderShop
+          isBlue={true}
           showFilter={showFilter}
           searchText={category}
           onPress={() => navigation.navigate('ShopFilter')}
@@ -56,7 +57,7 @@ const ShopClothing: React.FC<{ navigation: NavigationProp }> = ({
           showsVerticalScrollIndicator={false}
           onScroll={handleScroll}
           scrollEventThrottle={16}
-          contentContainerStyle={{ marginTop: 10 }}
+          contentContainerStyle={{ marginTop: 10, paddingBottom: 65 }}
         >
           <Section
             sectionContent={[

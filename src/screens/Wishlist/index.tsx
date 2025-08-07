@@ -9,6 +9,7 @@ import { styles } from './styles';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../types/RootStackParamList';
 import Section from '../../components/Section';
+import VariationRow from '../../components/VariationRow';
 
 const recentlyViewed = [
   { source: images.RecentlyViewed1 },
@@ -42,20 +43,15 @@ const Wishlist: React.FC<{ navigation: NavigationProp }> = ({ navigation }) => {
         <Title label="Wishlist" textStyle={{ fontSize: 25, marginTop: 10 }} />
         <Section
           title={
-            <Title
-              label="Recently Viewed"
-              rightElement={
-                <ArrowButton
-                  title=""
-                  style={styles.arrowButton}
-                  onPress={() => navigation.navigate('WishlistEmpty')}
-                />
-              }
+            <VariationRow
+              title="Recently Viewed"
+              arrowCircle
+              onPressArrow={() => navigation.navigate('WishlistRecentlyViewed')}
             />
           }
           sectionContent={
             <>
-              <View key="recently-viewed-title"></View>
+              <View style={{ marginTop: 10 }} />
               <ImageRow
                 key="recently-viewed-images"
                 imageList={recentlyViewed}

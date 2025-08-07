@@ -4,7 +4,8 @@ export const styles = StyleSheet.create({
   container: {
     padding: 24,
     backgroundColor: '#FFFFFF',
-    borderRadius: 16,
+    borderTopRightRadius: 16,
+    borderTopLeftRadius: 16,
   },
   header: {
     fontSize: 24,

@@ -4,8 +4,7 @@ export const styles = StyleSheet.create({
   variationRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: 9,
-    marginBottom: 10,
+    justifyContent: 'space-between',
   },
   variationLabel: {
     fontSize: 18,
@@ -32,7 +31,7 @@ export const styles = StyleSheet.create({
     height: 36,
     justifyContent: 'center',
     alignItems: 'center',
-    marginLeft: 112,
+    marginLeft: Platform.OS === 'android' ? 135 : 112,
   },
   variationArrowIcon: {
     color: '#fff',

@@ -4,7 +4,8 @@ export const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 10,
+    paddingVertical: 5,
+    justifyContent: 'space-between',
   },
   imageWrapper: {
     position: 'relative',
@@ -51,12 +52,12 @@ export const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: '400',
     color: '#000',
+    marginTop: 14,
     marginLeft: 14,
   },
   textPrice: {
     fontSize: 20,
     fontWeight: '700',
     color: '#000',
-    marginLeft: 36,
   },
 });
