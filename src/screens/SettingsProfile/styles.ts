@@ -34,12 +34,14 @@ export const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 4 },
   },
   profilePic: {
+    elevation: 4,
     width: 120,
     height: 120,
     borderRadius: 60,
     borderWidth: 8,
     borderColor: '#FFFFFF',
     backgroundColor: '#eaeaff',
+    zIndex: -1,
   },
   editIconWrapper: {
     position: 'absolute',

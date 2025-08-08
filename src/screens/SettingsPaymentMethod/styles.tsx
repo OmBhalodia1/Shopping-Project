@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   safeArea: {
@@ -13,7 +13,6 @@ export const styles = StyleSheet.create({
   },
   cardRow: {
     flexDirection: 'row',
-    alignItems: 'stretch',
     marginRight: 12,
   },
   card: {
@@ -22,8 +21,8 @@ export const styles = StyleSheet.create({
     backgroundColor: '#F1F4FE',
     borderRadius: 20,
     padding: 20,
-    marginRight: 14,
     justifyContent: 'space-between',
+    marginRight: Platform.OS === 'android' ? 30 : 18,
   },
   topRow: {
     flexDirection: 'row',

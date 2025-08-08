@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#fff',
     flex: 1,
     paddingHorizontal: 20,
-    paddingBottom: 20,
+    paddingBottom: Platform.OS === 'android' ? 200 : 20,
   },
   header: {
     fontSize: 28,
@@ -42,9 +42,9 @@ export const styles = StyleSheet.create({
   },
   delete: {
     color: '#D97474',
-    marginTop: 32,
+    marginTop: 30,
     fontSize: 15,
-    marginBottom: 40,
+    marginBottom: 30,
     textAlign: 'left',
   },
   footer: {

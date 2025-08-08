@@ -27,6 +27,7 @@ const SettingsShippingAddress: React.FC<{ navigation: NavigationProp }> = ({
       <View style={styles.innerContainer}>
         <Title label="Settings" textStyle={{ fontSize: 28 }} />
         <Title label="Shipping Address" textStyle={{ fontWeight: '300' }} />
+        <View style={{ marginTop: 10 }} />
         <Section
           title={
             <Title
@@ -50,7 +51,7 @@ const SettingsShippingAddress: React.FC<{ navigation: NavigationProp }> = ({
             </TouchableOpacity>
           }
         />
-
+        <View style={{ marginTop: 10 }} />
         <Section
           sectionContent={
             <>

@@ -58,43 +58,46 @@ const SettingsPaymentMethod = () => {
           <>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               <View style={styles.cardRow}>
-                {cards.map(card => (
+                <View>
+                  {cards.map(card => (
+                    <TouchableOpacity
+                      key={card.id}
+                      style={styles.card}
+                      onPress={() => handleEditCard(card)}
+                    >
+                      <View style={styles.topRow}>
+                        <Image
+                          source={
+                            card.brand === 'mastercard'
+                              ? images.MasterCard
+                              : images.VisaCard
+                          }
+                          style={styles.mastercardLogo}
+                        />
+                        <TouchableOpacity onPress={() => handleEditCard(card)}>
+                          <Image source={icons.settings2} />
+                        </TouchableOpacity>
+                      </View>
+
+                      <Text style={styles.cardNumber}>
+                        **** **** **** {card.last4}
+                      </Text>
+
+                      <View style={styles.cardFooter}>
+                        <Text style={styles.cardName}>{card.name}</Text>
+                        <Text style={styles.cardExpiry}>{card.expiry}</Text>
+                      </View>
+                    </TouchableOpacity>
+                  ))}
+                </View>
+                <View>
                   <TouchableOpacity
-                    key={card.id}
-                    style={styles.card}
-                    onPress={() => handleEditCard(card)}
+                    style={styles.addButton}
+                    onPress={handleAddCard}
                   >
-                    <View style={styles.topRow}>
-                      <Image
-                        source={
-                          card.brand === 'mastercard'
-                            ? images.MasterCard
-                            : images.VisaCard
-                        }
-                        style={styles.mastercardLogo}
-                      />
-                      <TouchableOpacity onPress={() => handleEditCard(card)}>
-                        <Image source={icons.settings2} />
-                      </TouchableOpacity>
-                    </View>
-
-                    <Text style={styles.cardNumber}>
-                      **** **** **** {card.last4}
-                    </Text>
-
-                    <View style={styles.cardFooter}>
-                      <Text style={styles.cardName}>{card.name}</Text>
-                      <Text style={styles.cardExpiry}>{card.expiry}</Text>
-                    </View>
+                    <Text style={styles.addButtonText}>+</Text>
                   </TouchableOpacity>
-                ))}
-
-                <TouchableOpacity
-                  style={styles.addButton}
-                  onPress={handleAddCard}
-                >
-                  <Text style={styles.addButtonText}>+</Text>
-                </TouchableOpacity>
+                </View>
               </View>
             </ScrollView>
           </>
