@@ -32,7 +32,10 @@ export const styles = StyleSheet.create({
     minWidth: 98,
     marginRight: 6,
   },
-  daysBadgeWrap: { flexDirection: 'row', marginRight: 8 },
+  daysBadgeWrap: {
+    flexDirection: 'row',
+    marginRight: 8,
+  },
   daysBadge: {
     color: '#0260E8',
     backgroundColor: '#F5F8FF',

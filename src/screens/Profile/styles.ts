@@ -81,11 +81,7 @@ export const styles = StyleSheet.create({
     marginTop: 18,
     marginBottom: 12,
   },
-  storiesRow: {
-    flexDirection: 'row',
-    marginBottom: 12,
-    shadowRadius: 3,
-  },
+
   orderRow: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
@@ -105,7 +101,6 @@ export const styles = StyleSheet.create({
     lineHeight: 21,
     fontWeight: '400',
   },
-  storyImage: { width: 110, height: 180, borderRadius: 16 },
   greenDot: {
     width: 10,
     height: 10,

@@ -1,0 +1,13 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/Nunito-Sans.ttf",
+      "sha1": "f0b973155b2836a02d172a742fb780a5abaf2c08"
+    },
+    {
+      "path": "src/assets/fonts/Raleway.ttf",
+      "sha1": "ab21b55115bd50a57f3a95ec4eda834eee675d04"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   View,
   Text,
@@ -14,6 +14,7 @@ import { styles } from './styles';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../types/RootStackParamList';
 import Section from '../../components/Section';
+import ProfileStoriesSection from '../../components/ProfileStoriesSection';
 
 const recentlyViewed = [
   { source: images.RecentlyViewed1 },
@@ -22,12 +23,7 @@ const recentlyViewed = [
   { source: images.RecentlyViewed4 },
   { source: images.RecentlyViewed5 },
 ];
-const stories = [
-  images.Stories1,
-  images.Stories2,
-  images.Stories3,
-  images.Stories3,
-];
+
 type NavigationProp = StackNavigationProp<
   RootStackParamList,
   'BottomTabNavigator'
@@ -96,47 +92,59 @@ export const Profile: React.FC<{ navigation: NavigationProp }> = ({
         <Section
           sectionContent={
             <>
-              <Text style={styles.sectionTitle}>Recently viewed</Text>
-              <ImageRow imageList={recentlyViewed} />
+              <Section
+                sectionContent={
+                  <>
+                    <Text style={styles.sectionTitle}>Recently viewed</Text>
+                    <ImageRow imageList={recentlyViewed} />
+                  </>
+                }
+              />
 
-              <Text style={styles.sectionTitle}>My Orders</Text>
-              <View style={styles.orderRow}>
-                <TouchableOpacity style={styles.orderBtn}>
-                  <Text style={styles.orderBtnText}>To Pay</Text>
-                </TouchableOpacity>
+              <Section
+                sectionContent={
+                  <>
+                    <Text style={styles.sectionTitle}>My Orders</Text>
+                    <View style={styles.orderRow}>
+                      <TouchableOpacity style={styles.orderBtn}>
+                        <Text style={styles.orderBtnText}>To Pay</Text>
+                      </TouchableOpacity>
 
-                <View style={{ position: 'relative' }}>
-                  <TouchableOpacity
-                    style={styles.orderBtn}
-                    onPress={() => navigation.navigate('ProfileToReceive')}
-                  >
-                    <Text style={styles.orderBtnText}>To Receive</Text>
-                  </TouchableOpacity>
-                  <View style={styles.whiteCircle} />
-                  <View style={styles.greenDot} />
-                </View>
+                      <View style={{ position: 'relative' }}>
+                        <TouchableOpacity
+                          style={styles.orderBtn}
+                          onPress={() =>
+                            navigation.navigate('ProfileToReceive')
+                          }
+                        >
+                          <Text style={styles.orderBtnText}>To Receive</Text>
+                        </TouchableOpacity>
+                        <View style={styles.whiteCircle} />
+                        <View style={styles.greenDot} />
+                      </View>
 
-                <TouchableOpacity
-                  style={styles.orderBtn}
-                  onPress={() => navigation.navigate('ProfileHistory')}
-                >
-                  <Text style={styles.orderBtnText}>To Review</Text>
-                </TouchableOpacity>
-              </View>
+                      <TouchableOpacity
+                        style={styles.orderBtn}
+                        onPress={() => navigation.navigate('ProfileHistory')}
+                      >
+                        <Text style={styles.orderBtnText}>To Review</Text>
+                      </TouchableOpacity>
+                    </View>
+                  </>
+                }
+              />
             </>
           }
         />
 
-        <Text style={styles.sectionTitle}>Stories</Text>
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          style={styles.storiesRow}
-        >
-          {stories.map((img, idx) => (
-            <Image key={idx} source={img} style={styles.storyImage} />
-          ))}
-        </ScrollView>
+        <Section
+          sectionContent={
+            <>
+              <Text style={styles.sectionTitle}>Stories</Text>
+              <ProfileStoriesSection />
+            </>
+          }
+        />
       </ScrollView>
     </SafeAreaView>
   );

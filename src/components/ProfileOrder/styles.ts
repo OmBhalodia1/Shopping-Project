@@ -4,16 +4,16 @@ export const styles = StyleSheet.create({
   card: {
     flexDirection: 'row',
     backgroundColor: '#fff',
-    padding: 14,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
     borderRadius: 16,
-    marginVertical: 10,
     alignItems: 'flex-start',
   },
   imageGrid: {
-    width: 64,
-    height: 64,
+    width: 75,
+    height: 75,
     marginRight: 14,
-    borderRadius: 12,
+    borderRadius: 14,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#fff',
@@ -33,6 +33,7 @@ export const styles = StyleSheet.create({
   singleImage: {
     width: 64,
     height: 64,
+    borderRadius: 10,
   },
   twoRow: {
     flexDirection: 'row',

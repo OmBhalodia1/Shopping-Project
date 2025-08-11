@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
     alignItems: 'flex-start',
   },
   image: {
-    width: 160,
+    width: '100%',
     height: 160,
     borderRadius: 10,
     alignSelf: 'center',

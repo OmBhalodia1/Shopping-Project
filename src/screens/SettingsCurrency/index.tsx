@@ -29,7 +29,15 @@ const SettingsCurrency = () => {
         <Section
           sectionContent={
             <>
-              <Title label="Currency" textStyle={styles.title2} />
+              <Text
+                style={{
+                  fontWeight: '400',
+                  fontSize: 20,
+                  marginBottom: 10,
+                }}
+              >
+                Currency
+              </Text>
 
               <View style={{ marginTop: 16 }}>
                 {CURRENCY.map((item, idx) => {

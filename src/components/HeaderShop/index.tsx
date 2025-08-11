@@ -38,36 +38,37 @@ const HeaderShop: React.FC<HeaderShopProps> = ({
       <View
         style={[
           styles.searchContainer,
-          { flexDirection: 'row', alignItems: 'center' },
+          {
+            flexDirection: 'row',
+          },
           isBlue
             ? { backgroundColor: '#E8EDFF' }
             : { backgroundColor: '#f2f2f2' },
         ]}
       >
-        <TextInput
-          style={[
-            { flex: 1 },
-            isBlue ? { color: '#0042E0' } : { color: '#000' },
-          ]}
-          placeholder="Search"
-          placeholderTextColor={isBlue ? '#0042E0' : '#C7C7C7'}
-          value={input}
-          onChangeText={setInput}
-          onSubmitEditing={handleSubmit}
-        />
+        <View style={{ flexDirection: 'row' }}>
+          <TextInput
+            style={[isBlue ? { color: '#0042E0' } : { color: '#000' }]}
+            placeholder="Search"
+            placeholderTextColor={isBlue ? '#0042E0' : '#C7C7C7'}
+            value={input}
+            onChangeText={setInput}
+            onSubmitEditing={handleSubmit}
+          />
 
-        {input.length > 0 && (
-          <TouchableOpacity onPress={handleClear} style={styles.clearButton}>
-            <Text
-              style={[
-                styles.clearText,
-                isBlue ? { color: '#0042E0' } : { color: '#000' },
-              ]}
-            >
-              ×
-            </Text>
-          </TouchableOpacity>
-        )}
+          {input.length > 0 && (
+            <TouchableOpacity onPress={handleClear} style={styles.clearButton}>
+              <Text
+                style={[
+                  styles.clearText,
+                  isBlue ? { color: '#0042E0' } : { color: '#000' },
+                ]}
+              >
+                ×
+              </Text>
+            </TouchableOpacity>
+          )}
+        </View>
 
         <TouchableOpacity>
           <Image

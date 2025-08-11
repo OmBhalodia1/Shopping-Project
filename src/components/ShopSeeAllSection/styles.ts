@@ -19,6 +19,7 @@ export const styles = StyleSheet.create({
     color: '#222',
     marginRight: 10,
     fontWeight: '600',
+    fontFamily: 'Raleway',
   },
   arrowCircle: {
     backgroundColor: '#0F4BFF',

@@ -17,22 +17,34 @@ const CartVouchers: React.FC<CartVouchersProps> = ({
 }) => {
   return (
     <BottomSheet isOpen={isOpen} onClose={onClose}>
-      <View style={styles.container}>
-        <Text style={styles.activeVouchers}>Active Vouchers</Text>
-        <VoucherCard
-          label="Voucher"
-          validUntil="5.16.20"
-          title="First Purchase"
-          subtitle="5% off for your next order"
-          onApply={onApplyVoucher}
-        />
-        <VoucherCard
-          label="Voucher"
-          validUntil="6.20.20"
-          title="Gift From Customer Care"
-          subtitle="15% off your next purchase"
-          onApply={onApplyVoucher}
-        />
+      <View
+        style={{
+          backgroundColor: '#FFFFFF',
+          borderTopRightRadius: 16,
+          borderTopLeftRadius: 16,
+        }}
+      >
+        <View style={styles.container}>
+          <Text style={styles.activeVouchers}>Active Vouchers</Text>
+        </View>
+        <View style={{ paddingHorizontal: 16, paddingTop: 10 }}>
+          <VoucherCard
+            label="Voucher"
+            isButtonRed
+            validUntil="5.16.20"
+            title="First Purchase"
+            subtitle="5% off for your next order"
+            onApply={onApplyVoucher}
+          />
+          <VoucherCard
+            isButtonRed
+            label="Voucher"
+            validUntil="6.20.20"
+            title="Gift From Customer Care"
+            subtitle="15% off your next purchase"
+            onApply={onApplyVoucher}
+          />
+        </View>
       </View>
     </BottomSheet>
   );

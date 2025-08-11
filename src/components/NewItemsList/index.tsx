@@ -31,7 +31,11 @@ const ProductCard: React.FC<{ image: any; name: string; price: string }> = ({
 
 const NewItemsList: React.FC<NewItemsListProps> = ({ products }) => {
   return (
-    <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+    <ScrollView
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      contentContainerStyle={{ columnGap: 10 }}
+    >
       {products.map(item => (
         <ProductCard
           key={item.id}

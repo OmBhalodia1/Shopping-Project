@@ -22,6 +22,7 @@ export const styles = StyleSheet.create({
   voucherLabel: {
     fontSize: 19,
     fontWeight: 'bold',
+    fontFamily: 'Raleway',
   },
   redText: {
     color: '#DD7E7E',
@@ -40,6 +41,7 @@ export const styles = StyleSheet.create({
     borderRadius: 6,
     fontSize: 14,
     marginLeft: 6,
+    fontFamily: 'Raleway',
   },
   redValidUntil: {
     color: '#A05B5B',

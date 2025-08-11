@@ -11,6 +11,7 @@ type VoucherCardProps = {
   title: string;
   subtitle: string;
   mode?: Mode;
+  isButtonRed?: boolean;
   isCollected?: boolean;
   daysLeft?: string;
   onApply?: (voucher: { title: string }) => void;
@@ -25,6 +26,7 @@ const VoucherCard: React.FC<VoucherCardProps> = ({
   isCollected = false,
   daysLeft,
   onApply,
+  isButtonRed,
 }) => {
   let icon = icons.activeVoucher;
   if (title === 'Gift From Customer Care') icon = icons.voucherGift;
@@ -43,7 +45,14 @@ const VoucherCard: React.FC<VoucherCardProps> = ({
         >
           {label}
         </Text>
-        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+        <View
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            borderRadius: 6,
+            backgroundColor: isButtonRed ? '#FFEBEB' : '#F9F9F9',
+          }}
+        >
           {isRed && daysLeft && (
             <Text style={styles.redDaysLeft}>{daysLeft} left</Text>
           )}

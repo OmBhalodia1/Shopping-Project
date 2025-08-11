@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
   searchContainer: {
     flex: 1,
     flexDirection: 'row',
-    alignItems: 'center',
+    justifyContent: 'space-between',
     borderRadius: 999,
     paddingHorizontal: 12,
     paddingVertical: 8,
@@ -42,7 +42,7 @@ export const styles = StyleSheet.create({
     fontWeight: '500',
   },
   clearButton: {
-    paddingHorizontal: 6,
+    paddingHorizontal: 10,
   },
   clearText: {
     fontSize: 18,

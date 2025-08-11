@@ -105,7 +105,7 @@ const ShopScreen: React.FC<{ navigation: NavigationProp }> = ({
             </View>
           }
         />
-
+        <View style={{ marginTop: 10 }} />
         <Section
           title={
             <Title label="Most Popular" rightElement={<ShopSeeAllSection />} />

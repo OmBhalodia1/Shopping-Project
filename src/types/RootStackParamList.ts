@@ -13,6 +13,7 @@ export type RootStackParamList = {
   CategoriesFilter: undefined;
   ShopSearch: undefined;
   ShopFilter: undefined;
+  ShopReviews: undefined;
   ProductVariations: undefined;
   Reviews: undefined;
   ShopClothing: {

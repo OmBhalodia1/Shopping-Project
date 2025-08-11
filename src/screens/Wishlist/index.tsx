@@ -40,7 +40,10 @@ const Wishlist: React.FC<{ navigation: NavigationProp }> = ({ navigation }) => {
       showsVerticalScrollIndicator={false}
     >
       <View style={styles.innerContainer}>
-        <Title label="Wishlist" textStyle={{ fontSize: 25, marginTop: 10 }} />
+        <Title
+          label="Wishlist"
+          textStyle={{ fontSize: 25, marginTop: 20, marginBottom: 10 }}
+        />
         <Section
           title={
             <VariationRow

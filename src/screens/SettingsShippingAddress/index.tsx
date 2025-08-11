@@ -26,14 +26,27 @@ const SettingsShippingAddress: React.FC<{ navigation: NavigationProp }> = ({
     <SafeAreaView style={styles.container}>
       <View style={styles.innerContainer}>
         <Title label="Settings" textStyle={{ fontSize: 28 }} />
-        <Title label="Shipping Address" textStyle={{ fontWeight: '300' }} />
+        <Text
+          style={{
+            fontWeight: '400',
+            fontSize: 20,
+            marginVertical: 10,
+          }}
+        >
+          Shipping Address
+        </Text>{' '}
         <View style={{ marginTop: 10 }} />
         <Section
           title={
-            <Title
-              label="Country"
-              textStyle={{ fontSize: 20, fontWeight: '300' }}
-            />
+            <Text
+              style={{
+                fontWeight: '400',
+                fontSize: 20,
+                marginTop: 10,
+              }}
+            >
+              Country
+            </Text>
           }
           sectionContent={
             <TouchableOpacity
@@ -88,7 +101,6 @@ const SettingsShippingAddress: React.FC<{ navigation: NavigationProp }> = ({
             </>
           }
         />
-
         <Section
           sectionContent={
             <>

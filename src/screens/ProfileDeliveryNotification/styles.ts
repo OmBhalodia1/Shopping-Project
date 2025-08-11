@@ -1,7 +1,12 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-  header: { padding: 20, backgroundColor: '#F8FAFF' },
+  header: {
+    padding: 20,
+    backgroundColor: '#F8FAFF',
+    borderTopLeftRadius: 16,
+    borderTopRightRadius: 16,
+  },
   headerText: {
     fontFamily: 'Raleway',
     fontWeight: '700',

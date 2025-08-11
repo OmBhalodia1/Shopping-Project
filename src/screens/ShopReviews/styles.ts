@@ -9,6 +9,6 @@ export const styles = StyleSheet.create({
   },
   scrollContent: {
     paddingBottom: 20,
-    paddingHorizontal: 10,
+    paddingHorizontal: 20,
   },
 });

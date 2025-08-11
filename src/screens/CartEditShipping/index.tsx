@@ -36,55 +36,60 @@ const CartEditShipping: React.FC<CartEditShippingProps> = ({
         <View
           style={{
             backgroundColor: '#F8FAFF',
+            padding: 10,
+            paddingHorizontal: 20,
+            borderTopLeftRadius: 16,
+            borderTopRightRadius: 16,
           }}
         >
           <Text style={styles.header}>Shipping Address</Text>
         </View>
-
-        <Text style={styles.label}>Country</Text>
-        <View style={styles.disabledField}>
-          <Text style={styles.disabledText}>India</Text>
-          <View style={styles.arrowCircle}>
-            <Text style={styles.arrow}>→</Text>
+        <View style={{ paddingHorizontal: 20 }}>
+          <Text style={styles.label}>Country</Text>
+          <View style={styles.disabledField}>
+            <Text style={styles.disabledText}>India</Text>
+            <View style={styles.arrowCircle}>
+              <Text style={styles.arrow}>→</Text>
+            </View>
           </View>
-        </View>
 
-        <Section
-          sectionContent={
-            <>
-              <Text style={styles.label}>Address</Text>
-              <TextInput
-                style={styles.input}
-                placeholder="Enter your address"
-                value={address}
-                onChangeText={setAddress}
-                autoCorrect={false}
-              />
+          <Section
+            sectionContent={
+              <>
+                <Text style={styles.label}>Address</Text>
+                <TextInput
+                  style={styles.input}
+                  placeholder="Enter your address"
+                  value={address}
+                  onChangeText={setAddress}
+                  autoCorrect={false}
+                />
 
-              <Text style={styles.label}>Town / City</Text>
-              <TextInput
-                style={styles.input}
-                placeholder="Enter your city"
-                value={city}
-                onChangeText={setCity}
-                autoCorrect={false}
-              />
+                <Text style={styles.label}>Town / City</Text>
+                <TextInput
+                  style={styles.input}
+                  placeholder="Enter your city"
+                  value={city}
+                  onChangeText={setCity}
+                  autoCorrect={false}
+                />
 
-              <Text style={styles.label}>Postcode</Text>
-              <TextInput
-                style={styles.input}
-                placeholder="Enter your postcode"
-                value={postcode}
-                onChangeText={setPostcode}
-                keyboardType="numeric"
-                autoCorrect={false}
-              />
-            </>
-          }
-        />
+                <Text style={styles.label}>Postcode</Text>
+                <TextInput
+                  style={styles.input}
+                  placeholder="Enter your postcode"
+                  value={postcode}
+                  onChangeText={setPostcode}
+                  keyboardType="numeric"
+                  autoCorrect={false}
+                />
+              </>
+            }
+          />
 
-        <View style={{ marginTop: 10 }}>
-          <Button title="Save Changes" onPress={handleSave} />
+          <View style={{ marginTop: 10 }}>
+            <Button title="Save Changes" onPress={handleSave} />
+          </View>
         </View>
       </View>
     </BottomSheet>

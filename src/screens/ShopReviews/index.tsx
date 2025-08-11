@@ -14,7 +14,9 @@ const ShopReviews = () => {
         <Section
           title={<Title label="Reviews" />}
           sectionContent={reviewData.map((stars, index) => (
-            <ReviewsComponent starCount={stars} key={index} />
+            <View style={{ marginTop: 10 }}>
+              <ReviewsComponent starCount={stars} key={index} />
+            </View>
           ))}
         />
       </ScrollView>

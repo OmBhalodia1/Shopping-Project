@@ -40,14 +40,15 @@ const SettingsCountry = () => {
         <Section
           sectionContent={
             <>
-              <Title
-                label="Country"
-                textStyle={{
-                  fontWeight: '300',
+              <Text
+                style={{
+                  fontWeight: '400',
                   fontSize: 20,
-                  marginBottom: 10,
+                  marginVertical: 10,
                 }}
-              />
+              >
+                Country
+              </Text>
               <View style={styles.pickerBox}>
                 <Text style={styles.pickerText}>{selectedCountry}</Text>
                 <Image

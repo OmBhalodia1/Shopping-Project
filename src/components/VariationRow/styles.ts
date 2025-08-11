@@ -18,6 +18,7 @@ export const styles = StyleSheet.create({
     marginRight: 8,
     paddingHorizontal: 12,
     paddingVertical: 6,
+    marginTop: 5,
   },
   variationValue: {
     fontSize: 15.5,

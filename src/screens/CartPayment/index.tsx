@@ -72,7 +72,7 @@ const CartPayment = () => {
                     height: 35,
                     width: 120,
                     marginTop: 10,
-                    borderRadius: 11,
+                    borderRadius: 12,
                   }}
                   onPress={() => {
                     if (!appliedVoucher) {

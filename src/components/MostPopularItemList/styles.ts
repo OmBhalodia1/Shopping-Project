@@ -4,6 +4,7 @@ export const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
     paddingBottom: 10,
+    paddingTop: 5,
   },
   shadowWrapper: {
     width: CARD_WIDTH,
@@ -37,6 +38,7 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 14,
     color: '#222',
+    fontFamily: 'Raleway',
   },
   heart: {
     color: '#0042E0',
@@ -46,5 +48,6 @@ export const styles = StyleSheet.create({
     fontSize: 14,
     color: '#555',
     fontWeight: '500',
+    fontFamily: 'Nunito-Sans',
   },
 });

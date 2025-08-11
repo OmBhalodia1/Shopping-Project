@@ -5,7 +5,8 @@ export const styles = StyleSheet.create({
     backgroundColor: '#FFF',
   },
   card: {
-    padding: 20,
+    paddingHorizontal: 20,
+    paddingTop: 20,
     backgroundColor: '#FFF',
     borderRadius: 16,
   },

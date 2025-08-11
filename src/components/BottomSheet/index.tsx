@@ -1,5 +1,6 @@
 import React, { ReactNode, Ref, useEffect, useRef } from 'react';
 import ActionSheet, { ActionSheetRef } from 'react-native-actions-sheet';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 type BottomSheetProps = Readonly<{
   isOpen: boolean;
@@ -13,6 +14,7 @@ export default function BottomSheet({
   children,
 }: BottomSheetProps) {
   const actionSheetRef = useRef<ActionSheetRef>(null);
+  const insets = useSafeAreaInsets();
 
   useEffect(() => {
     if (isOpen) {
@@ -26,7 +28,12 @@ export default function BottomSheet({
     <ActionSheet
       ref={actionSheetRef}
       onClose={onClose}
-      containerStyle={{ backgroundColor: 'transparent' }}
+      safeAreaInsets={{ ...insets, bottom: 0 }}
+      containerStyle={{
+        backgroundColor: 'white',
+        paddingBottom: insets.bottom,
+      }}
+      useBottomSafeAreaPadding={false}
     >
       {children}
     </ActionSheet>

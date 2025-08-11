@@ -34,10 +34,8 @@ export const styles = StyleSheet.create({
   alphaHeader: {
     backgroundColor: '#F6F6FA',
     borderRadius: 10,
-    marginHorizontal: 14,
     paddingVertical: 6,
-    marginTop: 10,
-    marginBottom: 3,
+    marginVertical: 13,
     width: 60,
     alignItems: 'center',
   },
@@ -50,13 +48,14 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingHorizontal: 26,
-    paddingVertical: 14,
+    paddingHorizontal: 5,
+    paddingVertical: 7,
     borderRadius: 10,
   },
   countryText: {
     fontSize: 18,
     color: '#222',
     fontWeight: '400',
+    fontFamily: 'Nunito-Sans',
   },
 });
