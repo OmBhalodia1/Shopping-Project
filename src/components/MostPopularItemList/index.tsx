@@ -12,25 +12,27 @@ const products = [
 
 export default function MostPopularItemList() {
   return (
-    <View style={styles.container}>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        {products.map(item => (
-          <TouchableOpacity key={item.id} style={styles.shadowWrapper}>
-            <View style={styles.card}>
-              <Image source={item.image} resizeMode="cover" />
-              <View style={styles.infoRow}>
-                <Text style={styles.points}>1780</Text>
-                <Image
-                  source={images.Heart}
-                  style={{ tintColor: 'blue' }}
-                  resizeMode="contain"
-                />
-                <Text style={styles.label}>{item.label}</Text>
-              </View>
+    <ScrollView
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      style={{ overflow: 'visible' }}
+    >
+      {products.map(item => (
+        <TouchableOpacity key={item.id} style={styles.shadowWrapper}>
+          <View style={styles.card}>
+            <Image source={item.image} resizeMode="cover" />
+            <View style={styles.infoRow}>
+              <Text style={styles.points}>1780</Text>
+              <Image
+                source={images.Heart}
+                style={{ tintColor: 'blue' }}
+                resizeMode="contain"
+              />
+              <Text style={styles.label}>{item.label}</Text>
             </View>
-          </TouchableOpacity>
-        ))}
-      </ScrollView>
-    </View>
+          </View>
+        </TouchableOpacity>
+      ))}
+    </ScrollView>
   );
 }

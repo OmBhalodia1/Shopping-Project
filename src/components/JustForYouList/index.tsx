@@ -1,5 +1,12 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  StyleProp,
+  ViewStyle,
+} from 'react-native';
 import { styles } from './styles';
 
 type Product = {
@@ -17,15 +24,16 @@ type NewItemsListProps = {
 const ProductCard: React.FC<{
   product: Product;
   onPress?: () => void;
-}> = ({ product, onPress }) => (
-  <TouchableOpacity style={styles.card} onPress={onPress}>
+  style?: StyleProp<ViewStyle>;
+}> = ({ product, onPress, style }) => (
+  <TouchableOpacity style={[styles.card, style]} onPress={onPress}>
     <View style={styles.shadow}>
       <Image source={product.image} style={styles.image} resizeMode="cover" />
-      <Text style={styles.name} numberOfLines={2}>
-        {product.name}
-      </Text>
-      <Text style={styles.price}>{product.price}</Text>
     </View>
+    <Text style={styles.name} numberOfLines={2}>
+      {product.name}
+    </Text>
+    <Text style={styles.price}>{product.price}</Text>
   </TouchableOpacity>
 );
 
@@ -35,11 +43,12 @@ const JustForYouList: React.FC<NewItemsListProps> = ({
 }) => {
   return (
     <View style={styles.container}>
-      {products.map(item => (
+      {products.map((item, index) => (
         <ProductCard
           key={item.id}
           product={item}
           onPress={() => onProductPress?.(item)}
+          style={index % 2 === 0 ? {} : { paddingRight: 0 }}
         />
       ))}
     </View>

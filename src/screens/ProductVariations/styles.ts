@@ -7,8 +7,8 @@ export const styles = StyleSheet.create({
   card: {
     paddingHorizontal: 20,
     paddingTop: 20,
-    backgroundColor: '#FFF',
-    borderRadius: 16,
+    // backgroundColor: '#FFF',
+    // borderRadius: 16,
   },
   image: {
     width: 70,

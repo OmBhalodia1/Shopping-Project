@@ -20,8 +20,8 @@ const CartVouchers: React.FC<CartVouchersProps> = ({
       <View
         style={{
           backgroundColor: '#FFFFFF',
-          borderTopRightRadius: 16,
-          borderTopLeftRadius: 16,
+          // borderTopRightRadius: 16,
+          // borderTopLeftRadius: 16,
         }}
       >
         <View style={styles.container}>

@@ -38,11 +38,13 @@ const ShopScreen: React.FC<{ navigation: NavigationProp }> = ({
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={{ paddingHorizontal: 20 }}
+        stickyHeaderIndices={[0]}
       >
+        <HeaderShop onSubmit={() => navigation.navigate('ShopSearch')} />
+
         <Section
           sectionContent={
             <>
-              <HeaderShop onSubmit={() => navigation.navigate('ShopSearch')} />
               <View style={styles.bannerWrapper}>
                 <Image
                   source={images.BigSale1}
@@ -84,7 +86,7 @@ const ShopScreen: React.FC<{ navigation: NavigationProp }> = ({
             />
           }
         />
-        <View style={{ marginTop: 10 }} />
+
         <Section
           title={<Title label="Top Products" />}
           sectionContent={<ImageRow imageList={TopProducts} />}
@@ -99,13 +101,9 @@ const ShopScreen: React.FC<{ navigation: NavigationProp }> = ({
 
         <Section
           title={<Title label="Flash Sale" rightElement={<TitleTimer />} />}
-          sectionContent={
-            <View style={{ marginTop: 5 }}>
-              <FlashSaleImageGrid />
-            </View>
-          }
+          sectionContent={<FlashSaleImageGrid />}
         />
-        <View style={{ marginTop: 10 }} />
+
         <Section
           title={
             <Title label="Most Popular" rightElement={<ShopSeeAllSection />} />

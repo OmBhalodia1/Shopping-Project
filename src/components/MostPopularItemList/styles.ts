@@ -1,11 +1,6 @@
 import { StyleSheet, Dimensions } from 'react-native';
 const CARD_WIDTH = Dimensions.get('window').width * 0.28;
 export const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#fff',
-    paddingBottom: 10,
-    paddingTop: 5,
-  },
   shadowWrapper: {
     width: CARD_WIDTH,
     borderRadius: 12,
@@ -16,7 +11,6 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.102,
     shadowRadius: 8,
     marginBottom: 8,
-    marginTop: 3,
     elevation: 3,
   },
   card: {

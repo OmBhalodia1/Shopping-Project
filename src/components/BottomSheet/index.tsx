@@ -32,6 +32,7 @@ export default function BottomSheet({
       containerStyle={{
         backgroundColor: 'white',
         paddingBottom: insets.bottom,
+        overflow: 'hidden',
       }}
       useBottomSafeAreaPadding={false}
     >
