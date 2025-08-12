@@ -4,14 +4,11 @@ export const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    // columnGap: 10,
     rowGap: 5,
   },
   card: {
     width: '50%',
-    // backgroundColor: '#fff',
     alignItems: 'flex-start',
-    paddingRight: 20,
   },
   shadow: {
     width: '100%',
@@ -26,11 +23,9 @@ export const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
-    // height: 'auto',
     borderRadius: 10,
     borderWidth: 4,
     borderColor: '#FFFFFF',
-    // alignSelf: 'center',
   },
   name: {
     marginTop: 8,

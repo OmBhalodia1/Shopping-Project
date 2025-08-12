@@ -48,7 +48,11 @@ const JustForYouList: React.FC<NewItemsListProps> = ({
           key={item.id}
           product={item}
           onPress={() => onProductPress?.(item)}
-          style={index % 2 === 0 ? {} : { paddingRight: 0 }}
+          style={
+            index % 2 === 0
+              ? { paddingRight: 10 }
+              : { paddingRight: 0, paddingLeft: 10 }
+          }
         />
       ))}
     </View>
