@@ -70,7 +70,7 @@ const HeaderShop: React.FC<HeaderShopProps> = ({
           )}
         </View>
 
-        <TouchableOpacity>
+        <TouchableOpacity style={{ alignSelf: 'center' }}>
           <Image
             source={icons.camera}
             style={[

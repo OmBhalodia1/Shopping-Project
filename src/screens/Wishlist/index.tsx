@@ -54,7 +54,6 @@ const Wishlist: React.FC<{ navigation: NavigationProp }> = ({ navigation }) => {
           }
           sectionContent={
             <>
-              <View style={{ marginTop: 10 }} />
               <ImageRow
                 key="recently-viewed-images"
                 imageList={recentlyViewed}

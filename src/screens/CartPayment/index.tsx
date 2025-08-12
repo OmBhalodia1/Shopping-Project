@@ -24,7 +24,7 @@ const CartPayment = () => {
       <ScrollView
         style={styles.container}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ flexGrow: 1 }}
+        contentContainerStyle={{ flexGrow: 1, paddingBottom: 10 }}
         keyboardShouldPersistTaps="handled"
       >
         <View style={styles.innerContainer}>
