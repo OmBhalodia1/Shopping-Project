@@ -14,6 +14,7 @@ export const styles = StyleSheet.create({
   cardRow: {
     flexDirection: 'row',
     marginRight: 12,
+    gap: 18,
   },
   card: {
     width: 280,
@@ -22,7 +23,6 @@ export const styles = StyleSheet.create({
     borderRadius: 20,
     padding: 20,
     justifyContent: 'space-between',
-    marginRight: Platform.OS === 'android' ? 30 : 18,
   },
   topRow: {
     flexDirection: 'row',

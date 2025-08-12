@@ -57,7 +57,7 @@ const ShopClothing: React.FC<{ navigation: NavigationProp }> = ({
           showsVerticalScrollIndicator={false}
           onScroll={handleScroll}
           scrollEventThrottle={16}
-          contentContainerStyle={{ marginTop: 10, paddingBottom: 65 }}
+          contentContainerStyle={{ marginTop: 10, paddingBottom: 85 }}
         >
           <Section
             sectionContent={[

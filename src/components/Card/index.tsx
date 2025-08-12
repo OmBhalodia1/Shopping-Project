@@ -31,7 +31,7 @@ const Card: React.FC<CardProps> = ({
     <SafeAreaView>
       <View style={styles.card}>
         {image && (
-          <Image source={image} style={styles.cardImage} resizeMode="contain" />
+          <Image source={image} style={styles.cardImage} resizeMode="cover" />
         )}
         <View style={styles.textWrapper}>
           <Text style={styles.title}>{title}</Text>

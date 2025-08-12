@@ -34,7 +34,7 @@ export const Profile: React.FC<{ navigation: NavigationProp }> = ({
 }) => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
-      <ScrollView style={styles.container}>
+      <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
         <Section
           sectionContent={
             <View style={styles.headerRow}>

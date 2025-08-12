@@ -1,8 +1,11 @@
-import { Platform, StyleSheet } from 'react-native';
+import { Dimensions, Platform, StyleSheet } from 'react-native';
+
+const { width } = Dimensions.get('window');
+const CARD_WIDTH = Math.min(width * 0.9, 350);
 
 export const styles = StyleSheet.create({
   card: {
-    width: 350,
+    width: CARD_WIDTH,
     height: 650,
     borderTopLeftRadius: 26,
     borderTopRightRadius: 26,
@@ -15,14 +18,14 @@ export const styles = StyleSheet.create({
     shadowRadius: 32,
     alignItems: 'center',
     elevation: 4,
-    // marginTop: Platform.OS === 'android' ? 40 : 0,
   },
+  // rest of the styles...
+
   cardImage: {
     width: '100%',
     height: 368,
     borderTopLeftRadius: 26,
     borderTopRightRadius: 26,
-    bottom: 7,
   },
   textWrapper: {
     padding: 28,

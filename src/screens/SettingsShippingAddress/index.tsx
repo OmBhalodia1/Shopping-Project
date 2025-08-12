@@ -1,5 +1,6 @@
 import {
   SafeAreaView,
+  ScrollView,
   StyleSheet,
   Text,
   TextInput,
@@ -24,7 +25,7 @@ const SettingsShippingAddress: React.FC<{ navigation: NavigationProp }> = ({
 }) => {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.innerContainer}>
+      <ScrollView contentContainerStyle={styles.innerContainer}>
         <Title label="Settings" textStyle={{ fontSize: 28 }} />
         <Text
           style={{
@@ -34,7 +35,7 @@ const SettingsShippingAddress: React.FC<{ navigation: NavigationProp }> = ({
           }}
         >
           Shipping Address
-        </Text>{' '}
+        </Text>
         <View style={{ marginTop: 10 }} />
         <Section
           title={
@@ -118,7 +119,7 @@ const SettingsShippingAddress: React.FC<{ navigation: NavigationProp }> = ({
             <Button title="Save Changes" style={{ marginTop: 80 }} />
           }
         />
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };

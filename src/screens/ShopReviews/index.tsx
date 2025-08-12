@@ -15,9 +15,7 @@ const ShopReviews = () => {
           title={<Title label="Reviews" />}
           sectionContent={reviewData.map((stars, index) => (
             <>
-              <View style={{ marginTop: 10 }}>
-                <ReviewsComponent starCount={stars} key={index} />
-              </View>
+              <ReviewsComponent starCount={stars} key={index} />
             </>
           ))}
         />

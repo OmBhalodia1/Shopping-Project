@@ -17,8 +17,7 @@ export const styles = StyleSheet.create({
     borderRadius: 8,
     marginRight: 8,
     paddingHorizontal: 12,
-    paddingVertical: 6,
-    marginTop: 5,
+    paddingVertical: 3,
   },
   variationValue: {
     fontSize: 15.5,
@@ -32,7 +31,6 @@ export const styles = StyleSheet.create({
     height: 36,
     justifyContent: 'center',
     alignItems: 'center',
-    marginLeft: Platform.OS === 'android' ? 135 : 112,
   },
   variationArrowIcon: {
     color: '#fff',

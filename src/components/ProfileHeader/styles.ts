@@ -1,10 +1,11 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   headerRow: {
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 16,
+    paddingHorizontal: Platform.OS === 'android' ? 0 : 20,
   },
   avatar: {
     width: 48,
@@ -13,7 +14,6 @@ export const styles = StyleSheet.create({
   },
   headerRight: {
     flex: 1,
-    marginLeft: 12,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -21,8 +21,7 @@ export const styles = StyleSheet.create({
   activityTitle: {
     borderRadius: 18,
     paddingHorizontal: 16,
-    paddingVertical: 6,
-    bottom: 4,
+    alignSelf: 'center',
   },
   activityText: {
     fontSize: 21,
@@ -36,9 +35,4 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   icon: { fontSize: 20, marginLeft: 16 },
-  icon1: {
-    marginLeft: 16,
-    borderRadius: 30,
-    backgroundColor: '#F8F8F8',
-  },
 });

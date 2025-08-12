@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
   },
   categoryImg: {
     width: (ITEM_WIDTH - 20) / 2 - 2, // Two images per row inside the card
-    height: 80,
+    height: (ITEM_WIDTH - 20) / 2 - 2,
     borderRadius: 8,
     marginBottom: 4,
   },

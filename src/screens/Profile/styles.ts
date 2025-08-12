@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     padding: 20,
     paddingTop: Platform.OS === 'android' ? 60 : 0,
+    paddingBottom: 20,
   },
   headerRow: {
     flexDirection: 'row',
@@ -84,7 +85,7 @@ export const styles = StyleSheet.create({
 
   orderRow: {
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-between',
     alignItems: 'center',
   },
   orderBtn: {
