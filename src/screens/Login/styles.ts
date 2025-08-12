@@ -9,7 +9,6 @@ export const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     height: '100%',
-    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
   },
   keyboardAvoiding: {
     flex: 1,
@@ -21,7 +20,6 @@ export const styles = StyleSheet.create({
     paddingBottom: 53,
   },
   headerSection: {
-    flex: 1,
     justifyContent: 'flex-end',
     alignItems: 'flex-start',
     paddingBottom: 33,

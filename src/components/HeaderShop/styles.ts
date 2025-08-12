@@ -43,6 +43,7 @@ export const styles = StyleSheet.create({
   },
   clearButton: {
     paddingHorizontal: 10,
+    alignSelf: 'center',
   },
   clearText: {
     fontSize: 18,

@@ -36,7 +36,6 @@ export const styles = StyleSheet.create({
     lineHeight: 24,
   },
   emailContainer: { alignSelf: 'flex-start' },
-
   email: {
     textAlign: 'left',
     marginBottom: 18,

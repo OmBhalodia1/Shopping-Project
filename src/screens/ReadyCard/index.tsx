@@ -29,27 +29,25 @@ const ReadyCard: React.FC<Props> = ({ navigation }) => {
         resizeMode="cover"
       />
 
-      <View style={{ marginTop: 27 }}>
-        <Card
-          image={images.Ready}
-          subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-          title="Ready?"
-          showButton={true}
-          buttonText="Let's Start"
-          onButtonPress={() => navigation.navigate('BottomTabNavigator')}
-        />
+      <Card
+        image={images.Ready}
+        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        title="Ready?"
+        showButton={true}
+        buttonText="Let's Start"
+        onButtonPress={() => navigation.navigate('BottomTabNavigator')}
+      />
 
-        <Section
-          sectionContent={
-            <View style={styles.paginationWrapper}>
-              <View style={[styles.dot, styles.dotInactive]} />
-              <View style={[styles.dot, styles.dotInactive]} />
-              <View style={[styles.dot, styles.dotInactive]} />
-              <View style={[styles.dot, styles.dotActive]} />
-            </View>
-          }
-        />
-      </View>
+      <Section
+        sectionContent={
+          <View style={styles.paginationWrapper}>
+            <View style={[styles.dot, styles.dotInactive]} />
+            <View style={[styles.dot, styles.dotInactive]} />
+            <View style={[styles.dot, styles.dotInactive]} />
+            <View style={[styles.dot, styles.dotActive]} />
+          </View>
+        }
+      />
     </View>
   );
 };

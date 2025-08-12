@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     shadowRadius: 32,
     alignItems: 'center',
     elevation: 4,
-    marginTop: Platform.OS === 'android' ? 40 : 0,
+    // marginTop: Platform.OS === 'android' ? 40 : 0,
   },
   cardImage: {
     width: '100%',

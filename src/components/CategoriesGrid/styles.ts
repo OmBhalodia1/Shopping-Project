@@ -1,30 +1,41 @@
 import { StyleSheet, Dimensions } from 'react-native';
-const ITEM_WIDTH = (Dimensions.get('window').width - 48) / 2;
+
+const screenWidth = Dimensions.get('window').width;
+const horizontalPadding = 32; // 16 left + 16 right
+const gutter = 16; // space between cards
+
+export const ITEM_WIDTH = Math.floor(
+  (screenWidth - horizontalPadding - gutter) / 2,
+);
 
 export const styles = StyleSheet.create({
-  row: { justifyContent: 'space-between', marginBottom: 16 },
+  gridContainer: { overflow: 'visible', paddingHorizontal: 2 },
+  columnWrapper: {
+    justifyContent: 'space-between',
+    marginBottom: 16,
+  },
   card: {
-    width: ITEM_WIDTH,
     backgroundColor: '#fff',
     borderRadius: 18,
     padding: 10,
     shadowColor: '#000',
     shadowOpacity: 0.07,
-    shadowOffset: { width: 1, height: 6 },
+    shadowOffset: { width: 0, height: 6 },
     shadowRadius: 18,
     elevation: 2,
+    overflow: 'visible',
   },
   imagesRow: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    marginBottom: 2,
+    marginBottom: 8,
     justifyContent: 'space-between',
   },
-  image: {
-    width: 70,
-    height: 70,
+  categoryImg: {
+    width: (ITEM_WIDTH - 20) / 2 - 2, // Two images per row inside the card
+    height: 80,
     borderRadius: 8,
-    backgroundColor: '#eee',
+    marginBottom: 4,
   },
   cardFooter: {
     flexDirection: 'row',
@@ -44,9 +55,7 @@ export const styles = StyleSheet.create({
     borderRadius: 5,
     minWidth: 38,
     alignItems: 'center',
-  },
-  categoryImg: {
-    padding: 2,
+    paddingHorizontal: 6,
   },
   countText: {
     color: '#202020',
@@ -55,11 +64,5 @@ export const styles = StyleSheet.create({
     fontSize: 12,
     lineHeight: 21,
     letterSpacing: -0.15,
-  },
-  gridContainer: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-    rowGap: 10,
   },
 });

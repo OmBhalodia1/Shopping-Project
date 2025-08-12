@@ -1,6 +1,13 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, Dimensions } from 'react-native';
-import { styles } from './styles';
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  FlatList,
+  Dimensions,
+} from 'react-native';
+import { styles, ITEM_WIDTH } from './styles';
 
 type Category = {
   key?: string;
@@ -13,8 +20,6 @@ type CategoriesGridProps = {
   categories: Category[];
   onCategoryPress?: (title: string) => void;
 };
-
-const ITEM_WIDTH = (Dimensions.get('window').width - 48) / 2;
 
 const CategoryCard: React.FC<{
   category: Category;
@@ -50,15 +55,20 @@ const CategoriesGrid: React.FC<CategoriesGridProps> = ({
   onCategoryPress,
 }) => {
   return (
-    <View style={styles.gridContainer}>
-      {categories.map((category, idx) => (
+    <FlatList
+      scrollEnabled={false}
+      data={categories}
+      keyExtractor={(item, index) => item.key ?? index.toString()}
+      numColumns={2}
+      columnWrapperStyle={styles.columnWrapper}
+      contentContainerStyle={styles.gridContainer}
+      renderItem={({ item }) => (
         <CategoryCard
-          key={category.key ?? idx.toString()}
-          category={category}
-          onPress={() => onCategoryPress?.(category.title)}
+          category={item}
+          onPress={() => onCategoryPress?.(item.title)}
         />
-      ))}
-    </View>
+      )}
+    />
   );
 };
 
