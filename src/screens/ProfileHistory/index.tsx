@@ -5,6 +5,7 @@ import {
   Image,
   SafeAreaView,
   FlatList,
+  Platform,
 } from 'react-native';
 import React, { useState } from 'react';
 import { icons } from '../../utils/icons';
@@ -19,7 +20,12 @@ const ProfileHistory = () => {
   const [isProfileReview, setIsProfileReview] = useState(false);
 
   return (
-    <SafeAreaView style={{ backgroundColor: '#FFFFFF' }}>
+    <SafeAreaView
+      style={{
+        backgroundColor: '#FFFFFF',
+        paddingBottom: Platform.OS === 'android' ? 80 : 0,
+      }}
+    >
       <Section
         sectionContent={
           <View style={styles.headerRow}>

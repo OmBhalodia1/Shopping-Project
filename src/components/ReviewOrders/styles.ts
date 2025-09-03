@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
@@ -12,13 +12,14 @@ export const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 4 },
   },
   image: {
-    width: 100,
-    height: 100,
+    width: Platform.OS === 'android' ? 110 : 100,
+    height: Platform.OS === 'android' ? 110 : 100,
     borderRadius: 12,
     marginRight: 12,
     backgroundColor: '#FFFFFF',
     borderWidth: 4,
     borderColor: '#FFFFFF',
+    elevation: 4,
   },
   infoSection: {
     flex: 1,

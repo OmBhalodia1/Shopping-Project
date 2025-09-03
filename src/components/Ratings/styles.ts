@@ -8,6 +8,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 6,
     marginLeft: 20,
+    bottom: 3,
   },
   innerContainer: { gap: 6, flexDirection: 'row' },
   container: { flex: 1, flexDirection: 'row' },
