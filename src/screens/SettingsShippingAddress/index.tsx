@@ -57,7 +57,6 @@ const SettingsShippingAddress: React.FC<{ navigation: NavigationProp }> = ({
                 label="Chooose your country"
                 rightElement={
                   <ArrowButton
-                    title=""
                     onPress={() => navigation.navigate('SettingsCountry')}
                   />
                 }

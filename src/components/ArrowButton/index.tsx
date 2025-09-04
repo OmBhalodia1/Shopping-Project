@@ -9,7 +9,7 @@ import React from 'react';
 import { styles } from './styles';
 
 type ArrowButtonProps = {
-  title: string;
+  title?: string;
 } & TouchableOpacityProps;
 
 const ArrowButton: React.FC<ArrowButtonProps> = ({ title, ...rest }) => {
