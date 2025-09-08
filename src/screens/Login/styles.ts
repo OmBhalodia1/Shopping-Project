@@ -1,4 +1,4 @@
-import { StyleSheet, Platform, StatusBar } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   root: {
@@ -32,21 +32,7 @@ export const styles = StyleSheet.create({
     fontSize: 19,
     color: '#202020',
   },
-  formSection: {
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-  },
   heart: { marginTop: 3, marginLeft: 10.2 },
-  input: {
-    backgroundColor: '#F8F8F8',
-    borderRadius: 59.12,
-    paddingHorizontal: 20,
-    paddingVertical: 14,
-    fontSize: 16,
-    color: '#222',
-    width: '100%',
-    marginBottom: 20,
-  },
   nextButton: {
     backgroundColor: '#004CFF',
     borderRadius: 12,
@@ -63,11 +49,10 @@ export const styles = StyleSheet.create({
     fontFamily: 'Nunito Sans',
   },
   cancelText: {
-    color: '#888',
-    fontSize: 15,
+    fontSize: 18,
     textAlign: 'center',
     fontFamily: 'Nunito Sans',
-    fontWeight: '300',
+    fontWeight: '600',
     lineHeight: 26,
     marginBottom: 0,
   },

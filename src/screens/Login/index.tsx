@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   View,
   StyleSheet,
@@ -7,6 +7,10 @@ import {
   Platform,
   StatusBar,
   Image,
+  TextInput as RNTextInput,
+  Keyboard,
+  Text as ReactText,
+  TouchableOpacity,
 } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../types/RootStackParamList';
@@ -14,12 +18,30 @@ import { images } from '../../utils/images';
 import TextInput from '../../components/TextInput';
 import Button from '../../components/Button';
 import Text from '../../components/Text';
-import { styles } from './styles';
 import Section from '../../components/Section';
-
+import { styles } from './styles';
 type Props = NativeStackScreenProps<RootStackParamList, 'Login'>;
 
 const Login: React.FC<Props> = ({ navigation }) => {
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const onNextPress = () => {
+    Keyboard.dismiss();
+    if (!email) {
+      setError('Email is required');
+      return;
+    }
+    if (!emailRegex.test(email)) {
+      setError('Please enter a valid email address');
+      return;
+    }
+    setError('');
+    navigation.navigate('Password');
+  };
+
   return (
     <View style={styles.root}>
       <StatusBar
@@ -33,7 +55,8 @@ const Login: React.FC<Props> = ({ navigation }) => {
         resizeMode="cover"
       >
         <KeyboardAvoidingView
-          behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+          keyboardVerticalOffset={Platform.OS === 'android' ? 20 : 40}
           style={styles.keyboardAvoiding}
         >
           <View style={styles.container}>
@@ -53,17 +76,27 @@ const Login: React.FC<Props> = ({ navigation }) => {
               }
             />
             <View style={styles.gap}>
-              <TextInput title="Email" />
+              <TextInput
+                title="Email"
+                value={email}
+                onChangeText={setEmail}
+                keyboardType="email-address"
+                autoCapitalize="none"
+                autoCorrect={false}
+                placeholder="Enter your email"
+              />
+              {error ? (
+                <Text mode="subtext" style={styles.errorText} label={error} />
+              ) : null}
               <Button
                 title="Next"
-                onPress={() => navigation.navigate('Password')}
+                onPress={onNextPress}
+                style={styles.nextButton}
               />
             </View>
-            <Button
-              title="Cancel"
-              mode="plain"
-              onPress={() => navigation.goBack()}
-            />
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <ReactText style={styles.cancelText}>Cancel </ReactText>
+            </TouchableOpacity>
           </View>
         </KeyboardAvoidingView>
       </ImageBackground>

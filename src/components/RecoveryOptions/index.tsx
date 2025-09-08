@@ -5,8 +5,11 @@ import {
   TouchableOpacity,
   Text as ReactText,
   TouchableOpacityProps,
+  Image,
 } from 'react-native';
 import { styles } from './styles';
+import { images } from '../../utils/images';
+import { icons } from '../../utils/icons';
 
 type RecoveryOptionType = 'sms' | 'email';
 
@@ -41,7 +44,7 @@ const RecoveryOptions: React.FC<Props> = ({ label, selected, onSelect }) => {
           selected ? styles.radioSelected : styles.radioUnselected,
         ]}
       >
-        {selected && <ReactText style={styles.radioTick}>✓</ReactText>}
+        {selected && <Image source={icons.check}></Image>}
       </View>
     </TouchableOpacity>
   );

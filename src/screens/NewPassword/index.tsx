@@ -60,9 +60,8 @@ const NewPassword: React.FC<Props> = ({ navigation }) => {
                 secureTextEntry={secureNew}
                 value={newPassword}
                 onChangeText={setNewPassword}
-                autoCapitalize="none"
                 autoCorrect={false}
-                placeholder="Enter new password"
+                placeholder="New Password"
               />
 
               <TextInput
@@ -71,9 +70,8 @@ const NewPassword: React.FC<Props> = ({ navigation }) => {
                 secureTextEntry={secureRepeat}
                 value={repeatPassword}
                 onChangeText={setRepeatPassword}
-                autoCapitalize="none"
                 autoCorrect={false}
-                placeholder="Repeat new password"
+                placeholder="Repeat Password"
               />
             </View>
           }

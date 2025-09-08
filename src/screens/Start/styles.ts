@@ -5,16 +5,12 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
     paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
+    paddingBottom: 10,
   },
   mainContainer: {
     flex: 1,
     justifyContent: 'space-between',
     paddingHorizontal: 24,
-    paddingVertical: 32,
-  },
-  container: {
-    flex: 1,
-    justifyContent: 'space-between',
   },
   content: {
     alignItems: 'center',

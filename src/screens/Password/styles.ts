@@ -26,6 +26,7 @@ export const styles = StyleSheet.create({
     lineHeight: 35,
   },
   notYouContainer: {
+    flex: 1,
     position: 'absolute',
     bottom: 0,
     left: 0,

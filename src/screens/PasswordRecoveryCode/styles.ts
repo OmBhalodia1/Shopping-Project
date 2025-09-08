@@ -13,6 +13,7 @@ export const styles = StyleSheet.create({
     width: 320,
     right: 0,
     top: 0,
+    elevation: 3,
   },
   title: {
     fontSize: 24,
@@ -39,15 +40,13 @@ export const styles = StyleSheet.create({
   },
   dotsRow: {
     marginBottom: 50,
-    alignSelf: 'center',
-    justifyContent: 'center',
     height: 40,
     width: '100%',
   },
   flatListContent: {
-    gap: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    flex: 1,
   },
   dot: {
     width: 18,
@@ -55,7 +54,6 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: '#e3ebff',
     marginLeft: 15,
-    left: 97,
   },
   hiddenInput: {
     width: 1,

@@ -17,6 +17,7 @@ export const styles = StyleSheet.create({
     shadowColor: '#000000',
     shadowOpacity: 0.1608,
     shadowRadius: 10,
+    elevation: 3,
   },
   avatar: {
     width: 91,

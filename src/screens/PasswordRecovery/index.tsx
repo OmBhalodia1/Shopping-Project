@@ -1,13 +1,5 @@
 import React, { useState } from 'react';
-import {
-  StyleSheet,
-  View,
-  Text as ReactText,
-  Image,
-  FlatList,
-  TouchableOpacity,
-  Dimensions,
-} from 'react-native';
+import { View, Text as ReactText, Image } from 'react-native';
 import { images } from '../../utils/images';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../types/RootStackParamList';
@@ -19,7 +11,6 @@ import { styles } from './styles';
 import Section from '../../components/Section';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'PasswordRecovery'>;
-const { width, height } = Dimensions.get('window');
 
 const options = [
   { key: 'sms', label: 'SMS' },
@@ -52,16 +43,19 @@ const PasswordRecovery: React.FC<Props> = ({ navigation }) => {
         <Section
           sectionContent={
             <>
-              <Button
-                style={styles.nextButton}
-                title="Next"
-                onPress={() => navigation.navigate('PasswordRecoveryCode')}
-              />
-              <Button
-                title="Cancel"
-                mode="plain"
-                onPress={() => navigation.goBack()}
-              />
+              <View style={{ bottom: 20 }}>
+                <Button
+                  style={styles.nextButton}
+                  title="Next"
+                  onPress={() => navigation.navigate('PasswordRecoveryCode')}
+                />
+
+                <Button
+                  title="Cancel"
+                  mode="plain"
+                  onPress={() => navigation.goBack()}
+                />
+              </View>
             </>
           }
         />

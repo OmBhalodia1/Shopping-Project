@@ -48,9 +48,4 @@ export const styles = StyleSheet.create({
     borderColor: '#FFFFFF',
     backgroundColor: '#F8CECE',
   },
-  radioTick: {
-    fontSize: 14,
-    color: '#fff',
-    fontWeight: 'bold',
-  },
 });
