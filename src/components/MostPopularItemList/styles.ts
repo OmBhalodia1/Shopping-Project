@@ -1,5 +1,5 @@
 import { StyleSheet, Dimensions } from 'react-native';
-const CARD_WIDTH = Dimensions.get('window').width * 0.28;
+const CARD_WIDTH = Dimensions.get('window').width * 0.26;
 export const styles = StyleSheet.create({
   shadowWrapper: {
     width: CARD_WIDTH,
@@ -29,7 +29,6 @@ export const styles = StyleSheet.create({
     marginTop: 6,
   },
   points: {
-    fontWeight: 'bold',
     fontSize: 14,
     color: '#222',
     fontFamily: 'Raleway',
@@ -41,7 +40,6 @@ export const styles = StyleSheet.create({
   label: {
     fontSize: 14,
     color: '#555',
-    fontWeight: '500',
-    fontFamily: 'Nunito-Sans',
+    fontFamily: 'NunitoSans-Bold',
   },
 });

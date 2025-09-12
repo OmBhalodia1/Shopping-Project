@@ -119,7 +119,7 @@ const CartPaymentMethod: React.FC<CartPaymentMethodProps> = ({
                   </View>
 
                   <Text style={styles.cardNumber}>
-                    **** **** **** {card.last4}
+                    •••• •••• •••• {card.last4}
                   </Text>
 
                   <View style={styles.cardFooter}>

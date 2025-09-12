@@ -26,7 +26,6 @@ export const styles = StyleSheet.create({
   },
   timeValue: {
     fontSize: 17,
-    fontWeight: 'bold',
     color: '#222',
     fontFamily: 'Raleway',
   },

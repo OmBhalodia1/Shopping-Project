@@ -1,10 +1,17 @@
 import React from 'react';
-import { View, Text, TextInput, StyleSheet, Platform } from 'react-native';
+import {
+  View,
+  Text,
+  TextInput,
+  ScrollView,
+  useWindowDimensions,
+  StyleSheet,
+} from 'react-native';
 import BottomSheet from '../../components/BottomSheet';
 import Button from '../../components/Button';
-import { styles } from './styles';
 import Section from '../../components/Section';
-
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { styles } from './styles';
 type CartEditShippingProps = Readonly<{
   isOpen: boolean;
   onClose: () => void;
@@ -30,53 +37,55 @@ const CartEditShipping: React.FC<CartEditShippingProps> = ({
     onClose();
   };
 
+  const insets = useSafeAreaInsets();
+  const { height, width } = useWindowDimensions();
+
+  const scale = width / 375;
+  const dynamicStyles = styles(scale);
+
   return (
     <BottomSheet isOpen={isOpen} onClose={onClose}>
-      <View style={styles.container}>
-        <View
-          style={{
-            backgroundColor: '#F8FAFF',
-            padding: 10,
-            paddingHorizontal: 20,
-            borderTopLeftRadius: 16,
-            borderTopRightRadius: 16,
-          }}
-        >
-          <Text style={styles.header}>Shipping Address</Text>
+      <View style={[dynamicStyles.container, { paddingBottom: insets.bottom }]}>
+        <View style={dynamicStyles.headerContainer}>
+          <Text style={dynamicStyles.header}>Shipping Address</Text>
         </View>
-        <View style={{ paddingHorizontal: 20 }}>
-          <Text style={styles.label}>Country</Text>
-          <View style={styles.disabledField}>
-            <Text style={styles.disabledText}>India</Text>
-            <View style={styles.arrowCircle}>
-              <Text style={styles.arrow}>→</Text>
+
+        <ScrollView
+          contentContainerStyle={{ paddingHorizontal: 20 }}
+          showsVerticalScrollIndicator={false}
+        >
+          <Text style={dynamicStyles.label}>Country</Text>
+          <View style={dynamicStyles.disabledField}>
+            <Text style={dynamicStyles.disabledText}>India</Text>
+            <View style={dynamicStyles.arrowCircle}>
+              <Text style={dynamicStyles.arrow}>→</Text>
             </View>
           </View>
 
           <Section
             sectionContent={
               <>
-                <Text style={styles.label}>Address</Text>
+                <Text style={dynamicStyles.label}>Address</Text>
                 <TextInput
-                  style={styles.input}
+                  style={dynamicStyles.input}
                   placeholder="Enter your address"
                   value={address}
                   onChangeText={setAddress}
                   autoCorrect={false}
                 />
 
-                <Text style={styles.label}>Town / City</Text>
+                <Text style={dynamicStyles.label}>Town / City</Text>
                 <TextInput
-                  style={styles.input}
+                  style={dynamicStyles.input}
                   placeholder="Enter your city"
                   value={city}
                   onChangeText={setCity}
                   autoCorrect={false}
                 />
 
-                <Text style={styles.label}>Postcode</Text>
+                <Text style={dynamicStyles.label}>Postcode</Text>
                 <TextInput
-                  style={styles.input}
+                  style={dynamicStyles.input}
                   placeholder="Enter your postcode"
                   value={postcode}
                   onChangeText={setPostcode}
@@ -87,10 +96,10 @@ const CartEditShipping: React.FC<CartEditShippingProps> = ({
             }
           />
 
-          <View style={{ marginTop: 10 }}>
+          <View style={{ marginTop: 16 }}>
             <Button title="Save Changes" onPress={handleSave} />
           </View>
-        </View>
+        </ScrollView>
       </View>
     </BottomSheet>
   );

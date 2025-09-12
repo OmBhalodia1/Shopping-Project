@@ -2,13 +2,11 @@ import { StyleSheet, Dimensions, Platform, StatusBar } from 'react-native';
 
 const { width, height } = Dimensions.get('window');
 
-// Design based on some reference width & height. e.g. iPhone 12 Pro: 390 x 844
 const REFERENCE_WIDTH = 390;
 const REFERENCE_HEIGHT = 844;
 
-// Scale function based on width
 const scaleWidth = (size: number) => (width / REFERENCE_WIDTH) * size;
-// Scale function based on height
+
 const scaleHeight = (size: number) => (height / REFERENCE_HEIGHT) * size;
 
 export const styles = StyleSheet.create({
@@ -22,8 +20,8 @@ export const styles = StyleSheet.create({
   backgroundImage: {
     position: 'absolute',
     top: 0,
-    width: width, // full width of screen
-    height: scaleHeight(852), // scale height proportionally
+    width: width,
+    height: scaleHeight(852),
   },
   paginationWrapper: {
     marginTop: scaleHeight(32),
@@ -54,8 +52,7 @@ export const styles = StyleSheet.create({
   buttonText: {
     color: '#F3F3F3',
     fontSize: scaleWidth(22),
-    fontWeight: '300',
-    fontFamily: 'nunito sans',
+    fontFamily: 'NunitoSans-Regular',
     letterSpacing: 0,
     lineHeight: scaleHeight(31),
   },

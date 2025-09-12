@@ -72,22 +72,21 @@ const VoucherCard: React.FC<VoucherCardProps> = ({
           isRed ? styles.redDottedLine : styles.blueDottedLine,
         ]}
       />
-      <View style={styles.contentRow}>
+      <View style={{ gap: 10 }}>
         <View style={styles.iconTextWrapper}>
           <Image source={icon} style={styles.icon} />
-          <View>
-            <Text style={styles.voucherTitle}>{title}</Text>
-            <Text style={styles.voucherSubtitle}>{subtitle}</Text>
-          </View>
+          <Text style={styles.voucherTitle}>{title}</Text>
         </View>
-
-        <TouchableOpacity
-          style={isCollected ? styles.collectedButton : styles.button}
-        >
-          <Text style={styles.buttonText}>
-            {isCollected ? 'Collected' : 'Apply'}
-          </Text>
-        </TouchableOpacity>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+          <Text style={styles.voucherSubtitle}>{subtitle}</Text>
+          <TouchableOpacity
+            style={isCollected ? styles.collectedButton : styles.button}
+          >
+            <Text style={styles.buttonText}>
+              {isCollected ? 'Collected' : 'Apply'}
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );

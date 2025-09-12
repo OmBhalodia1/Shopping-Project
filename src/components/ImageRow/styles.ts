@@ -32,7 +32,6 @@ export const styles = StyleSheet.create({
     color: '#202020',
     textAlign: 'center',
     fontFamily: 'Raleway',
-    fontWeight: '500',
     lineHeight: 17,
     letterSpacing: -0.13,
   },

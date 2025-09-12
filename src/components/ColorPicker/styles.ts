@@ -48,7 +48,7 @@ export const styles = StyleSheet.create({
   tickText: {
     color: '#FFFFFF',
     fontSize: 10,
-    fontWeight: '900',
+    fontFamily: 'Raleway',
     justifyContent: 'center',
   },
 });

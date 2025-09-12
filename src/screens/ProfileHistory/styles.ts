@@ -32,7 +32,6 @@ export const styles = StyleSheet.create({
     fontFamily: 'Raleway',
     lineHeight: 30,
     letterSpacing: -0.21,
-    fontWeight: '700',
   },
   headerIcons: {
     flexDirection: 'row',

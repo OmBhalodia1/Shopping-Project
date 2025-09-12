@@ -50,6 +50,15 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.102,
     shadowRadius: 4,
     elevation: 3,
+    overflow: 'visible',
+    justifyContent: 'space-between',
+  },
+  categoryRow1: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    overflow: 'visible',
   },
 
   icon: {
@@ -60,20 +69,6 @@ export const styles = StyleSheet.create({
   },
   arrow: {
     marginRight: 10,
-  },
-  arrowCircle: {
-    backgroundColor: '#0F4BFF',
-    borderRadius: 20,
-    width: 30,
-    height: 30,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginLeft: Platform.OS === 'android' ? 160 : 135,
-  },
-  arrowText: {
-    color: '#ffffff',
-    fontSize: 19,
-    bottom: Platform.OS === 'android' ? 4 : 0,
   },
   catLabel: {
     flex: 1,

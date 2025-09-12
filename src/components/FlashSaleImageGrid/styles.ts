@@ -32,12 +32,14 @@ export const styles = StyleSheet.create({
     right: 0,
     backgroundColor: '#ff4d79',
     paddingHorizontal: 1,
-    paddingVertical: 3,
-    borderRadius: 8,
+    paddingVertical: 2,
+    borderTopRightRadius: 8,
+    borderTopLeftRadius: 8,
+    borderBottomLeftRadius: 8,
   },
   discountText: {
     color: 'white',
-    fontWeight: 'bold',
+    fontFamily: 'Raleway',
     fontSize: 14,
   },
 });

@@ -22,9 +22,7 @@ const Title: React.FC<TitleProps> = ({
     <View style={styles.container}>
       <View style={styles.star}>
         <Text style={[styles.text, textStyle]}>{label}</Text>
-        {star && (
-          <Image style={{ marginTop: 5, marginLeft: 7 }} source={icons.star} />
-        )}
+        {star && <Image style={{ marginLeft: 7 }} source={icons.star} />}
       </View>
       {rightElement}
     </View>

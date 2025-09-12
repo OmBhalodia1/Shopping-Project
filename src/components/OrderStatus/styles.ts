@@ -9,13 +9,14 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontSize: 18,
-    fontWeight: '700',
+    fontFamily: 'Raleway',
     flexShrink: 1,
     maxWidth: '70%',
   },
   description: {
     fontSize: 14,
     color: '#222',
+    fontFamily: 'Nunito-Sans-Regular',
   },
   dateTime: {
     fontSize: 14,
@@ -27,7 +28,7 @@ export const styles = StyleSheet.create({
   activeDate: {
     color: '#323366',
     backgroundColor: '#f9f9f9',
-    fontWeight: '500',
+    fontFamily: 'Raleway',
     padding: 4,
   },
   pending: {
@@ -36,6 +37,7 @@ export const styles = StyleSheet.create({
   },
   pendingText: {
     color: '#bfc1d0',
+    fontFamily: 'Nunito-Sans-Regular',
   },
   expectedBox: {
     backgroundColor: '#edf0fa',

@@ -6,5 +6,5 @@ export const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     paddingTop: Platform.OS === 'android' ? 40 : 0,
   },
-  innerContainer: { paddingTop: 20, paddingRight: 10 },
+  innerContainer: { paddingTop: 20, paddingHorizontal: 25 },
 });

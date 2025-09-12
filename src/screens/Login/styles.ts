@@ -45,14 +45,14 @@ export const styles = StyleSheet.create({
   nextButtonText: {
     color: 'white',
     fontSize: 18,
-    fontWeight: '300',
+
     fontFamily: 'Nunito Sans',
   },
   cancelText: {
     fontSize: 18,
     textAlign: 'center',
     fontFamily: 'Nunito Sans',
-    fontWeight: '600',
+
     lineHeight: 26,
     marginBottom: 0,
   },

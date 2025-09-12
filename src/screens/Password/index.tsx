@@ -53,7 +53,7 @@ const Password: React.FC<Props> = ({ navigation }) => {
     }
 
     if (index === otp.length - 1 && text) {
-      navigation.navigate('HelloCard'); // navigate when last digit entered
+      navigation.navigate('HelloCard');
     }
   };
 
@@ -130,7 +130,9 @@ const Password: React.FC<Props> = ({ navigation }) => {
                 <Pressable
                   onPress={() => navigation.navigate('PasswordRecovery')}
                 >
-                  <ReactText>Forget your password?</ReactText>
+                  <ReactText style={{ fontFamily: 'NunitoSans-Regular' }}>
+                    Forget your password?
+                  </ReactText>
                 </Pressable>
               </View>
             }

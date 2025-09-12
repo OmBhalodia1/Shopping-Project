@@ -52,15 +52,13 @@ export const styles = StyleSheet.create({
     marginBottom: 30,
   },
   footerBrand: {
-    fontWeight: '800',
     fontSize: 20,
     fontFamily: 'Raleway',
     marginBottom: 2,
   },
   footerVersion: {
     fontSize: 12,
-    fontFamily: 'Nunito-Sans',
-    fontWeight: '400',
+    fontFamily: 'Nunito-Sans-Regular',
     lineHeight: 20,
     color: '#000000',
   },

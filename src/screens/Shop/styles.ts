@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    paddingTop: Platform.OS === 'android' ? 50 : 0,
+    // paddingTop: Platform.OS === 'android' ? 50 : 0,
   },
 
   bannerWrapper: {
@@ -34,8 +34,7 @@ export const styles = StyleSheet.create({
     fontSize: 15,
     color: '#fff',
     marginBottom: 8,
-    fontFamily: 'Nunito-Sans',
-    fontWeight: '700',
+    fontFamily: 'NunitoSans-Regular',
     lineHeight: 18,
     letterSpacing: 0,
   },

@@ -21,10 +21,7 @@ const Start: React.FC<Props> = ({ navigation }) => {
   const insets = useSafeAreaInsets();
 
   return (
-    <SafeAreaView
-      style={styles.safeArea}
-      edges={['top', 'bottom', 'left', 'right']}
-    >
+    <SafeAreaView style={styles.safeArea}>
       <StatusBar
         barStyle="dark-content"
         backgroundColor="white"
@@ -54,9 +51,7 @@ const Start: React.FC<Props> = ({ navigation }) => {
 
         <Section
           sectionContent={
-            <View
-              style={[styles.bottomButtons, { paddingBottom: insets.bottom }]}
-            >
+            <View style={[styles.bottomButtons]}>
               <Button
                 title="Let's get started"
                 style={styles.button}

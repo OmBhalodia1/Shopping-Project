@@ -4,9 +4,11 @@ import {
   View,
   TouchableOpacity,
   TouchableOpacityProps,
+  Image,
 } from 'react-native';
 import React from 'react';
 import { styles } from './styles';
+import { icons } from '../../utils/icons';
 
 type ArrowButtonProps = {
   title?: string;
@@ -16,9 +18,7 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({ title, ...rest }) => {
   return (
     <TouchableOpacity style={styles.loginRow} {...rest}>
       <Text style={styles.loginText}>{title}</Text>
-      <View style={styles.arrowCircle}>
-        <Text style={styles.arrow}>{'→'}</Text>
-      </View>
+      <Image source={icons.ArrowButton} resizeMode="contain" />
     </TouchableOpacity>
   );
 };

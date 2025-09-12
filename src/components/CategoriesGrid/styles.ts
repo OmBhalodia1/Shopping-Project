@@ -1,15 +1,15 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
 const screenWidth = Dimensions.get('window').width;
-const horizontalPadding = 32; // 16 left + 16 right
-const gutter = 16; // space between cards
+const horizontalPadding = 32;
+const gapbetween = 16; // space between cards
 
 export const ITEM_WIDTH = Math.floor(
-  (screenWidth - horizontalPadding - gutter) / 2,
+  (screenWidth - horizontalPadding - gapbetween) / 2,
 );
 
 export const styles = StyleSheet.create({
-  gridContainer: { overflow: 'visible', paddingHorizontal: 2 },
+  gridContainer: { paddingHorizontal: 1 },
   columnWrapper: {
     justifyContent: 'space-between',
     marginBottom: 16,
@@ -17,25 +17,25 @@ export const styles = StyleSheet.create({
   card: {
     backgroundColor: '#fff',
     borderRadius: 18,
-    padding: 10,
+    padding: 8,
     shadowColor: '#000',
     shadowOpacity: 0.07,
     shadowOffset: { width: 0, height: 6 },
     shadowRadius: 18,
-    elevation: 2,
-    overflow: 'visible',
+    elevation: 3,
+    overflow: 'hidden',
   },
   imagesRow: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    marginBottom: 8,
+    marginBottom: 4,
     justifyContent: 'space-between',
   },
   categoryImg: {
     width: (ITEM_WIDTH - 20) / 2 - 2, // Two images per row inside the card
     height: (ITEM_WIDTH - 20) / 2 - 2,
     borderRadius: 8,
-    marginBottom: 4,
+    marginBottom: 6,
   },
   cardFooter: {
     flexDirection: 'row',
@@ -44,7 +44,6 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontFamily: 'Raleway',
-    fontWeight: '700',
     fontSize: 17,
     lineHeight: 21,
     letterSpacing: -0.17,
@@ -60,7 +59,6 @@ export const styles = StyleSheet.create({
   countText: {
     color: '#202020',
     fontFamily: 'Raleway',
-    fontWeight: '700',
     fontSize: 12,
     lineHeight: 21,
     letterSpacing: -0.15,

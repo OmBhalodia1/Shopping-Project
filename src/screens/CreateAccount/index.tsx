@@ -128,15 +128,10 @@ const CreateAccount: React.FC<Props> = ({ navigation }) => {
                       { paddingBottom: insets.bottom },
                     ]}
                   >
-                    <Button
-                      title="Done"
-                      style={styles.doneText}
-                      onPress={onDonePress}
-                    />
+                    <Button title="Done" onPress={onDonePress} />
                     <Button
                       mode="plain"
                       title="Cancel"
-                      style={styles.cancelText}
                       onPress={() => navigation.goBack()}
                     />
                   </View>

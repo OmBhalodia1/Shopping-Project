@@ -4,7 +4,6 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-
     alignItems: 'center',
     paddingHorizontal: 26,
   },
@@ -34,7 +33,7 @@ export const styles = StyleSheet.create({
     color: '#222',
     textAlign: 'center',
     fontWeight: '300',
-    fontFamily: 'Nunito Sans',
+    fontFamily: 'NunitoSans-Regular',
     letterSpacing: 0,
     lineHeight: 27,
   },
@@ -45,7 +44,7 @@ export const styles = StyleSheet.create({
     borderRadius: 12,
     fontSize: 17,
     color: '#222',
-    fontFamily: 'Nunito Sans',
+    fontFamily: 'NunitoSans-Regular',
     textAlign: 'center',
     fontWeight: '500',
     lineHeight: 21,

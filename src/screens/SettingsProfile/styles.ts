@@ -72,7 +72,6 @@ export const styles = StyleSheet.create({
     paddingVertical: 12,
     color: '#000000',
     fontFamily: 'Raleway',
-    fontWeight: '400',
     lineHeight: 21,
     letterSpacing: -0.17,
   },

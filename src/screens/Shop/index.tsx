@@ -1,5 +1,12 @@
 import React from 'react';
-import { SafeAreaView, View, Text, Image, ScrollView } from 'react-native';
+import {
+  SafeAreaView,
+  View,
+  Text,
+  Image,
+  ScrollView,
+  StatusBar,
+} from 'react-native';
 import { images } from '../../utils/images';
 import CategoriesGrid from '../../components/CategoriesGrid';
 import ImageRow from '../../components/ImageRow';
@@ -35,13 +42,12 @@ const ShopScreen: React.FC<{ navigation: NavigationProp }> = ({
 
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar barStyle={'dark-content'} backgroundColor={'#fff'} />
+      <HeaderShop onSubmit={() => navigation.navigate('ShopSearch')} />
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={{ paddingHorizontal: 20 }}
-        stickyHeaderIndices={[0]}
       >
-        <HeaderShop onSubmit={() => navigation.navigate('ShopSearch')} />
-
         <Section
           sectionContent={
             <>
@@ -86,11 +92,12 @@ const ShopScreen: React.FC<{ navigation: NavigationProp }> = ({
             />
           }
         />
-
+        <View style={{ marginVertical: 8 }} />
         <Section
           title={<Title label="Top Products" />}
           sectionContent={<ImageRow imageList={TopProducts} />}
         />
+        <View style={{ marginVertical: 10 }} />
 
         <Section
           title={
@@ -98,11 +105,13 @@ const ShopScreen: React.FC<{ navigation: NavigationProp }> = ({
           }
           sectionContent={<NewItemsList products={NewItemProducts} />}
         />
+        <View style={{ marginVertical: 8 }} />
 
         <Section
           title={<Title label="Flash Sale" rightElement={<TitleTimer />} />}
           sectionContent={<FlashSaleImageGrid />}
         />
+        <View style={{ marginVertical: 8 }} />
 
         <Section
           title={
@@ -110,6 +119,7 @@ const ShopScreen: React.FC<{ navigation: NavigationProp }> = ({
           }
           sectionContent={<MostPopularItemList />}
         />
+        <View style={{ marginVertical: 10 }} />
 
         <Section
           title={<Title label="Just For You" star />}

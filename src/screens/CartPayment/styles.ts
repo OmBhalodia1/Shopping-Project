@@ -27,8 +27,8 @@ export const styles = StyleSheet.create({
   cardContainer: {
     backgroundColor: '#E5EBFC',
     borderRadius: 25,
-    paddingVertical: 4,
-    paddingHorizontal: 18,
+    paddingVertical: 6,
+    paddingHorizontal: 20,
     alignSelf: 'flex-start',
     marginBottom: 20,
   },
@@ -40,5 +40,11 @@ export const styles = StyleSheet.create({
     lineHeight: 19,
     letterSpacing: -0.15,
     textAlign: 'center',
+  },
+  deliveryText: {
+    bottom: 8,
+    marginLeft: 5,
+    fontSize: 14,
+    fontFamily: 'Nunito-Sans-Regular',
   },
 });

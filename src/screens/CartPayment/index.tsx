@@ -24,13 +24,16 @@ const CartPayment = () => {
       <ScrollView
         style={styles.container}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ flexGrow: 1, paddingBottom: 10 }}
+        contentContainerStyle={{ flexGrow: 1, paddingBottom: 30 }}
         keyboardShouldPersistTaps="handled"
       >
         <View style={styles.innerContainer}>
           <Section
             sectionContent={
-              <Title label="Payment" textStyle={{ fontSize: 28 }} />
+              <Title
+                label="Payment"
+                textStyle={{ fontSize: 28, marginBottom: 10 }}
+              />
             }
           />
 
@@ -69,8 +72,8 @@ const CartPayment = () => {
                   mode={appliedVoucher ? 'contained' : 'outline'}
                   title={appliedVoucher || 'Add Voucher'}
                   style={{
-                    height: 35,
-                    width: 120,
+                    height: 34,
+                    width: 155,
                     marginTop: 10,
                     borderRadius: 12,
                   }}
@@ -95,15 +98,19 @@ const CartPayment = () => {
               </>
             }
           />
-
+          <View style={{ marginTop: 10 }} />
           <Section
             title={<Title label="Shipping Options" />}
             sectionContent={
               <>
-                <DeliveryOptions2 />
-                <Text style={{ marginLeft: 5, fontSize: 12 }}>
-                  Delivered on or before Thursday, 23 April 2020
-                </Text>
+                <View>
+                  <DeliveryOptions2 />
+                </View>
+                <View>
+                  <Text style={styles.deliveryText}>
+                    Delivered on or before Thursday, 23 April 2020
+                  </Text>
+                </View>
               </>
             }
           />

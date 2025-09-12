@@ -16,7 +16,6 @@ export const styles = StyleSheet.create({
   },
   headerText: {
     fontFamily: 'Raleway',
-    fontWeight: '700',
     fontSize: 20,
     letterSpacing: -0.22,
     color: '#000000',

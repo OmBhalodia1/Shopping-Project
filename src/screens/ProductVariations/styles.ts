@@ -23,7 +23,7 @@ export const styles = StyleSheet.create({
   },
   price: {
     fontSize: 26,
-    fontWeight: 'bold',
+    fontFamily: 'Raleway',
   },
   optionsRow: {
     flexDirection: 'row',

@@ -4,10 +4,10 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    paddingTop: Platform.OS === 'android' ? 40 : 0,
+    // paddingTop: Platform.OS === 'android' ? 40 : 0,
   },
   contentWrapper: {
-    paddingHorizontal: 20,
+    paddingHorizontal: 12,
   },
   scrollView: {
     flexGrow: 1,

@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     paddingVertical: 14,
     fontSize: 16,
     color: '#222',
-    paddingRight: 50,
+    fontFamily: 'NunitoSans-Regular',
   },
   iconContainer: {
     position: 'absolute',

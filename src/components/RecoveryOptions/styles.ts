@@ -19,7 +19,6 @@ export const styles = StyleSheet.create({
   },
   optionText: {
     fontSize: 15,
-    fontWeight: '500',
     flex: 1,
     textAlign: 'center',
     fontFamily: 'Raleway',

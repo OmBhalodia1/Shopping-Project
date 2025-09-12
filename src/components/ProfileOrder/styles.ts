@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: '#fff',
     paddingHorizontal: 20,
-    paddingVertical: 10,
+    paddingVertical: 15,
     borderRadius: 16,
     alignItems: 'flex-start',
   },
@@ -44,7 +44,7 @@ export const styles = StyleSheet.create({
   },
   twoImage: {
     width: 30,
-    height: 54,
+    height: 60,
     borderRadius: 6,
     marginHorizontal: 2,
   },
@@ -93,13 +93,14 @@ export const styles = StyleSheet.create({
     fontSize: 14,
     color: '#111',
     marginBottom: 2,
+    fontFamily: 'Raleway',
   },
   bold: {
     fontWeight: 'bold',
   },
   deliveryText: {
     fontSize: 13,
-    color: '#555',
+    fontFamily: 'Nunito-Sans-Regular',
     marginBottom: 6,
   },
   statusRow: {
@@ -108,7 +109,7 @@ export const styles = StyleSheet.create({
   },
   statusText: {
     fontSize: 16,
-    fontWeight: 'bold',
+    fontFamily: 'Raleway',
     marginRight: 6,
   },
   checkIcon: {
@@ -122,7 +123,7 @@ export const styles = StyleSheet.create({
   },
   itemBadge: {
     backgroundColor: '#F5F5F5',
-    borderRadius: 12,
+    borderRadius: 6,
     paddingHorizontal: 10,
     paddingVertical: 2,
     marginBottom: 6,
@@ -131,6 +132,7 @@ export const styles = StyleSheet.create({
   itemText: {
     fontSize: 13,
     color: '#111',
+    fontFamily: 'Raleway',
   },
   actionButton: {
     height: 36,
@@ -143,7 +145,7 @@ export const styles = StyleSheet.create({
     height: 36,
     borderRadius: 10,
     marginHorizontal: 10,
-    paddingHorizontal: 27,
+    paddingHorizontal: 29,
     marginTop: 10,
   },
 });

@@ -18,6 +18,7 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({ subtext }) => {
           borderRadius: 30,
           borderWidth: 4,
           borderColor: '#FFFFFF',
+          elevation: 3,
         }}
       >
         <Image source={images.ProfilePhoto} style={styles.avatar} />

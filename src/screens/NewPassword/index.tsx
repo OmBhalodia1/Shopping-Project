@@ -24,7 +24,6 @@ type Props = NativeStackScreenProps<RootStackParamList, 'NewPassword'>;
 const NewPassword: React.FC<Props> = ({ navigation }) => {
   const [newPassword, setNewPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
-  const [secureNew, setSecureNew] = useState(true);
   const [secureRepeat, setSecureRepeat] = useState(true);
 
   const handleSave = () => {
@@ -57,7 +56,7 @@ const NewPassword: React.FC<Props> = ({ navigation }) => {
               <TextInput
                 style={styles.input}
                 title="New Password"
-                secureTextEntry={secureNew}
+                secureTextEntry
                 value={newPassword}
                 onChangeText={setNewPassword}
                 autoCorrect={false}

@@ -51,20 +51,18 @@ export const styles = StyleSheet.create({
   modalTitle: {
     fontSize: 22,
     color: '#202020',
-    fontWeight: '700',
     textAlign: 'center',
     marginBottom: 9,
     letterSpacing: -0.2,
     fontFamily: 'Raleway',
   },
   modalText: {
-    fontSize: 17,
+    fontSize: 12,
     color: '#202020',
     textAlign: 'center',
     marginBottom: 38,
-    fontWeight: '400',
     lineHeight: 25,
-    fontFamily: 'Raleway',
+    fontFamily: 'Nunito-Sans-Regular',
     letterSpacing: -0.08,
   },
 });

@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
     width: 60,
     borderColor: '#FFFFFF',
     borderRadius: 30,
+    elevation: 4,
   },
   imageBorder: {
     shadowColor: '#000000',
@@ -17,7 +18,6 @@ export const styles = StyleSheet.create({
   nameText: {
     fontFamily: 'Raleway',
     fontSize: 18,
-    fontWeight: '600',
   },
   starContainer: {
     flexDirection: 'row',
@@ -29,9 +29,8 @@ export const styles = StyleSheet.create({
     height: 16,
   },
   reviewText: {
-    fontFamily: 'Nunito-Sans',
+    fontFamily: 'Nunito-Sans-Regular',
     fontSize: 13.5,
-    fontWeight: '400',
     lineHeight: 18,
     marginVertical: 10,
   },

@@ -33,7 +33,7 @@ const CartFooter: React.FC<CartFooterProps> = ({
         title={title}
         style={[
           {
-            paddingHorizontal: 30,
+            paddingHorizontal: 50,
             height: 38,
             borderRadius: 10,
             marginLeft: 50,

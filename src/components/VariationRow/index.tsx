@@ -5,9 +5,11 @@ import {
   TouchableOpacity,
   StyleProp,
   ViewStyle,
+  Image,
 } from 'react-native';
 import React from 'react';
 import { styles } from './styles';
+import { icons } from '../../utils/icons';
 
 type VariationRowProps = {
   title?: string;
@@ -53,10 +55,10 @@ const VariationRow: React.FC<VariationRowProps> = ({
       <View>
         {arrowCircle ? (
           <TouchableOpacity
-            style={styles.variationArrow}
+            style={{ height: 36, width: 36 }}
             onPress={onPressArrow}
           >
-            <Text style={styles.variationArrowIcon}>→</Text>
+            <Image source={icons.ArrowButton} resizeMode="contain" />
           </TouchableOpacity>
         ) : null}
       </View>

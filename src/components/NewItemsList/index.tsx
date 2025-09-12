@@ -35,6 +35,7 @@ const NewItemsList: React.FC<NewItemsListProps> = ({ products }) => {
       horizontal
       showsHorizontalScrollIndicator={false}
       contentContainerStyle={{ columnGap: 10 }}
+      style={{ overflow: 'visible' }}
     >
       {products.map(item => (
         <ProductCard

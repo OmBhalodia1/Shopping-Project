@@ -9,14 +9,12 @@ export const styles = StyleSheet.create({
   },
   headerText: {
     fontFamily: 'Raleway',
-    fontWeight: '700',
     fontSize: 22,
     letterSpacing: -0.22,
   },
   subtext: {
-    fontFamily: 'Nunito-Sans',
+    fontFamily: 'Nunito-Sans-Regular',
     fontSize: 15,
-    fontWeight: '400',
     lineHeight: 20,
     marginVertical: 15,
   },

@@ -17,9 +17,24 @@ const DeliveryOptions: React.FC<DeliveryOptionsProps> = ({
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.optionContainer}>
-        <Text style={styles.optionLabel}>{deliveryType}</Text>
-        <Text style={styles.optionDetail}>{days} days</Text>
-        <Text style={styles.optionPrice}>{price}</Text>
+        <View
+          style={{
+            flexDirection: 'row',
+          }}
+        >
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+            }}
+          >
+            <Text style={styles.optionLabel}>{deliveryType}</Text>
+            <Text style={styles.optionDetail}>{days} days</Text>
+          </View>
+          <View style={{ flex: 1 }}>
+            <Text style={styles.optionPrice}>{price}</Text>
+          </View>
+        </View>
       </TouchableOpacity>
     </View>
   );

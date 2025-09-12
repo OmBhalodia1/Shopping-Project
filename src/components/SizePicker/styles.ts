@@ -21,9 +21,9 @@ export const styles = StyleSheet.create({
     position: 'relative',
   },
   label: {
+    fontFamily: 'Raleway',
     fontSize: 13,
     color: '#AAC3FF',
-    fontWeight: '800',
     zIndex: 1,
     letterSpacing: -0.13,
     lineHeight: 17,
@@ -31,6 +31,7 @@ export const styles = StyleSheet.create({
   selectedLabel: {
     color: '#0053ff',
     fontSize: 15,
+    fontFamily: 'Raleway',
   },
   circleHighlight: {
     position: 'absolute',

@@ -22,6 +22,7 @@ import { imageList2 } from './data';
 import TitleCancel from '../../components/TitleCancel';
 import TitleCategoryButton from '../../components/TitleCategoryButton';
 import PriceComponent from '../../components/PriceComponent';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 type NavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -31,6 +32,8 @@ type NavigationProp = StackNavigationProp<
 const ShopFilter: React.FC<{ navigation: NavigationProp }> = ({
   navigation,
 }) => {
+  const insets = useSafeAreaInsets();
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
@@ -72,7 +75,9 @@ const ShopFilter: React.FC<{ navigation: NavigationProp }> = ({
           <PriceComponent />
         </ScrollView>
 
-        <View style={styles.buttonContainer}>
+        <View
+          style={[styles.buttonContainer, { paddingBottom: insets.bottom }]}
+        >
           <Button
             title="Clear"
             mode="outline"

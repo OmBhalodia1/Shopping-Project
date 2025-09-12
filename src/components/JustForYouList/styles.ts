@@ -9,6 +9,7 @@ export const styles = StyleSheet.create({
   card: {
     width: '50%',
     alignItems: 'flex-start',
+    paddingBottom: 8,
   },
   shadow: {
     width: '100%',
@@ -17,7 +18,6 @@ export const styles = StyleSheet.create({
     shadowColor: '#222',
     shadowOpacity: 0.125,
     shadowOffset: { width: 0, height: 5 },
-    overflow: 'visible',
     backgroundColor: 'white',
     elevation: 4,
   },
@@ -32,13 +32,11 @@ export const styles = StyleSheet.create({
     fontSize: 12,
     color: '#000000',
     marginBottom: 5,
-    fontWeight: '400',
-    fontFamily: 'Nunito-Sans',
+    fontFamily: 'NunitoSans-Regular',
     lineHeight: 16,
     letterSpacing: 0,
   },
   price: {
-    fontWeight: '700',
     fontSize: 17,
     color: '#202020',
     fontFamily: 'Raleway',

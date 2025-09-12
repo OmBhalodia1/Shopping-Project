@@ -3,7 +3,6 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
   text: {
     fontFamily: 'Raleway',
-    fontWeight: '700',
     fontSize: 21,
     lineHeight: 30,
     letterSpacing: -0.21,
@@ -35,7 +34,6 @@ export const styles = StyleSheet.create({
   },
   categoryButtonText: {
     color: '#222',
-    fontWeight: '500',
     fontFamily: 'Raleway',
     fontSize: 13,
     textAlign: 'center',

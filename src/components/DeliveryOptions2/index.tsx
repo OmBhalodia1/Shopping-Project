@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { styles } from './styles';
+import { icons } from '../../utils/icons';
 
 const OPTIONS = [
   { type: 'Standard', days: '5-7', price: 'FREE', isFree: true },
@@ -22,18 +23,10 @@ const DeliveryOptions2: React.FC = () => {
             activeOpacity={0.85}
           >
             <View style={styles.radio}>
-              {checked && (
-                <View style={styles.tickContainer}>
-                  <View style={styles.tickCircle}>
-                    <Text style={styles.tickText}>✓</Text>
-                  </View>
-                </View>
-              )}
+              {checked && <Image source={icons.check} resizeMode="contain" />}
             </View>
             <Text style={styles.optionLabel}>{o.type}</Text>
-            <View style={styles.daysBadgeWrap}>
-              <Text style={styles.daysBadge}>{o.days} days</Text>
-            </View>
+            <Text style={styles.daysBadge}>{o.days} days</Text>
             <Text
               style={[styles.optionPrice, o.isFree && styles.optionPriceFree]}
             >

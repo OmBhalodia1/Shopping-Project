@@ -62,7 +62,6 @@ export const styles = StyleSheet.create({
     color: '#202020',
     textAlign: 'center',
     marginBottom: 38,
-    fontWeight: '400',
     lineHeight: 25,
     fontFamily: 'Raleway',
     letterSpacing: -0.08,
@@ -88,7 +87,7 @@ export const styles = StyleSheet.create({
   cancelButtonText: {
     color: '#fff',
     fontSize: 16,
-    fontFamily: 'Nunito Sans',
+    fontFamily: 'NunitoSans-Regular',
     fontWeight: '500',
     textAlign: 'center',
   },
@@ -106,7 +105,7 @@ export const styles = StyleSheet.create({
   deleteButtonText: {
     color: '#fff',
     fontSize: 16,
-    fontFamily: 'Nunito Sans',
+    fontFamily: 'NunitoSans-Regular',
     fontWeight: '500',
     textAlign: 'center',
   },

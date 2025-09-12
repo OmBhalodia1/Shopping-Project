@@ -5,7 +5,9 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 1.5,
     marginBottom: 16,
-    padding: 20,
+    paddingHorizontal: 20,
+    paddingTop: 20,
+    paddingBottom: 4,
     backgroundColor: '#fff',
   },
   redCard: {
@@ -21,7 +23,6 @@ export const styles = StyleSheet.create({
   },
   voucherLabel: {
     fontSize: 19,
-    fontWeight: 'bold',
     fontFamily: 'Raleway',
   },
   redText: {
@@ -62,11 +63,7 @@ export const styles = StyleSheet.create({
   blueDottedLine: {
     borderColor: '#004CFF',
   },
-  contentRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
+
   iconTextWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -79,8 +76,7 @@ export const styles = StyleSheet.create({
   },
   voucherTitle: {
     fontSize: 15,
-    fontWeight: 'bold',
-    marginBottom: 2,
+    fontFamily: 'Raleway',
   },
   voucherSubtitle: {
     fontSize: 13,
@@ -88,10 +84,10 @@ export const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: '#004CFF',
-    borderRadius: 12,
+    borderRadius: 6,
     paddingHorizontal: 20,
-    paddingVertical: 8,
-    alignSelf: 'center',
+    paddingVertical: 5,
+    bottom: 10,
   },
   collectedButton: {
     backgroundColor: '#004CFF',
@@ -103,7 +99,7 @@ export const styles = StyleSheet.create({
   },
   buttonText: {
     color: '#fff',
-    fontWeight: 'bold',
+    fontFamily: 'Nunito-Sans-Regular',
     fontSize: 16,
   },
 });

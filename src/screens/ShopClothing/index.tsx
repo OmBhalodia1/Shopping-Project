@@ -53,47 +53,55 @@ const ShopClothing: React.FC<{ navigation: NavigationProp }> = ({
           searchText={category}
           onPress={() => navigation.navigate('ShopFilter')}
         />
-        <ScrollView
-          showsVerticalScrollIndicator={false}
-          onScroll={handleScroll}
-          scrollEventThrottle={16}
-          contentContainerStyle={{ marginTop: 10, paddingBottom: 85 }}
-        >
-          <Section
-            sectionContent={[
-              <ImageRow
-                key="clothing-list-1"
-                imageList={imageList1}
-                scrollEnabled={false}
-                scrollViewStyle={styles.scrollView}
-              />,
-              <ImageRow
-                key="clothing-list-2"
-                imageList={imageList2}
-                scrollEnabled={false}
-              />,
-            ]}
-          />
-          <Section
-            title={
-              <Title
-                label="All Items"
-                rightElement={
-                  <TitleFilter
-                    onPress={() => navigation.navigate('ShopFilter')}
-                  />
-                }
-              />
-            }
-            sectionContent={
-              <JustForYouList
-                products={AllItems}
-                onProductPress={handleProductPress}
-              />
-            }
-          />
-        </ScrollView>
       </View>
+
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        onScroll={handleScroll}
+        style={{
+          overflow: 'visible',
+          paddingHorizontal: 20,
+          marginTop: 10,
+          paddingBottom: 85,
+        }}
+        scrollEventThrottle={16}
+      >
+        <Section
+          sectionContent={[
+            <ImageRow
+              key="clothing-list-1"
+              imageList={imageList1}
+              scrollEnabled={false}
+              scrollViewStyle={styles.scrollView}
+            />,
+            <ImageRow
+              key="clothing-list-2"
+              imageList={imageList2}
+              scrollEnabled={false}
+            />,
+          ]}
+        />
+
+        <Section
+          title={
+            <Title
+              label="All Items"
+              rightElement={
+                <TitleFilter
+                  onPress={() => navigation.navigate('ShopFilter')}
+                />
+              }
+            />
+          }
+          sectionContent={
+            <JustForYouList
+              products={AllItems}
+              onProductPress={handleProductPress}
+            />
+          }
+        />
+      </ScrollView>
+      {/* </View> */}
     </SafeAreaView>
   );
 };

@@ -35,7 +35,7 @@ export const styles = StyleSheet.create({
   },
   price: {
     fontSize: 28,
-    fontWeight: 'bold',
+    fontFamily: 'Raleway',
     color: '#202020',
     marginBottom: 7,
     marginTop: 9,
@@ -46,5 +46,6 @@ export const styles = StyleSheet.create({
     color: '#292929',
     marginVertical: 12,
     lineHeight: 21,
+    fontFamily: 'Nunito-Sans-Regular',
   },
 });

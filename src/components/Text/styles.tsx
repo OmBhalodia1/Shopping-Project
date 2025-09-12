@@ -3,7 +3,6 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
   title: {
     fontSize: 52,
-    fontWeight: '700',
     textAlign: 'center',
     color: 'black',
     fontFamily: 'Raleway',
@@ -11,9 +10,8 @@ export const styles = StyleSheet.create({
   },
   subtext: {
     fontSize: 19,
-    fontWeight: '300',
     textAlign: 'center',
     color: 'black',
-    fontFamily: 'Nunito Sans',
+    fontFamily: 'NunitoSans-Regular',
   },
 });

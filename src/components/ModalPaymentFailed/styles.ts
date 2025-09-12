@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
   iconWrapper: {
     alignSelf: 'center',
     position: 'absolute',
-    top: -43,
+    top: -38,
     left: 0,
     right: 0,
     zIndex: 8,
@@ -26,6 +26,7 @@ export const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 7 },
     shadowOpacity: 0.1608,
     shadowRadius: 11,
+    elevation: 3,
   },
   iconImage: {
     width: 70,
@@ -34,13 +35,14 @@ export const styles = StyleSheet.create({
     borderRadius: 40,
     borderWidth: 6,
     borderColor: '#fff',
+    elevation: 2,
     backgroundColor: '#fff',
   },
 
   modalContentBox: {
     backgroundColor: '#fff',
     borderRadius: 24,
-    paddingTop: 60,
+    paddingTop: 45,
     paddingBottom: 32,
     paddingHorizontal: 32,
     alignItems: 'center',
@@ -53,20 +55,18 @@ export const styles = StyleSheet.create({
   modalTitle: {
     fontSize: 22,
     color: '#202020',
-    fontWeight: '700',
     textAlign: 'center',
     marginBottom: 9,
     letterSpacing: -0.2,
     fontFamily: 'Raleway',
   },
   modalText: {
-    fontSize: 17,
+    fontSize: 12,
     color: '#202020',
     textAlign: 'center',
-    marginBottom: 38,
-    fontWeight: '400',
+    marginBottom: 25,
     lineHeight: 25,
-    fontFamily: 'Raleway',
+    fontFamily: 'Nunito-Sans-Regular',
     letterSpacing: -0.08,
   },
   buttonsOuterWrap: {
@@ -87,8 +87,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 21,
     alignItems: 'center',
     minWidth: 120,
-    minHeight: 47,
-    flex: 1,
+    minHeight: 30,
     marginHorizontal: 5,
   },
   secondaryButton: {
@@ -98,8 +97,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 21,
     alignItems: 'center',
     minWidth: 120,
-    minHeight: 47,
-    flex: 1,
+    minHeight: 30,
     marginHorizontal: 5,
   },
   buttonHalfWidth: {
@@ -108,7 +106,7 @@ export const styles = StyleSheet.create({
   buttonText: {
     color: '#fff',
     fontSize: 16,
-    fontFamily: 'Nunito Sans',
+    fontFamily: 'NunitoSans-Regular',
     fontWeight: '500',
     textAlign: 'center',
     letterSpacing: 0,
@@ -129,7 +127,7 @@ export const styles = StyleSheet.create({
     marginRight: 10,
   },
   cancelButton: {
-    backgroundColor: '#202020', // black
+    backgroundColor: '#202020',
     borderRadius: 11,
     paddingVertical: 12,
     paddingHorizontal: 32,
@@ -142,7 +140,7 @@ export const styles = StyleSheet.create({
   cancelButtonText: {
     color: '#fff',
     fontSize: 16,
-    fontFamily: 'Nunito Sans',
+    fontFamily: 'NunitoSans-Regular',
     fontWeight: '500',
     textAlign: 'center',
     letterSpacing: 0,
@@ -161,7 +159,7 @@ export const styles = StyleSheet.create({
   deleteButtonText: {
     color: '#fff',
     fontSize: 16,
-    fontFamily: 'Nunito Sans',
+    fontFamily: 'NunitoSans-Regular',
     fontWeight: '500',
     textAlign: 'center',
     letterSpacing: 0,

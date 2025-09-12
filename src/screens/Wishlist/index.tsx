@@ -42,7 +42,11 @@ const Wishlist: React.FC<{ navigation: NavigationProp }> = ({ navigation }) => {
       <View style={styles.innerContainer}>
         <Title
           label="Wishlist"
-          textStyle={{ fontSize: 25, marginTop: 20, marginBottom: 10 }}
+          textStyle={{
+            fontSize: 30,
+            marginTop: 20,
+            marginBottom: 10,
+          }}
         />
         <Section
           title={

@@ -20,8 +20,8 @@ export const styles = StyleSheet.create({
   },
 
   imageWrapper: {
-    width: 112,
-    height: 115,
+    width: 130,
+    height: 114,
     borderRadius: 12,
     backgroundColor: '#FFFFFF',
     borderWidth: 3,
@@ -42,15 +42,14 @@ export const styles = StyleSheet.create({
 
   deleteButton: {
     position: 'absolute',
-    left: 10,
-    bottom: 10,
+    left: 5,
+    bottom: 5,
     width: 32,
     height: 32,
     borderRadius: 16,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'transparent',
-
     shadowOpacity: 0.1608,
     shadowRadius: 2,
     shadowOffset: { width: 0, height: 4 },
@@ -68,10 +67,7 @@ export const styles = StyleSheet.create({
     height: 40,
     borderRadius: 20,
     justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'transparent',
-    elevation: 0,
-    shadowColor: 'transparent',
+    marginTop: 18,
   },
 
   addIcon: {
@@ -85,12 +81,13 @@ export const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     marginRight: 12,
+    marginLeft: 10,
   },
   subtext: {
     fontSize: 14,
-    color: '#222',
+    color: '#000',
     fontWeight: '400',
-    fontFamily: 'Nunito-Sans',
+    fontFamily: 'Nunito-Sans-Regular',
     lineHeight: 16,
     letterSpacing: 0,
   },
@@ -107,11 +104,11 @@ export const styles = StyleSheet.create({
     fontWeight: '400',
     marginRight: 8,
     opacity: 0.56,
+    fontFamily: 'Raleway',
   },
   price: {
     fontSize: 17,
     color: '#202020',
-    fontWeight: '700',
     marginRight: 8,
     fontFamily: 'Raleway',
     lineHeight: 22,
@@ -131,10 +128,8 @@ export const styles = StyleSheet.create({
   optionText: {
     fontSize: 18,
     color: '#000000',
-    fontWeight: '500',
     fontFamily: 'Raleway',
     lineHeight: 18,
-
     letterSpacing: -0.14,
   },
 });

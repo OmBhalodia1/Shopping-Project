@@ -20,8 +20,7 @@ export const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 18,
-    fontWeight: '300',
-    fontFamily: 'Nunito Sans',
+    fontFamily: 'NunitoSans-Regular',
   },
   textContained: {
     color: 'white',
@@ -34,5 +33,6 @@ export const styles = StyleSheet.create({
     fontSize: 15,
     lineHeight: 26,
     letterSpacing: 0,
+    fontFamily: 'Nunito-Sans-Regular',
   },
 });

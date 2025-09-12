@@ -7,10 +7,12 @@ export const styles = StyleSheet.create({
     paddingTop: 8,
     paddingBottom: 3,
     backgroundColor: '#fff',
+    width: '100%',
+    zIndex: 10,
+    overflow: 'visible',
   },
   title: {
     fontSize: 28,
-    fontWeight: '700',
     color: '#202020',
     marginRight: 16,
     fontFamily: 'Raleway',
@@ -23,7 +25,6 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     borderRadius: 999,
     paddingHorizontal: 12,
-    paddingVertical: 8,
   },
   inputRow: {
     flexDirection: 'row',
@@ -33,17 +34,14 @@ export const styles = StyleSheet.create({
   searchText: {
     fontSize: 16,
     fontFamily: 'Raleway',
-    fontWeight: '500',
   },
   placeholder: {
     flex: 1,
     fontSize: 16,
     fontFamily: 'Raleway',
-    fontWeight: '500',
   },
   clearButton: {
     paddingHorizontal: 10,
-    alignSelf: 'center',
   },
   clearText: {
     fontSize: 18,

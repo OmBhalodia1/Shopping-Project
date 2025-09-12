@@ -15,14 +15,14 @@ export default function ShopStack() {
       <Stack.Screen name="ShopClothing" component={ShopCLothing} />
       <Stack.Screen name="ShopSearch" component={ShopSearch} />
 
-      <Stack.Screen
+      {/* <Stack.Screen
         name="CategoriesFilter"
         component={CategoriesFilter}
         options={{
           headerShown: false,
           presentation: 'fullScreenModal',
         }}
-      />
+      /> */}
     </Stack.Navigator>
   );
 }

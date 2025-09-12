@@ -18,7 +18,7 @@ const Ratings = () => {
           style={{
             fontSize: 15.5,
             color: '#202020',
-            fontWeight: '600',
+            fontFamily: 'Raleway',
             flex: 1,
           }}
         >

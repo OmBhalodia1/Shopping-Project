@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
-import { View, Text as ReactText, Image, ScrollView } from 'react-native';
+import {
+  View,
+  Text as ReactText,
+  Image,
+  ScrollView,
+  StatusBar,
+} from 'react-native';
 import { RouteProp, NavigationProp } from '@react-navigation/native';
 import { RootStackParamList } from '../../types/RootStackParamList';
 import { images } from '../../utils/images';
@@ -56,6 +62,7 @@ export const Product: React.FC<Props> = ({ route, navigation }) => {
     <>
       <View style={styles.container}>
         <ScrollView showsVerticalScrollIndicator={false}>
+          <StatusBar barStyle={'dark-content'} backgroundColor={'#fff'} />
           <Section
             sectionContent={
               <View style={styles.imageSection}>
@@ -128,7 +135,6 @@ export const Product: React.FC<Props> = ({ route, navigation }) => {
                       </View>
                     }
                   />
-                  <View style={{ marginTop: 10 }} />
                   <Section
                     title={<Title label="Origin" />}
                     sectionContent={
@@ -143,18 +149,16 @@ export const Product: React.FC<Props> = ({ route, navigation }) => {
                       />
                     }
                   />
-                  <View style={{ marginTop: 10 }} />
-
                   <Section
                     sectionContent={
-                      <VariationRow arrowCircle title="Size Guide" />
+                      <VariationRow arrowCircle title="Size guide" />
                     }
                   />
 
                   <Section
                     title={<Title label="Delivery" />}
                     sectionContent={
-                      <View style={{ marginTop: 10 }}>
+                      <View style={{ marginTop: 4 }}>
                         <DeliveryOptions
                           deliveryType="Standard"
                           days="5-7"

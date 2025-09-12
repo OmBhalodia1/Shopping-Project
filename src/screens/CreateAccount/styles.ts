@@ -19,7 +19,6 @@ export const styles = StyleSheet.create({
     fontSize: 50,
     fontFamily: 'Raleway',
     color: '#000',
-    fontWeight: '700',
     lineHeight: 54,
     letterSpacing: -0.5,
     flex: 1,
@@ -62,8 +61,6 @@ export const styles = StyleSheet.create({
     marginHorizontal: 8,
     color: '#ccc',
   },
-  cancelText: { fontSize: 15, lineHeight: 26 },
-  doneText: { fontSize: 22, lineHeight: 31 },
   buttonContainer: {
     marginTop: 52.1,
     gap: 12,

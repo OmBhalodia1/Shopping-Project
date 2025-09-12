@@ -22,13 +22,13 @@ export const styles = StyleSheet.create({
   label: {
     fontSize: 14,
     color: '#1D2134',
-    fontWeight: '500',
+    fontFamily: 'Raleway',
     marginBottom: 4,
   },
   trackingNumber: {
     fontSize: 15,
     color: '#444A61',
-    fontWeight: '400',
+    fontFamily: 'Nunito-Sans-Regular',
   },
   icon: {
     width: 20,

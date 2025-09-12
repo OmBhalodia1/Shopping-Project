@@ -66,6 +66,7 @@ const CategoriesFilter: React.FC<{ navigation: NavigationProp }> = ({
         </View>
 
         <FlatList
+          style={{ overflow: 'visible' }}
           data={categories}
           keyExtractor={item => item.label}
           showsVerticalScrollIndicator={false}
@@ -97,24 +98,23 @@ const CategoriesFilter: React.FC<{ navigation: NavigationProp }> = ({
           )}
           ListFooterComponent={
             <TouchableOpacity style={styles.categoryRow}>
-              <Image source={categoryImages.JustForYou} style={styles.icon} />
+              <View style={styles.categoryRow1}>
+                <Image source={categoryImages.JustForYou} style={styles.icon} />
 
-              <Title
-                star
-                label="Just For You"
-                textStyle={{
-                  fontSize: 17,
-                  fontWeight: '700',
-                  color: '#202020',
-                  fontFamily: 'Raleway',
-                  lineHeight: 21,
-                  letterSpacing: -0.17,
-                }}
-              />
-
-              <View style={styles.arrowCircle}>
-                <Text style={styles.arrowText}>{'→'}</Text>
+                <Title
+                  star
+                  label="Just For You"
+                  textStyle={{
+                    fontSize: 17,
+                    fontWeight: '700',
+                    color: '#202020',
+                    fontFamily: 'Raleway',
+                    lineHeight: 21,
+                    letterSpacing: -0.17,
+                  }}
+                />
               </View>
+              <Image source={icons.ArrowButton} resizeMode="contain" />
             </TouchableOpacity>
           }
         />

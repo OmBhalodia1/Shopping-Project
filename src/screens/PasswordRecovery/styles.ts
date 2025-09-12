@@ -17,8 +17,7 @@ export const styles = StyleSheet.create({
     marginBottom: 32,
     color: '#222',
     textAlign: 'center',
-    fontWeight: '300',
-    fontFamily: 'Nunito Sans',
+    fontFamily: 'NunitoSans-Regular',
   },
   optionsList: {
     width: '100%',

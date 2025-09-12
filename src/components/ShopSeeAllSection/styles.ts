@@ -8,7 +8,6 @@ export const styles = StyleSheet.create({
   },
   headerTitle: {
     fontSize: 21,
-    fontWeight: '700',
     fontFamily: 'Raleway',
     lineHeight: 30,
     letterSpacing: -0.21,
@@ -18,7 +17,6 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     color: '#222',
     marginRight: 10,
-    fontWeight: '600',
     fontFamily: 'Raleway',
   },
   arrowCircle: {

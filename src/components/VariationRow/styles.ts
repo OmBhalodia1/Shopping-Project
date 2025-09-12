@@ -7,8 +7,8 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   variationLabel: {
-    fontSize: 18,
-    fontWeight: 'bold',
+    fontSize: 20,
+    fontFamily: 'Raleway',
     color: '#181818',
     marginRight: 12,
   },
@@ -22,16 +22,9 @@ export const styles = StyleSheet.create({
   variationValue: {
     fontSize: 15.5,
     color: '#202020',
-    fontWeight: '600',
+    fontFamily: 'Raleway',
   },
-  variationArrow: {
-    backgroundColor: '#0958FD',
-    borderRadius: 20,
-    width: 36,
-    height: 36,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
+
   variationArrowIcon: {
     color: '#fff',
     fontSize: 20,

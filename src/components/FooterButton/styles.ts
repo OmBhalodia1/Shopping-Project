@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
   buttonRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 20,
+    padding: 10,
   },
   heartButton: {
     borderWidth: 2,

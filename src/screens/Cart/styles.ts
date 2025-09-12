@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
   },
   number: {
     fontSize: 16,
-    fontWeight: 'bold',
+    fontFamily: 'Raleway',
     color: '#222',
   },
   image: { flex: 1, alignItems: 'center', paddingVertical: 70 },

@@ -12,8 +12,8 @@ export const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 4 },
   },
   image: {
-    width: Platform.OS === 'android' ? 110 : 100,
-    height: Platform.OS === 'android' ? 110 : 100,
+    width: 130,
+    height: 110,
     borderRadius: 12,
     marginRight: 12,
     backgroundColor: '#FFFFFF',
@@ -28,12 +28,13 @@ export const styles = StyleSheet.create({
   },
   description: {
     color: '#000000',
-    fontSize: 15,
+    fontSize: 14,
     marginBottom: 5,
+    fontFamily: 'Nunito-Sans-Regular',
   },
 
   bold: {
-    fontWeight: '700',
+    fontFamily: 'Raleway',
     fontSize: 15,
     marginBottom: 8,
   },
@@ -43,11 +44,11 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   date: {
-    backgroundColor: '#EDEDED',
+    backgroundColor: '#f9f9f9',
     color: '#000000',
     fontSize: 15,
-    paddingHorizontal: 15,
-    paddingVertical: 8,
+    paddingHorizontal: 25,
+    paddingVertical: 7,
     borderRadius: 8,
     fontWeight: '500',
   },

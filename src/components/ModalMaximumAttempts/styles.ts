@@ -69,7 +69,7 @@ export const styles = StyleSheet.create({
   buttonText: {
     color: '#fff',
     fontSize: 16,
-    fontFamily: 'Nunito Sans',
+    fontFamily: 'NunitoSans-Regular',
     fontWeight: '500',
     textAlign: 'center',
   },

@@ -1,6 +1,7 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import React from 'react';
 import { styles } from './styles';
+import { icons } from '../../utils/icons';
 
 type ShopSeeAllSectionProps = {
   title?: string;
@@ -16,9 +17,7 @@ const ShopSeeAllSection: React.FC<ShopSeeAllSectionProps> = ({
       <Text style={styles.headerTitle}>{title}</Text>
       <TouchableOpacity style={styles.seeAllBtn} onPress={onPress}>
         <Text style={styles.seeAllText}>See All</Text>
-        <View style={styles.arrowCircle}>
-          <Text style={styles.arrow}>{'→'}</Text>
-        </View>
+        <Image source={icons.ArrowButton} resizeMode="contain" />
       </TouchableOpacity>
     </View>
   );

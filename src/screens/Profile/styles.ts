@@ -20,6 +20,7 @@ export const styles = StyleSheet.create({
     borderRadius: 30,
     borderWidth: 4,
     borderColor: '#FFFFFF',
+    elevation: 3,
   },
   avatar: {
     width: 48,
@@ -68,7 +69,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     color: '#000000',
     fontSize: 11,
-    fontFamily: 'Nunito Sans',
+    fontFamily: 'NunitoSans-Regular',
     fontWeight: '400',
     lineHeight: 18,
     letterSpacing: 0,

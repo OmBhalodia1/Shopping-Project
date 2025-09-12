@@ -3,11 +3,14 @@ import React from 'react';
 import { useState } from 'react';
 import { icons } from '../../utils/icons';
 import { styles } from './styles';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const FooterButton = () => {
   const [isWishlisted, setIsWishlisted] = useState(true);
+  const insets = useSafeAreaInsets();
+
   return (
-    <View style={styles.buttonRow}>
+    <View style={[styles.buttonRow, { paddingBottom: insets.bottom }]}>
       <TouchableOpacity
         style={styles.heartButton}
         onPress={() => setIsWishlisted(prev => !prev)}

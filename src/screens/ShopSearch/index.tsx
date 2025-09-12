@@ -30,31 +30,33 @@ const ShopSearch = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar translucent backgroundColor="transparent" />
-      <View style={{ flex: 1, paddingHorizontal: 18 }}>
+      <View style={{ flex: 1 }}>
         <HeaderShop
           title="Search"
           searchText={search}
           onSubmit={handleSearch}
         />
-        <Section
-          sectionContent={
-            <SearchList
-              mode="history"
-              items={history}
-              onClear={handleClearHistory}
-            />
-          }
-        />
-        <Section
-          sectionContent={
-            <SearchList mode="recommendation" items={RECOMMENDATIONS} />
-          }
-        />
+        <View style={{ paddingHorizontal: 20 }}>
+          <Section
+            sectionContent={
+              <SearchList
+                mode="history"
+                items={history}
+                onClear={handleClearHistory}
+              />
+            }
+          />
+          <Section
+            sectionContent={
+              <SearchList mode="recommendation" items={RECOMMENDATIONS} />
+            }
+          />
 
-        <Section
-          title={<Title label="Discover" />}
-          sectionContent={<NewItemsList products={DiscoverProducts} />}
-        />
+          <Section
+            title={<Title label="Discover" />}
+            sectionContent={<NewItemsList products={DiscoverProducts} />}
+          />
+        </View>
       </View>
     </SafeAreaView>
   );

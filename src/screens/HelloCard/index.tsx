@@ -12,7 +12,7 @@ import { images } from '../../utils/images';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../types/RootStackParamList';
 import Card from '../../components/Card';
-import Section from '../../components/Section';
+
 import { styles } from './styles';
 type Props = NativeStackScreenProps<RootStackParamList, 'HelloCard'>;
 
@@ -21,7 +21,7 @@ const HelloCard: React.FC<Props> = ({ navigation }) => {
 
   const CARD_WIDTH = width * 0.85;
   const CARD_RADIUS = 28;
-  const CARD_MARGIN_TOP = height * 0.1;
+  const CARD_MARGIN_TOP = height * 0.06;
 
   const DOT_SIZE = Math.max(13, width * 0.05);
   const DOT_GAP = width * 0.025;
@@ -38,41 +38,23 @@ const HelloCard: React.FC<Props> = ({ navigation }) => {
         source={images.HelloBack}
         style={{
           position: 'absolute',
-          top: 0,
-          width,
-          height: height * 0.45,
         }}
-        resizeMode="cover"
+        resizeMode="contain"
       />
       <View
-        style={[
-          styles.shadowWrap,
-          {
-            width: CARD_WIDTH,
-            borderRadius: CARD_RADIUS,
-            marginTop: CARD_MARGIN_TOP,
-            alignSelf: 'center',
-            shadowColor: '#0F1133',
-            shadowOffset: { width: 0, height: 10 },
-            shadowOpacity: 0.07,
-            shadowRadius: 25,
-            elevation: 3,
-          },
-        ]}
+        style={{
+          width: CARD_WIDTH,
+          borderRadius: CARD_RADIUS,
+          marginTop: CARD_MARGIN_TOP,
+          alignSelf: 'center',
+          backgroundColor: '#FFF',
+        }}
       >
-        <View
-          style={{
-            backgroundColor: '#fff',
-            borderRadius: CARD_RADIUS,
-            overflow: 'hidden',
-          }}
-        >
-          <Card
-            title="Hello"
-            subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non consectetur turpis. Morbi eu eleifend lacus."
-            image={images.Hello}
-          />
-        </View>
+        <Card
+          title="Hello"
+          subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non consectetur turpis. Morbi eu eleifend lacus."
+          image={images.Hello}
+        />
       </View>
       <View
         style={{
