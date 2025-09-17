@@ -1,6 +1,7 @@
 apply plugin: "com.android.application"
 apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "com.facebook.react"
+apply plugin: "com.google.gms.google-services"
 
 react {
     /* Automatically link libraries and assets */
@@ -48,7 +49,9 @@ android {
             }
         }
     }
-
+     buildFeatures {
+        prefab false
+    }
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
@@ -70,4 +73,8 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+
+    implementation platform("com.google.firebase:firebase-bom:34.2.0")
+    implementation "com.google.firebase:firebase-analytics"
+
 }

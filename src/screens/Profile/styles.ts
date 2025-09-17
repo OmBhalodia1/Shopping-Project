@@ -70,12 +70,10 @@ export const styles = StyleSheet.create({
     color: '#000000',
     fontSize: 11,
     fontFamily: 'NunitoSans-Regular',
-    fontWeight: '400',
     lineHeight: 18,
     letterSpacing: 0,
   },
   sectionTitle: {
-    fontWeight: '700',
     lineHeight: 30,
     letterSpacing: -0.21,
     fontFamily: 'Raleway',
@@ -101,7 +99,6 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: 'center',
     lineHeight: 21,
-    fontWeight: '400',
   },
   greenDot: {
     width: 10,

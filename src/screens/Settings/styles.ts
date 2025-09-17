@@ -47,6 +47,12 @@ export const styles = StyleSheet.create({
     marginBottom: 30,
     textAlign: 'left',
   },
+  logout: {
+    color: '#D97474',
+    fontSize: 15,
+    marginBottom: 30,
+    textAlign: 'left',
+  },
   footer: {
     alignItems: 'flex-start',
     marginBottom: 30,

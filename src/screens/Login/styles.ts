@@ -62,4 +62,19 @@ export const styles = StyleSheet.create({
     marginVertical: 8,
     fontFamily: 'Nunito Sans',
   },
+  googleButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#222',
+    backgroundColor: '#fff',
+  },
+  googleText: {
+    fontSize: 16,
+    fontWeight: '500',
+    color: '#333',
+  },
 });

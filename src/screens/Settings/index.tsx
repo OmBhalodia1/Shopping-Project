@@ -5,6 +5,7 @@ import {
   ScrollView,
   TouchableOpacity,
   Platform,
+  Image,
 } from 'react-native';
 import { styles } from './styles';
 import SettingsRow from '../../components/SettingsRow';
@@ -14,6 +15,8 @@ import { RootStackParamList } from '../../types/RootStackParamList';
 import Section from '../../components/Section';
 import Modal from '../../components/Modal';
 import ModalDeleteAccountConfirm from '../../components/ModalDeleteAccountConfirm';
+import { getAuth, signOut } from '@react-native-firebase/auth';
+import { icons } from '../../utils/icons';
 
 type NavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -24,6 +27,15 @@ export const Settings: React.FC<{ navigation: NavigationProp }> = ({
   navigation,
 }) => {
   const [modalVisible, setModalVisible] = useState(false);
+  const handleLogout = async () => {
+    try {
+      const auth = getAuth();
+      await signOut(auth);
+      navigation.replace('Start');
+    } catch (error) {
+      console.error('Logout Error:', error);
+    }
+  };
 
   return (
     <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
@@ -95,6 +107,23 @@ export const Settings: React.FC<{ navigation: NavigationProp }> = ({
             <>
               <TouchableOpacity onPress={() => setModalVisible(true)}>
                 <Text style={styles.delete}>Delete My Account</Text>
+              </TouchableOpacity>
+            </>
+          }
+        />
+        <Section
+          sectionContent={
+            <>
+              <TouchableOpacity
+                style={{ flexDirection: 'row' }}
+                onPress={handleLogout}
+              >
+                <Text style={styles.logout}>Logout</Text>
+                <Image
+                  source={icons.logout}
+                  style={{ width: 24, height: 24, marginLeft: 10 }}
+                  resizeMode="contain"
+                />
               </TouchableOpacity>
             </>
           }

@@ -41,4 +41,6 @@ export const icons = {
   orderHistoryRed: require('../assets/icons/orderHistoryRed.png'),
   Close: require('../assets/icons/Close.png'),
   ArrowButton: require('../assets/icons/ArrowButton.png'),
+  google: require('../assets/icons/google.png'),
+  logout: require('../assets/icons/logout.png'),
 };

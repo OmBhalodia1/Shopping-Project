@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
   pickerText: {
     fontSize: 18,
     color: '#375AFF',
-    fontWeight: '400',
+    fontFamily: 'Raleway',
   },
   checkIcon: {
     width: 26,
@@ -41,7 +41,7 @@ export const styles = StyleSheet.create({
   },
   alphaHeaderText: {
     fontSize: 18,
-    fontWeight: '700',
+    fontFamily: 'Raleway',
     color: '#242529',
   },
   countryRow: {
@@ -55,7 +55,6 @@ export const styles = StyleSheet.create({
   countryText: {
     fontSize: 18,
     color: '#222',
-    fontWeight: '400',
-    fontFamily: 'Nunito-Sans',
+    fontFamily: 'Nunito-Sans-Regular',
   },
 });

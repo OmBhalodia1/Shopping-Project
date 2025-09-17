@@ -4,11 +4,10 @@ export const styles = StyleSheet.create({
   card: {
     backgroundColor: '#FFFFFF',
     borderRadius: 15,
-    alignItems: 'center',
   },
   header: {
     backgroundColor: '#F8FAFF',
-    paddingHorizontal: Platform.OS === 'android' ? 55 : 45,
+    paddingHorizontal: 45,
     paddingVertical: 20,
     marginBottom: 20,
     borderTopRightRadius: 16,

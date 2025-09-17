@@ -112,7 +112,7 @@ const Cart: React.FC<{ navigation: NavigationProp }> = ({ navigation }) => {
             ))}
           />
         </View>
-
+        <View style={{ marginTop: 20 }} />
         <Section
           title={
             <Title label="Most Popular" rightElement={<ShopSeeAllSection />} />
